@@ -1,0 +1,39 @@
+.eile1, .eile2, .eile3, .eile4 {
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.eile1, .eile3 {
+    background-color: #fea400;
+}
+
+.eile2, .eile4 {
+    background-color: #fe4500;
+}
+
+.eile2 div {
+    background-color: #ffffff;
+    margin: 15px;
+}
+
+
+.eile3 {
+    justify-content: center;
+}
+
+.eile3 div {
+    background-color: #ffffff;
+    padding: 15px;
+    width: 30%;
+}
+
+.eile4 {
+    justify-content: space-between;
+}
+
+.eile4 div {
+    background-color: #fea400;
+    padding: 15px;
+    margin: 15px;
+}

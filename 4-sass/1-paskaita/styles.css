@@ -1,0 +1,32 @@
+h2 {
+  color: red;
+}
+
+body {
+  color: red;
+}
+
+h1 {
+  color: green;
+}
+
+.primary-button {
+  margin: 321;
+  padding: 123;
+  border-radius: 5px;
+  color: blue;
+}
+
+.danger-button {
+  margin: 321;
+  padding: 123;
+  border-radius: 5px;
+  color: red;
+}
+
+.warning-button {
+  margin: 321;
+  padding: 123;
+  border-radius: 5px;
+  color: yellow;
+}

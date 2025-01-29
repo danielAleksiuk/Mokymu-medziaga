@@ -1,0 +1,19 @@
+.mano-button {
+	color: red;
+}
+
+@media screen and (max-width: 768) and (min-width: 376) {
+
+	/* TABLET  */
+	.mano-button {
+		color: blue;
+	}
+}
+
+@media screen and (max-width: 375) {
+	/* PHONE */
+}
+
+
+vazono spalvos burbuliukai mygtukas 1. desktop viena eilute 2. tablet,
+phone dvi eilutes pirma eil - vazono spalvos antra eil - mygtukas per visa ploti

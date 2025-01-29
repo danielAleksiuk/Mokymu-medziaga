@@ -1,0 +1,61 @@
+#page-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.flex-container {
+    display: flex;
+}
+
+main .page-block {
+    height: 100vh;
+}
+
+header {
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .title {
+    color: #222222;
+    font-family: Raleway;
+    font-size: 22px;
+    font-weight: 700;
+    line-height: 26px;
+    min-width: 300px;
+}
+
+header nav ul li {
+    list-style: none;
+    margin-left: 20px;
+}
+
+header nav ul li a {
+    text-decoration: none;
+    color: #222222;
+    text-transform: uppercase;
+    font-family: 'Open Sans';
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px;
+    letter-spacing: 1px;
+}
+
+header nav ul li a:hover {
+    color: orange;
+}
+
+.nav-top {
+    padding: 20px;
+    right: 20px;
+    bottom: 20px;
+    position: fixed;
+    border: 1px solid black;
+    border-radius: 20px;
+}
+
+.nav-top a {
+    text-decoration: none;
+    text-transform: uppercase;
+    color: grey
+}

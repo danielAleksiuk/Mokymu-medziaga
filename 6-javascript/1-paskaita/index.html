@@ -1,0 +1,792 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body style="background-color: bisque;">
+    Mano pirmas JavaScript darbas
+    <!-- inline -->
+    <button onclick="console.log('labas')">
+        click me
+    </button>
+    <div id="content"></div>
+
+    <!-- internal -->
+    <script>
+        let now = new Date();
+        let date1 = new Date('May 11 2015 09:00')
+
+        console.log(n);
+        console.log(now.toLocaleDateString('lt'))
+        console.log(now.toLocaleTimeString('lt'))
+
+
+
+
+        // let eilute = '     mano sakinys PVZ msg    ';
+
+     
+        // console.log('.'+ eilute + '.')
+        // console.log('.'+ eilute.trim() + '.' )
+        // console.log('.'+ eilute.trimStart() + '.' )
+        // console.log('.'+ eilute.trimEnd() + '.' )
+        // console.log('.'+ eilute + '.')
+        // console.log(eilute.indexOf('mano'));
+        // console.log(eilute.indexOf('msg'));
+
+
+        // for(let i = 0; i < eilute.length; i++) {
+        //     console.log(eilute[i]);
+        // }
+
+
+
+        // let studentai = [
+        //     {
+        //         vardas: 'Jonas',
+        //         pazymiai: [4, 7, 8, 5, 7]
+        //     },
+        //     {
+        //         vardas: 'Tomas',
+        //         pazymiai: [6, 7, 5, 7]
+        //     },
+        //     {
+        //         vardas: 'Ugne',
+        //         pazymiai: [4, 7, 8, 5, 10, 5,7]
+        //     }
+        // ];
+        
+        // for (let studentas of studentai) {
+        //     console.log('stud vardas: '+ studentas.vardas);
+        //     let suma = 0;
+
+        //     for (let pazymis of studentas.pazymiai) {
+        //         suma += pazymis;
+        //     }
+
+        //     console.log('pazymiu vidurkis: ' + (suma / studentas.pazymiai.length).toFixed(2))
+        // }
+        
+        // for (let savybe in studentas ) {
+        //     console.log(savybe + ':' + studentas[savybe]);
+        // }
+
+
+        // let studentai = [
+        //     {
+        //         vardas: 'Jonas',
+        //         amzius: 20,
+        //         studijos: {
+        //             kursas: 'medicina',
+        //             universitetas: 'VU',
+        //             metai: 4,
+        //             kartojantis: false,
+        //             pazymiai: [8, 7, 9 , 4],
+        //             studijuPrograma: 'pvz',
+        //             studiju_programa: 'pvz',
+        //             programa: 'pvz'
+        //         },
+        //         miestas: 'Vilnius'
+        //     },
+        //     {
+        //         vardas: 'petras',
+        //         amzius: 20,
+        //         studijos: {
+        //             kursas: 'medicina',
+        //             universitetas: 'VU',
+        //             metai: 4,
+        //             kartojantis: false,
+        //             pazymiai: [8, 7, 9 , 4],
+        //             studijuPrograma: 'pvz',
+        //             studiju_programa: 'pvz',
+        //             programa: 'pvz'
+        //         },
+        //         miestas: 'Vilnius'
+        //     },
+        //     {
+        //         vardas: 'mindaugas',
+        //         amzius: 20,
+        //         studijos: {
+        //             kursas: 'medicina',
+        //             universitetas: 'VU',
+        //             metai: 4,
+        //             kartojantis: false,
+        //             pazymiai: [8, 7, 9 , 4],
+        //             studijuPrograma: 'pvz',
+        //             studiju_programa: 'pvz',
+        //             programa: 'pvz'
+        //         },
+        //         miestas: 'Vilnius'
+        //     }
+        // ]
+
+        // let studentas = {
+        //     vardas: 'Jonas',
+        //     amzius: 20,
+        //     studijos: {
+        //         kursas: 'medicina',
+        //         universitetas: 'VU',
+        //         metai: 4,
+        //         kartojantis: false,
+        //         pazymiai: [8, 7, 9 , 4],
+        //         studijuPrograma: 'pvz',
+        //         studiju_programa: 'pvz',
+        //         programa: 'pvz'
+        //     },
+        //     miestas: 'Vilnius'
+        // };
+
+        // console.log(studentas);
+
+        // studentas.miestas = 1;
+        // console.log(studentas)
+
+        // let tuscia = {};
+        // console.log(tuscia);
+        // tuscia.pvz =12;
+        // console.log(tuscia)
+
+        // let skaiciai = [7, 8, -3];
+
+        // let suma = skaiciai.reduce((accumulator, currentValue) => {
+        //     console.log('++++');
+        //     console.log(currentValue);
+        //     console.log(accumulator);
+        //     console.log('++++');
+        //     return accumulator + currentValue;
+        // }, 0);
+
+        // console.log(suma)
+        // let cssKlases = ['red', 'blue', 'green'];
+
+        // let atrinkti = cssKlases
+        //     .sort()
+        //     .map(x => `<div class='bg-color-${x}'></div>`)
+        //     .concat()
+        //     .fill();
+
+        // console.log(atrinkti)
+
+        // let dvigubi = skaiciai.map(x => x * 2);
+        // console.log('dvigubi skaiciai', dvigubi);
+
+        // let trigubi = skaiciai.map(x => {
+        //     return x * 3;
+        // });
+        // console.log('trigubi skaiciai', trigubi);
+
+        // let punktai = skaiciai.map(x => '<li>' + x + '</li>');
+        // console.log('saraso punktai', punktai);
+
+        // let html = '<ul>' + punktai.join('') + '</ul>';
+        // console.log( html);
+        
+        // let yraTeigiamu = skaiciai.some(function(skaicius) {
+        //     console.log(skaicius)
+
+        //     return skaicius === 2;
+        // });
+
+        // console.log('yra bent vienas teigiamas', yraTeigiamu);
+
+        // let visiSkaiciai = skaiciai.every(skaicius => {
+        //     return skaicius > 0;
+        // });
+
+        // console.log(visiSkaiciai);
+
+        // let teigiami = skaiciai.filter(function(skaicius) {
+        //     return skaicius > 0;
+        // });
+
+        // console.log('teigiami skaiciai', teigiami);
+
+        // let lyginiai = skaiciai.filter(reiksme => reiksme % 2 === 0 );
+
+        // console.log('lyginiai skaiciai:' + lyginiai);
+
+        // let atrinkti = skaiciai.filter(elementas => {
+        //     return elementas % 2 === 0 && elementas > 0;
+        // });
+
+        // console.log(atrinkti);
+
+
+        // let zmones = ['Tomas', 'Greta', 'Paulius'];
+        // console.log(zmones);
+
+        // console.log(
+        //     zmones.find((zmogus) => {
+        //         return zmogus === 'Tomas';
+        //     })
+        // );
+
+        // console.log(
+        //     zmones.find(zmogus => zmogus === 'Tomas')
+        // );
+
+
+        // let skaiciai = [4, 8, 7, 2, 3];
+
+        // skaiciai.forEach((function (skaicius) {
+        //     console.log(skaicius);
+        // }));
+
+        // skaiciai.forEach((skaicius => {
+        //     console.log(skaicius);
+        // }));
+
+        // skaiciai.forEach(skaicius => console.log(skaicius));
+
+        // skaiciai.forEach(((skaicius, indeksas) => {
+        //     console.log('reiksme:' + skaicius);
+        //     console.log('indeksas:' + indeksas);
+        // }));
+
+
+
+        // let skaiciaiPild = [8, 4, 2,8 ,7];
+        // console.log(skaiciaiPild);
+
+        // console.log(
+        //     skaiciaiPild.sort((a, b) => b - a )
+        // )
+        // console.log(
+        //     skaiciaiPild.includes(7)
+        // );
+        // console.log(
+        //     skaiciaiPild.includes(777)
+        // );
+
+        // console.log(
+        //     skaiciaiPild.indexOf(7)
+        // );
+        // console.log(
+        //     skaiciaiPild.indexOf(777)
+        // );
+        // skaiciaiPild = [];
+        // skaiciaiPild.length = 0;
+        // skaiciaiPild.splice(0, skaiciaiPild.length);
+
+        // while (skaiciaiPild.length > 0) {
+        //     skaiciaiPild.pop();
+        // }
+        // console.log(skaiciaiPild);
+
+        //let skaiciaiPild2 = [80, 40, 20,80 ,70];
+        // console.log(skaiciaiPild2)
+        // let sujungtas = skaiciaiPild.concat(skaiciaiPild2);
+        // let didelisSujungimas = sujungtas.concat(skaiciaiPild, skaiciaiPild2);
+
+        // console.log(sujungtas
+        // .concat(skaiciaiPild, skaiciaiPild2));
+        // console.log(sujungtas
+        // .concat(skaiciaiPild, skaiciaiPild2).slice(5, 10) );
+        // // console.log(didelisSujungimas);
+        // let iskarpa = sujungtas
+        //     .concat(skaiciaiPild, skaiciaiPild2)
+        //     .slice(5, 10) // [a, b, c, d, e]
+        //     .slice(1);
+    
+        // let kopija = skaiciaiPild.slice();
+        // console.log(kopija);
+
+        // let naujaKopija = [
+        //     ...skaiciaiPild2,
+        //     ...skaiciaiPild
+        // ];
+        
+        // console.log(naujaKopija)
+
+        // skaiciaiPild.unshift(-2);
+
+        // console.log(skaiciaiPild);
+        // skaiciaiPild.shift();
+        // console.log(skaiciaiPild);
+        // let skaiciai = [1, 4, '8', 7, true];
+        // console.log('for OF')
+        // for(let i of skaiciai) {
+        //     console.log(elementas);
+        // }
+
+        // console.log('for IN')
+        // for(let i in skaiciai) {
+        //     console.log(indeksas);
+        // }
+
+        // let  medziai = ['obelis', 'kriause', 'berzas', 'egle'];
+        // for (let i = medziai.length - 1; i >= 0; i --) {
+        //     console.log(medziai[i]);
+        // };
+
+        // console.log('***************');
+        // let masyvas = [7, 8, 4, 9, 6];
+        // for(let i = 0; i < masyvas.length; i++) {
+        //     console.log('indeksas:', i);
+        //     console.log('reiksme:', masyvas[i]);
+        //     console.log('\n');
+        // }
+        // console.log('***************');
+        // let randomSkaiciai = [];
+        // console.log('for');
+        // for(let i = 0; i < 7; i++) {
+        //     randomSkaiciai.push(
+        //         Math.floor(Math.random() * 10) + 1
+        //     );
+        // };
+        // console.log(randomSkaiciai);
+
+        // randomSkaiciai = [];
+        // console.log('while');
+        // let index = 0;
+        // while (index < 7) {
+        //     randomSkaiciai.push(
+        //         Math.floor(Math.random() * 10) + 1
+        //     );
+        //     index++;
+        // }
+        // console.log(randomSkaiciai);
+
+        // let skaiciai = [7, 8, 4, 9, 6];
+        // console.log('for');
+        // for (let i = 0; i < skaiciai.length; i++) {
+        //     console.log(`${ i + 1 } elemento masyve reiksme yra: ${skaiciai[i]}`);
+
+        // }
+        // console.log('while');
+        // let j = 0;
+
+        // while( j < skaiciai.length) {
+        //     console.log(`${ j + 1 } elemento masyve reiksme yra: ${skaiciai[j]}`); 
+        //     j++;
+        // }
+
+
+        //     let suma = 0;
+        //     for(let i = 0; i < pazymiai.length; i++) {
+        //         suma += pazymiai[i];
+        //     }
+
+        //     let vidurkis = suma / pazymiai.length;
+
+
+        // let skaiciai = [54, 888];
+
+
+        // console.log(skaiciai);
+        // skaiciai[0] = 456;
+        // skaiciai[2] = 999;
+        // console.log(skaiciai);
+        // console.log(skaiciai[2]);
+        // skaiciai[5] = 1;
+        // console.log(skaiciai);
+        
+        // [0  length - 1]
+
+        // length
+
+
+        // skaiciai 
+
+        // skaiciai[1] 
+        // let skaicius = 1;
+
+        // while (skaicius < 5) {
+        //     console.log(skaicius);
+        //     skaicius++;
+        // }
+
+        // let tekstas = 'sita teksta isvedame';
+        // let kiek_liko = 13;
+
+        // while (kiek_liko > 0) {
+        //     console.log(tekstas);
+        //     kiek_liko--;
+        // }
+
+        // let priekiuKiekis = 24;
+
+        // while (priekiuKiekis > 0) {
+        //     console.log('turimas priekiu kiekis:', priekiuKiekis);
+        //     let kiekNupirko = Math.floor(Math.random() * 5) + 1;
+        //     if (kiekNupirko > priekiuKiekis) {
+        //         kiekNupirko = priekiuKiekis;
+        //     };
+
+        //     console.log('nupirko: ', kiekNupirko);
+
+        //     priekiuKiekis -= kiekNupirko;
+        // }
+
+        //  while (true ) {
+        //     let skaicius = Math.floor(Math.random() * 100) +1;
+        //     console.log(skaicius);
+            
+        //     if (skaicius % 7 === 0 && skaicius % 2 === 0) {
+        //         console.log('skaicius dlainasi is 7 ir is 2 ', skaicius);
+        //         break;
+        //     }
+        //  }
+        //  console.log('+++++++++++++++++++++++++++++');
+        // skaicius = 1;
+
+        // while (skaicius % 7 != 0 || skaicius % 2 != 0) {
+        //     skaicius = Math.floor(Math.random() * 100) +1;
+        //     console.log(skaicius);
+        // }
+        // console.log('+++++++++++++++++++++++++++++');
+
+
+        // let blokoAukstis = 100;
+        // let turinioAukstis = 128;
+
+        // console.log('pradiniai duomenys');
+        // console.log('bloko aukstis', blokoAukstis);
+        // console.log('turinio aukstis', turinioAukstis);
+
+        // while (turinioAukstis > blokoAukstis ) {
+        //     blokoAukstis += 10;
+        // }
+
+        // console.log('atnaujinti duomenys');
+        // console.log('bloko aukstis', blokoAukstis);
+        // console.log('turinio aukstis', turinioAukstis);
+
+        // console.log('+++++++++++++++++++++++++++++');
+
+        // let duomenuKiekis = 100;
+        // let apdorota = 10;
+
+        // while(apdorota < duomenuKiekis) {
+        //     console.log('jau apdorota ' + apdorota + ' % duomenu');
+        //     apdorota += Math.floor(Math.random() * 10);
+        // }
+
+        // console.log('baigta, pilnai apdorota')
+
+        // console.log('+++++++++++++++++++++++++++++');
+
+        // let suma = 0;
+        // skaicius =0 ;
+
+        // while (suma < 500) {
+        //     skaicius = Math.floor(Math.random() * 100) +1;
+        //     suma += skaicius;
+        //     console.log(skaicius);
+        // }
+
+        // console.log('skaiciu suma:', suma);
+        // let suma = 0;
+
+        // for (let i = 1; i <= 10; i++) {
+        //     if (i % 2 === 0) {
+        //         console.log(i);
+        //         suma += i;
+        //     }
+        // }
+
+        // console.log(suma);
+
+
+        // for (kintamasis; salyga; operacija) {
+        //     // kodas
+        // }
+        // i = i + 1 arba i += 1 arba i++
+        // let start = 55;
+        // let end = 50;
+
+        // for (let i = start; i <= end; i++) {
+        //     console.log(i);
+        // }
+
+
+        // for (let i = 1; i <=10; i++ ) {
+        //     console.log(i);
+        //     if (i % 2 === 0) {
+        //         continue;
+        //     }
+
+        //     console.log('nera continue')
+        // }
+
+        // let customerHasTicket = true;
+
+        // if (!customerHasTicket) {
+        //     console.log('pls buy a ticket')
+        // }
+
+        // false 
+
+        // !false -> true
+
+        // ! (true)
+        // !true -> false
+
+        // && || && && ||
+
+
+        // && (|| &&)  ( && ||)
+        // && a b
+
+        // (8 + 9 * 2 )
+
+        // (8 + 9 ) * 2 
+
+        // let skaicius = 140;
+
+        // if ((skaicius > 150 && skaicius +1525 -56 > skaicius % 45 ===0 || isCustomer === 'premium' && isCardNotEmpty) && (skaicius > 250 && skaicius +1525 -56 > skaicius % 45 ===0 || isCustomer === 'premium' && isCardNotEmpty) )
+        // if (isCardAdded && isCustomerEligible && paymentMethodVisa && adressCityVilnius && isCurrencyEur)
+
+        // if (skaicius > 0 && skaicius <=100) {
+        //     console.log('skaicius patenka tarp reziu [1-100]');
+        // } else {
+        //     console.log('skaicius nepatenka tarp nurodytu reziu');
+        // }
+
+        // if (skaicius % 5 ===0 && skaicius % 10 === 0 ){
+
+        // }
+
+        // if (skaicius % 5 === 0) {
+        //     if (skaicius % 10 === 0) {
+
+        //     }
+        // }
+
+        // // true && false -> false
+        // if ((10 > 9) && (9 > 10 )) {
+
+        // }
+        // // true || false -> true
+        // if ((10 > 9) || (9>10)) {
+
+        // }
+        // // false
+        // if (!true) {
+
+        // }
+        // // true
+        // if (!false) {
+            
+        // }
+        // // true && !false -> true && true -> true
+        // if ((10 > 9) && (!(9>10)))
+
+
+        // !true -> false
+        // !false -> true
+
+        // if ( (a && b) || (x && y))
+
+        // if ( X  && Y ) {
+
+        // }
+
+        // if ( X || Y ) {
+
+        // }
+
+        // let vardas = 'Jonas';
+        // let pavarde = 'Jonaitis';
+
+        // // && and ir  
+        // // || or arba
+        // // ! => !== 
+
+        // if (vardas === 'Jonas' && pavarde=== 'Jonaitis' && salyga1 ||  salyga2) {
+        //     //veiksmas1
+        // }
+
+        // if (vardas === 'Jonas' || vardas === 'Petras') {
+        //     // veiksmas1
+        // } else {
+        //     //veiksmas2
+        // }
+
+        // if (vardas === 'Jonas') {
+        //     //veiksmas1
+        // } else if (vardas === 'Petras') {
+        //     //veiksmas1
+        // } else {
+        //     // veiksmas2
+        // }
+
+
+
+        // let role = 'moderator';
+
+        // console.log('SWITCH:')
+        // switch (role) {
+        //     case 'guest':
+        //         console.log('Guest user');
+        //         console.log('READ');
+        //         break;
+        //     case 'admin':
+        //         console.log('Admin user');
+        //     console.log('READ');
+        //         console.log('Write');
+        //         break;
+        //     case 'moderator':
+        //         console.log('Moderator user');
+        //         console.log('READ');
+        //         console.log('WRITE');
+        //         console.log('CONTROL');
+        //         break;
+        //     default: 
+        //         console.log('unknown user');
+        //         console.log('ACCESS DENIED');
+        // }
+
+        // A112
+        // A202
+        // A348
+
+
+        // a ** 2;
+        // Math.pow(a, 2)
+
+
+        // console.log('+++++++++++++++++++');
+        // let skaicius = 41;
+
+        // switch (skaicius)  {
+        //     case 40: 
+        //         console.log('40')
+        //         break;
+        //     case 41:
+        //         console.log('41');
+        //         break;
+        //     default:
+        //         console.log('number nelygus 40 ir nelygus 41');
+        // }
+
+        // console.log('IF:')
+        // if (role === 'guest') {
+        //     console.log('Guest user');
+        // } else if (role === 'admin') {
+        //     console.log('Admin user');
+        // } else if (role === 'moderator') {
+        //     console.log('Moderator user');
+        // } else {
+        //     console.log('unknown user');
+        // }
+
+        // let skaicius = 0;
+        // if (skaicius > 0) {
+        //     console.log('teigiamas');
+        // } else if  (skaicius < 0 ){
+        //     console.log('neigiamas')
+        // } else {
+        //     console.log('nulis');
+        // }
+
+        // let vardas = 'Jonas';
+        // console.log(vardas === 'Jonas');
+        // if (vardas === 'Jonas') {
+        //     console.log('welcome Jonai');
+        // }  else {
+        //     console.log('access denied');
+        // }
+        
+
+
+
+
+
+
+// let reiksme = Math.floor(4.5); 
+        // let a = reiksme +45;
+        // console.log(reiksme )
+
+        // 22.41 -> ceil 23 
+        // 5.11 -> floor 5
+        // Math.round(4.5)
+        // Math.floor(4.5)
+        // Math.ceil(4.5)
+
+
+        // 4.01
+        // Math.PI
+
+
+        // x **3 === Math.pow(x, 3)
+
+        // //  1 uzd
+        // let skaicius = 2;
+        // console.log(skaicius ** 2);
+        // console.log(skaicius ** 3);
+        // // 2 uzd
+        // let a = 2, b = 2, c = 2;
+        // console.log(a + b + c);
+        // console.log(a * b * c);
+
+        // let a = 1, b = 2;
+        // let suma = a + b;
+
+        // console.log('a:',a);
+        // console.log('b:',b);
+
+        // console.log('suma:' + a + b);
+        // console.log('suma:' + (a + b));
+        // console.log('suma:' + suma.toString())
+        // console.log(1 + '2');
+
+
+        // let vardas = 'Greta';
+        // let amzius = 22;
+
+        // console.log('vardas', vardas, typeof vardas);
+        // console.log('amzius', amzius, typeof amzius);
+
+        // vardas = 24;
+        // amzius = 'Greta';
+
+        // console.log('vardas', vardas, typeof vardas);
+        // console.log('amzius', amzius, typeof amzius);
+
+        // let tekstas = `
+        //     pirm eil
+        //     antr eil
+        //     trec eil
+        // `;
+        // console.log(tekstas);
+
+        // let rezultatas;
+        // let a=10, b=10;
+
+        // rezultatas = a + b;
+        // rezultatas = a - b; 
+        // rezultatas = a * b; 
+        // rezultatas = a / (b + 5);
+        // let vardas = 'Greta'; // string tipas
+        // let amzius = 20; // number tipas
+        // let ugis = 1.7;
+        // let studente = true; // boolean (bool) tipas
+        // let teises = undefined;
+        // let hobis = null;
+
+        // console.log('vardas',typeof vardas);
+        // console.log(typeof amzius);
+        // console.log(typeof  ugis);
+        // console.log(typeof  studente);
+        // console.log(typeof  teises);
+        // console.log(typeof  hobis);
+
+        // let marke = 'audi';
+        // let modelis = 'a7';
+        // let metai = 2004;
+        
+        // console.log(`${marke}${marke}${marke}${marke}${marke} ${modelis}${marke}${marke}${marke} buvo${marke}${marke}${marke}${marke} pagaminta${marke}${marke} ${metai} metais`);
+
+    </script>
+
+    <!-- external -->
+    <script src="scripts.js">
+    </script>
+</body>
+
+</html>

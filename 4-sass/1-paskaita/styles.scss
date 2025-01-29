@@ -1,0 +1,45 @@
+// @use 'theme';
+@import 'pvz';
+@import 'theme';
+
+
+@mixin button {
+    margin: 321;
+    padding: 123;
+    border-radius: 5px;
+}
+
+.primary-button {
+    @include button;
+    color: blue;
+}
+
+.danger-button {
+    @include button;
+    color: red;
+}
+
+.warning-button {
+    @include button;
+    color: yellow;
+}
+
+// %button {
+//     padding: 123;
+//     border-radius: 5px;
+// }
+
+// .primary-button {
+//     @extend %button;
+//     color: blue;
+// }
+
+// .danger-button {
+//     @extend %button;
+//     color: red;
+// }
+
+// .warning-button {
+//     @extend %button;
+//     color: yellow;
+// }

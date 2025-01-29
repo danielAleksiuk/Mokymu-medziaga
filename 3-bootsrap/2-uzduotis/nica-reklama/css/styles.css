@@ -1,0 +1,376 @@
+/* GENERAL */
+
+* {
+    font-family: 'Roboto', sans-serif;
+}
+
+section {
+    padding: 112px 0;
+}
+
+section .section-header {
+    text-align: center;
+}
+
+section .section-header p {
+    width: 100%;
+    max-width: 648px;
+    margin: 0 auto;
+    font-size: 18px;
+    line-height: 22px;
+}
+
+section .section-header h2 {
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 46px;
+    margin-bottom: 25px;
+    color: #404445;
+}
+
+p {
+    color: #5F6B81;
+    font-size: 18px;
+}
+
+h3 {
+    color: #404445;
+    font-size: 22px;
+    line-height: 25.78px;
+}
+
+.icon {
+    color: #49C0FC;
+    font-size: 40px;
+}
+
+/* NAV */
+nav.navbar {
+    padding: 20px 0;
+}
+
+nav .navbar-brand {
+    font-weight: 700;
+    font-size: 26px;
+    line-height: 30px;
+    color: #878B9B;
+}
+
+nav .navbar-nav .nav-item {
+    margin: 0 20px;
+}
+
+nav .navbar-nav .nav-item .nav-link {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 18px;
+    color: #404445;
+}
+
+nav .navbar-nav .nav-item:first-child {
+    margin-left: 0;
+}
+
+nav .navbar-nav .nav-item:last-child {
+    margin-right: 0;
+}
+
+nav .navbar-nav .nav-item .active,
+nav .navbar-nav .nav-item .nav-link:hover {
+    color: #43C45F;
+}
+
+/* header */
+header {
+    padding-top: 300px;
+    height: calc(100vh - 80px);
+    background: linear-gradient(rgba(98, 100, 113, 0.5), rgba(98, 100, 113, 0.5)), url('../img/header-bg.jpg') center no-repeat;
+    background-size: cover;
+}
+
+header .row .green-btn {
+    background: #43C45F;
+    color: #ffffff;
+}
+
+header .row h1 {
+    font-size: 70px;
+    font-weight: 500;
+    line-height: 82px;
+    color: #ffffff
+}
+
+header .row p {
+    font-size: 26px;
+    font-weight: 400;
+    line-height: 30px;
+    color: rgba(213, 215, 216, 1);
+    margin-bottom: 50px;
+}
+
+/* sections */
+/* general info */
+.general-info-first .info-block {
+    margin-top: 50px;
+}
+
+
+
+.general-info-first .text-col h3 {
+    font-weight: 500;
+    text-align: left;
+    margin: 18px 0 10px;
+}
+
+.general-info-first .text-col p {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 20.35px;
+    text-align: left;
+    color: #5F6B81;
+    margin-bottom: 0;
+}
+
+.video {
+    background: #F1F8FF;
+}
+
+.video .video-col {
+    margin-top: 54px;
+}
+
+.video .video-col .video-wrapper {
+    position: relative;
+    padding-bottom: 50%;
+    height: 100%;
+}
+
+.video .video-col .video-wrapper iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 500px
+}
+
+.general-info-second .first p:last-child {
+    margin-bottom: 53px;
+}
+
+.general-info-second .first p {
+    font-size: 22px;
+    line-height: 27.98px;
+    text-align: left;
+    color: #404445;
+    margin-bottom: 28px;
+}
+
+.general-info-second .first p:last-child {
+    font-size: 40px;
+    font-weight: 500;
+    line-height: 50.88px;
+    max-width: 672px;
+    width: 100%;
+}
+
+.general-info-second .second .info-block p:last-child {
+    margin-bottom: 0;
+}
+
+.general-info-second hr {
+    border-top: solid #D8D8D8 1px;
+    margin: 0;
+    margin-bottom: 52px;
+}
+
+.general-info-second .second {
+    text-align: left;
+}
+
+.general-info-second .second p:first-of-type {
+    margin: 20px 0 10px;
+    font-size: 25px;
+    font-weight: 500;
+    line-height: 31.8px;
+    color: #404445;
+}
+
+.general-info-second .second p {
+    font-weight: 500;
+    line-height: 22.89px;
+    color: #5F6B81;
+}
+
+.work-info {
+    background-color: #F1F8FF;
+
+}
+
+.work-info .section-header {
+    margin-bottom: 50px;
+}
+
+.work-info article img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+}
+
+.work-info article h3 {
+    color: #404445;
+    font-size: 22px;
+    font-weight: 700;
+    line-height: 25px;
+    padding: 20px 0;
+}
+
+.work-info article p {
+    color: #5F6B81;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 20px;
+}
+
+.subscribe-info {
+    background: #5F6B81;
+}
+
+.subscribe-info .section-header p,
+.subscribe-info .section-header h2 {
+    color: #ffffff
+}
+
+.subscribe-info .input-group {
+    max-width: 540px;
+    margin: 50px auto;
+}
+
+.subscribe-info .input-group input {
+    padding: 15px 0 15px 25px;
+}
+
+.subscribe-info .input-group input::placeholder {
+    color: #D8D8D8;
+}
+
+.subscribe-info .input-group .btn {
+    background: #43C45F;
+    color: #ffffff;
+}
+
+.team-info .section-header {
+    margin-bottom: 50px;
+}
+
+.team-info .row:last-child div {
+    text-align: center;
+}
+
+.team-info .row:last-child div img {
+    width: 100%;
+    height: 392px;
+    object-fit: cover;
+}
+
+.team-info .row:last-child div h3 {
+    color: #404445;
+    font-size: 22px;
+    font-weight: 700;
+    line-height: 24px;
+    background: #EEEEEE;
+    padding: 15px 0;
+}
+
+.team-info .row:last-child div p {
+    background: #EEEEEE;
+    padding-bottom: 15px;
+    color: #5F6B81;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 18px;
+}
+
+hr.section-line {
+    border: 1px solid #D8D8D8
+}
+
+.contact-info .btn {
+    padding: 5px 50px;
+    margin-top: 25px;
+    text-transform: uppercase;
+    background: #43C45F;
+    color: #ffffff;
+}
+
+footer {
+    background: #2F323B;
+    ;
+}
+
+footer .row:first-child {
+    padding-top: 100px;
+}
+
+footer .row:first-child div p {
+    color: #7A7C88;
+}
+
+footer .row:first-child div:first-child h3 {
+    font-size: 26px;
+    font-weight: 700;
+    line-height: 30px;
+    letter-spacing: 1px;
+    color: #ffffff;
+    margin-bottom: 30px;
+}
+
+footer .row:first-child div:first-child p {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 22px;
+    color: #7A7C88;
+}
+
+footer .row:first-child div:nth-child(2) p:nth-child(2) {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 18px;
+}
+
+footer .row:first-child div:nth-child(3) p:nth-child(2) {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 22px;
+}
+
+footer .row:first-child div:nth-child(3) p span {
+    color: #ffffff
+}
+
+footer .row:first-child div:not(:first-child) p:first-child {
+    text-transform: uppercase;
+    margin-bottom: 30px;
+    color: #ffffff;
+}
+
+footer .row:first-child div:last-child p {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 18px;
+    color: #ffffff;
+}
+
+footer hr {
+    border: 1px solid #707070
+}
+
+footer .row:last-child {
+    padding: 25px 0;
+}
+
+footer .row:last-child div p {
+    color: #7A7C88;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 22px;
+}

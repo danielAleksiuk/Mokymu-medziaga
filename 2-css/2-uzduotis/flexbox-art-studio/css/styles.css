@@ -1,0 +1,98 @@
+#page-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.flex-container {
+    display: flex;
+}
+
+header {
+    height: 300px;
+    background-image: url('../img/header-bg.jpeg');
+    background-size: cover;
+}
+
+header .top-nav {
+    padding: 25px 20px;
+}
+
+header .top-nav, header .top-nav nav ul {
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .top-nav .logo img {
+    width: 50px;
+    height: 50px;
+}
+
+.top-nav nav ul li {
+    padding: 10px;
+    margin: 0 15px;
+    list-style: none;
+    color: #fff;
+    font-weight: 800;
+    text-align: center;
+    font-size: 16px;
+}
+
+.top-nav nav ul li:hover {
+    background: #E12E60;
+    border-radius: 5px;
+}
+
+header .heading {
+    margin-top: 50px;
+    padding: 0 50px;
+    width: 400px;
+}
+
+header .heading h1{
+    font-size: 30px;
+    font-weight: 700;
+    color: #fff;
+}
+
+/* MAIN */
+/* pirmas blokas */
+main .first-block {
+    background: #EF5D69;
+    padding: 25px;
+}
+
+main .first-block p {
+    background: pink;
+    padding: 40px;
+    font-family: Roboto;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 22px;
+    text-align: left;
+}
+/* antras blokas */
+main .second-block {
+    background: #FCDFE1;
+    padding: 50px;
+}
+
+main .second-block .text {
+    margin-right: 10px;
+    background: #fff;
+    padding: 50px 30px;
+    width: 40%;
+
+}
+
+main .second-block img {
+   width: 60%;
+}
+
+
+footer {
+    background-color: #000;
+    color: #fff;
+    align-items: center;
+    justify-content: space-between;
+}
+

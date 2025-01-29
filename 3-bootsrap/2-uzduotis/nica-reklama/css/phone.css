@@ -1,0 +1,10 @@
+@media screen and (max-width: 768px) {
+
+    /* section.general-info-first {
+        text-align: center;
+    } */
+    section.general-info-first .icon {
+        display: block;
+        margin: 0 auto;
+    }
+}

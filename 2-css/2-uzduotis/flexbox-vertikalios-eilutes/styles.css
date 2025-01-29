@@ -1,0 +1,36 @@
+.flex-container {
+    display: flex;
+}
+
+header {
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    background-color: #fee3c3;
+}
+
+header h1 {
+    padding: 15px;
+}
+
+header nav ul li {
+    list-style: none;
+    margin-left: 10px;
+    padding: 5px;
+}
+
+header nav ul li a{
+    cursor: pointer;
+    color: blue;
+    text-decoration: underline;
+}
+
+.banner-col-1 {
+    background-color: #892be1;
+    color: #ffffff;
+    text-align: center;
+}
+
+.banner-col-1 p {
+    padding: 15px;
+}

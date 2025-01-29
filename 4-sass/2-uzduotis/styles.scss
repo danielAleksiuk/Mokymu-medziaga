@@ -1,0 +1,89 @@
+@import 'colors';
+
+.flex-container {
+    display: flex;
+}
+
+#page-container {
+    max-width: 1100px;
+    margin: 0 auto;
+
+    header {
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        background-color: $headerFooterBgColor;
+
+        h1 {
+            padding: 15px;
+        }
+
+        nav {
+            ul {
+                li {
+                    list-style: none;
+                    margin-left: 10px;
+                    padding: 5px;
+
+                    a {
+                        cursor: pointer;
+                        color: $linkColor;
+                        text-decoration: underline;
+                    }
+                }
+            }
+        }
+    }
+
+    .banner-col-1 {
+        background-color: $bannerBgColor;
+        color: $cardBgColor;
+        text-align: center;
+        justify-content: center;
+
+        p {
+            padding: 15px;
+        }
+    }
+
+    .banner-col-2 {
+        background-color: #7d04d9;
+        color: #fff;
+        justify-content: space-evenly;
+
+        p {
+            padding: 0 20px;
+        }
+    }
+
+    footer,
+    .banner-col-2 {
+        align-items: center;
+    }
+
+    footer {
+        justify-content: space-between;
+        background-color: $headerFooterBgColor;
+        padding: 20px 0;
+
+        p {
+            padding: 15px;
+        }
+    }
+
+    main {
+        background-color: #f8f8f8;
+        flex-wrap: wrap;
+        justify-content: space-between;
+
+
+        .card {
+            width: 25%;
+            background-color: $cardBgColor;
+            margin: 10px;
+            padding: 30px 20px;
+            border: 1px solid $cardBorderColor;
+        }
+    }
+
+}
