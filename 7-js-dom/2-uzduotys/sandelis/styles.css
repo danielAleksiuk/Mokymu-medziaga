@@ -1,0 +1,8 @@
+.skirtukai .skirtukas.aktyvus {
+    border-color: green;
+}
+
+.turinio-blokas:not(.aktyvus) {
+    display: none;
+}
+
