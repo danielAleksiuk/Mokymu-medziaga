@@ -45,8 +45,7 @@ function findilgiausiasZodis(masyvas) {
     return ilgiausiasZodis;
 }
 
-let masyvas1 = ['musėt', 'guzikai', 'unaravas', 'čečkavot', 'kaštavot', 'besikiškiakopūsteliaudavomes'];
-
+masyvas1 = ['musėt', 'guzikai', 'unaravas', 'čečkavot', 'kaštavot', 'besikiškiakopūsteliaudavomes'];
 let ilgiausiasZodis = findilgiausiasZodis(masyvas1);
 
 console.log('Ilgiausias žodis masyve: ' + ilgiausiasZodis);
@@ -72,8 +71,8 @@ function atsakymasTekstu(rezultatas) {
     }
 }
 
-let masyvas1 = [10, 3, 9, 7, 4];
-let masyvas2 = [7, 8, 2, 7, 6];
+masyvas1 = [10, 3, 9, 7, 4];
+masyvas2 = [7, 8, 2, 7, 6];
 
 
 let rezultatas1 = arPazymiaiTeigiami(masyvas1);

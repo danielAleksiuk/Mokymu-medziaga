@@ -33,8 +33,6 @@ let masyvas2 = [10, 20, 30, 40, 50];
 console.log('Pirmas masyvas:');
 skaiciavimai(masyvas1);
 
-console.log('---------------');
-
 console.log('Antras masyvas:');
 skaiciavimai(masyvas2);
 
@@ -91,7 +89,7 @@ function atsitiktiniaiSkaiciai(masyvas, kiekis) {
 
 masyvas1 = [];
 masyvas2 = [];
-masyvas3 = [];
+let masyvas3 = [];
 
 atsitiktiniaiSkaiciai(masyvas1, 5);
 atsitiktiniaiSkaiciai(masyvas2, 8);
