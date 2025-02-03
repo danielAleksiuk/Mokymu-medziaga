@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="lt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kepykla</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <header class="block-wrapper">
+        <h1>Kepykla</h1>
+    </header>
+    
+    <div class="info-wrapper block-wrapper">
+        <h2>Pradinė informacija</h2>
+        <div class="input-wrapper">
+            <label for="employees-count">Darbuotojų skaičius:</label>
+            <input id="employees-count" type="number" min="0" step="1" value="0">
+            <span class="error">Darbuotojų skaičius negali būti neigiamas.</span>
+        </div>
+        <div class="input-wrapper">
+            <label for="employee-makes-per-day">Vienas darbuotojas duonos kepalų per dieną:</label>
+            <input id="employee-makes-per-day" type="number" min="0" step="1" value="0">
+            <span class="error">Duonos kepalų skaičius negali būti neigiamas.</span>
+        </div>
+        <div class="input-wrapper">
+            <label for="day-reservtions">Kiek užsakymų turi būti įgyvendinta:</label>
+            <input id="day-reservtions" type="number" min="0" step="1" value="0">
+            <span class="error">Užsakymų skaičius negali būti neigiamas.</span>
+        </div>
+        <button id="calculate">Skaičiuoti</button>
+        <button id="reset">Viską iš naujo</button>
+    </div>
+
+
+    <div class="calculation-wrapper block-wrapper">
+        <h2>Skaičiavimai</h2>
+        <div id="results">
+            <p>Kol kas nieko nėra.</p>
+        </div>
+    </div>
+
+    <script src="scripts.js"></script>
+</body>
+</html>

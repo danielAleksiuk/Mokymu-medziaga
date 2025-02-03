@@ -1,0 +1,35 @@
+h1 {
+    font-size: 30px;
+}
+p, ul, table, button {
+    font-size: 16px;
+}
+
+table {
+    border: 1px solid black;
+}
+table td {
+    border: 1px solid black;
+    padding: 5px;
+}
+table, table td {
+    border-collapse: collapse;
+}
+
+button {
+    margin-top: 10px;
+}
+
+body.isdidinti h1 {
+    font-size: 50px;
+}
+body.isdidinti p,
+body.isdidinti ul,
+body.isdidinti table,
+body.isdidinti button {
+    font-size: 24px;
+}
+
+body.isdidinti table td {
+    padding: 10px;
+}

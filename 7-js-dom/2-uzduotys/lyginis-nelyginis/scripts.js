@@ -1,8 +1,17 @@
-let inputSkaicius = document.getElementById('inputSkaicius');
+let inputSkaicius = document.getElementById('skaicius');
+let mygtukas = document.querySelector('button');
+let rezultatas = document.querySelector('.rezultatai');
 
-document.querySelector('button').addEventListener('click', () => {
-    console.dir(inputSkaicius);
-    console.log(inputSkaicius.value);
-    console.log(inputSkaicius.valueAsNumber);
-    inputSkaicius.valueAsNumber = 150
+mygtukas.addEventListener('click', () => {
+    let skaicius = inputSkaicius.valueAsNumber;
+
+    if (skaicius % 2 === 0) {
+        rezultatas.textContent = `Skaičius ${skaicius} yra lyginis!`;
+        rezultatas.classList.add('lyginis');
+        rezultatas.classList.remove('nelyginis');
+    } else {
+        rezultatas.textContent = `Skaičius ${skaicius} yra nelyginis!`;
+        rezultatas.classList.add('nelyginis');
+        rezultatas.classList.remove('lyginis');
+    }
 });
