@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>receptai</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="block-container">
+        <h1>Pasirinkite recepta:</h1>
+        <div class="korteles"></div>
+    </div>
+    <div class="block-container porcijos">
+        <h1>Kiek porciju gaminsite?</h1>
+        <p>1</p>
+        <input type="range" min="1" max="15" value="1">
+    </div>
+    <div class="block-container ingridientai">
+        <h1>Jums reikės šių ingredientų, tokiais kiekiais:</h1>
+        <div id="rezultatai"></div>
+    </div>
+    <script src="scripts.js"></script>    
+</body>
+</html>
