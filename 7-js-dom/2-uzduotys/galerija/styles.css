@@ -1,0 +1,57 @@
+body {
+    background: #C7C7C7;
+}
+
+#gallery-container {
+    margin:  0 auto;
+    max-width: 628px;
+}
+
+.selected-image {
+    height: 803px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 5px;
+    background: url('img/image1.png');
+    background-size: cover;
+    background-position: center;
+    padding: 20px;
+    overflow: hidden;
+    margin-top: 100px;
+    margin-bottom: 50px;
+}
+
+.image-gallery {
+    display: flex;
+    gap: 20px;
+    width: 100%;
+}
+
+.image-gallery .card {
+    width: 112px;
+    height: 130px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.image-gallery .card img {
+    height: 100%;
+    width: 100%;
+    object-position: center;
+    object-fit: cover;
+}
+
+/* 
+.card:not(.active) {
+    display: none;
+} */
+
+.active {
+    box-shadow: 0 0 0 5px  #F4BF03;
+}
+
+.active img {
+    width: 75%;
+    height: 75%;
+}
