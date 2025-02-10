@@ -1,3 +1,34 @@
+function initProductsValue() {
+    return [
+        {
+            id: 'sim-card',
+            name: 'Sim kortele',
+            price: 2.00,
+            quantity: 1,
+            imgUrl: 'img/sim.png'
+        },
+        {
+            id: 'phone',
+            name: 'Telefonas',
+            price: 1200.00,
+            quantity: 1,
+            imgUrl: 'img/phone.png'
+        },
+        {
+            id: 'sd-card',
+            name: 'SD kortele',
+            price: 35.00,
+            quantity: 2,
+            imgUrl: 'img/sd.png'
+        }
+    ].map(item => {
+        return {
+            ...item,
+            finalPrice: countFinalPrice(item.price, item.quantity)
+        }
+    });;
+}
+
 function countFinalPrice(price, quantity) {
     return price * quantity;
 }
@@ -11,14 +42,32 @@ function countFinalOrderPrice(items) {
     return sum;
 }
 
+function refreshBasket() {
+    products = initProductsValue();
+    productListHtml.innerHTML = generateProductsHTML(products);
+    finalOrderPrice.innerHTML = countFinalOrderPrice(products).toFixed(2) + ' eur';
+}
+
 function onDeleteButtonClick(id) {
     // pasalinti produkta is product listo
     products = products.filter(product => product.id !== id)
     // 1 budas - istrinti div dali is html
-    
+
     // 2 budas - atnaujinti krepseliu sarasa
     productListHtml.innerHTML = generateProductsHTML(products);
     finalOrderPrice.innerHTML = countFinalOrderPrice(products).toFixed(2) + ' eur';
+}
+
+function onRemoveButtonClick(id) {
+    // atnaujinti - kieki, bendra kaina, viso uzsakymo suma
+    // atnaujinti products masyva
+    finalOrderPrice.innerHTML = countFinalOrderPrice(products).toFixed(2) + ' eur';
+    console.log(id)
+}
+
+function onAddButtonClick(id) {
+    finalOrderPrice.innerHTML = countFinalOrderPrice(products).toFixed(2) + ' eur';
+    console.log(id)
 }
 
 function generateProductsHTML(products) {
@@ -35,9 +84,9 @@ function generateProductsHTML(products) {
                     <div class="col-2"><p> ${product.price} eur</p></div>
                     <div class="col-2">
                         <p class="quantity-section">
-                            <button class="remove-item">-</button>
+                            <button class="remove-item" onClick="onRemoveButtonClick('${product.id}')">-</button>
                             <span class="quantity">${product.quantity}</span>
-                            <button class="add-item">+</button>
+                            <button class="add-item" onClick="onAddButtonClick('${product.id}')">+</button>
                         </p>
                     </div>
                     <div class="col-2">
@@ -58,38 +107,9 @@ function generateProductsHTML(products) {
     return finalHtml;
 }
 
-let products = [
-    {
-        id: 'sim-card',
-        name: 'Sim kortele',
-        price: 2.00,
-        quantity: 1,
-        imgUrl: 'img/sim.png'
-    },
-    {
-        id: 'phone',
-        name: 'Telefonas',
-        price: 1200.00,
-        quantity: 1,
-        imgUrl: 'img/phone.png'
-    },
-    {
-        id: 'sd-card',
-        name: 'SD kortele',
-        price: 35.00,
-        quantity: 2,
-        imgUrl: 'img/sd.png'
-    }
-];
+let products = initProductsValue();
 let finalOrderPrice = document.querySelector('.basket-price .price');
 let productListHtml = document.querySelector('.product-list');
-
-products = products.map(product => {
-    return {
-        ...product,
-        finalPrice: countFinalPrice(product.price, product.quantity)
-    }
-});
 
 finalOrderPrice.innerHTML = countFinalOrderPrice(products).toFixed(2) + ' eur';
 productListHtml.innerHTML = generateProductsHTML(products);
