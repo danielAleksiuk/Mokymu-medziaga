@@ -20,16 +20,16 @@ function generateProductsHTML(products) {
                 <div class="col-6"><p> ${product.name}</p></div>
                 <div class="col-2"><p> ${product.price} eur</p></div>
                 <div class="col-2">
-                    <p>
+                    <p class="quantity-section">
                         <button class="remove-item">-</button>
                         <span class="quantity">${product.quantity}</span>
                         <button class="add-item">+</button>
                     </p>
                 </div>
                 <div class="col-2">
-                    <p>
-                        <span class="final-price"> ${product.finalPrice}</span> eur
-                        <button class="delete-item">delete</button>
+                    <p class="final-price-section">
+                        <span class="final-price"> ${product.finalPrice} eur</span>
+                        <button class="delete-item"><i class="bi bi-trash"></i></button>
                     </p>
                 </div>
             </div>

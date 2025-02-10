@@ -84,3 +84,44 @@ hr.basic-line {
     font-weight: 700;
     line-height: 24px;
 }
+
+
+.product-list .final-price-section {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.product-list .delete-item {
+    border: unset;
+    background: unset;
+}
+
+.product-list .delete-item:hover {
+    background: lightgrey;
+    border-radius: 3px
+}
+
+
+.product-list .add-item {
+    border: unset;
+    background: unset;
+    background-color: #757575;
+    border-radius: 0px 3px 3px 0px;
+}
+
+.product-list .remove-item {
+    border: unset;
+    background-color: #757575;
+    border-radius: 3px 0 0 3px;
+}
+
+.product-list .quantity-section {
+    display: flex;
+}
+
+.product-list .quantity {
+    display: flex;
+    background-color: #afa7a7;
+    padding-left: 10px;
+    padding-right: 10px;
+}
