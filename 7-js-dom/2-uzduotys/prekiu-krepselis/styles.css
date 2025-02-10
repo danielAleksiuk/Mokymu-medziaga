@@ -125,3 +125,13 @@ hr.basic-line {
     padding-left: 10px;
     padding-right: 10px;
 }
+
+.product-list .product-name {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+}
+
+.product-list .product-item {
+    align-items: center;
+}
