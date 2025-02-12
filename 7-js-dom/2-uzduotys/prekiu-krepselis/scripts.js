@@ -59,15 +59,28 @@ function onDeleteButtonClick(id) {
 }
 
 function onRemoveButtonClick(id) {
-    // atnaujinti - kieki, bendra kaina, viso uzsakymo suma
-    // atnaujinti products masyva
-    finalOrderPrice.innerHTML = countFinalOrderPrice(products).toFixed(2) + ' eur';
-    console.log(id)
+    let currentProduct = products.find(product => product.id === id);
+
+    if (currentProduct.quantity > 1) {
+        currentProduct.quantity--;
+        currentProduct.finalPrice = countFinalPrice(currentProduct.price, currentProduct.quantity)
+    
+        document.querySelector(`.${id} .quantity`).innerHTML = currentProduct.quantity;
+        document.querySelector(`.${id} .final-price`).innerHTML = currentProduct.finalPrice + ' eur';
+        finalOrderPrice.innerHTML = countFinalOrderPrice(products).toFixed(2) + ' eur';
+    }
 }
 
 function onAddButtonClick(id) {
+    let currentProduct = products.find(product => product.id === id);
+    currentProduct.quantity++;
+    currentProduct.finalPrice = countFinalPrice(currentProduct.price, currentProduct.quantity)
+
+    document.querySelector(`.${id} .quantity`).innerHTML = currentProduct.quantity;
+    document.querySelector(`.${id} .final-price`).innerHTML = currentProduct.finalPrice + ' eur';
     finalOrderPrice.innerHTML = countFinalOrderPrice(products).toFixed(2) + ' eur';
-    console.log(id)
+    // productListHtml.innerHTML = generateProductsHTML(products);
+    // finalOrderPrice.innerHTML = countFinalOrderPrice(products).toFixed(2) + ' eur';
 }
 
 function generateProductsHTML(products) {

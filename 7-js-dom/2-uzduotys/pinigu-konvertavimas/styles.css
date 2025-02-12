@@ -1,0 +1,88 @@
+html body { 
+    margin: 0; 
+    padding: 0; 
+    background-color: black;
+} 
+
+.container .pig img { 
+    width: 760px;
+} 
+
+.container {
+    margin: 200px auto;
+    max-width: 1500px;
+    display: flex;  
+    align-items: center;
+} 
+
+.container .convert { 
+    margin-bottom: 325px;
+} 
+
+.suma p { 
+    color: white; 
+    font-family: 'PT Sans'; 
+    font-size: 14px; 
+    margin-top: 43px; 
+    margin-bottom: 8px;
+} 
+
+.suma .currency-to-label { 
+    color: #949494; 
+    font-family: 'Inter'; 
+    font-size: 12px;
+    margin-top: unset
+} 
+
+.suma input { 
+    color: white;
+    width: 320px; 
+    height: 44px; 
+    background: #191919;
+    border-radius: 5px; 
+    border: none;
+} 
+
+.suma .input select { 
+    width: 85px; 
+    height: 44px;  
+    color: white;
+    background: #191919;
+    border-radius: 5px; 
+    border: none; 
+    margin-left: 10px; 
+    padding-left: 5px;
+} 
+
+.suma .currency select { 
+    width: 308px; 
+    height: 44px;  
+    color: white;
+    background: #191919;
+    border-radius: 5px; 
+    border: none;
+} 
+
+.buttons button.calculate { 
+    background-color: white; 
+    color: black; 
+    height: 44px; 
+    width: 205px; 
+    border-radius: 5px; 
+    margin-top: 15px; 
+    font-weight: 700; 
+    font-size: 16px;
+} 
+
+.buttons button.active { 
+    background-color: black; 
+    color: white; 
+    height: 44px; 
+    width: 205px; 
+    border-radius: 5px; 
+    margin-top: 15px; 
+    border: 2px solid white; 
+    font-weight: 700; 
+    font-size: 16px; 
+    
+}
