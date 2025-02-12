@@ -79,16 +79,16 @@ document.querySelector('.calculate').addEventListener('click', () => {
     let currencyFromValue = document.getElementById('input-from-value').value;
     let fromSelectValue = document.getElementById('select-currency-from').value;
     let toSelectValue = document.getElementById('select-currency-to').value;
-    // console.log(fromSelectValue)
-    // console.log(toSelectValue);
-    // console.log(currencyFromValue);
 
-    let currencyRate = currencies.find(currency => currency.id === fromSelectValue).rates.find(rate => rate.currencyId === toSelectValue).rate;
-        
+    if (fromSelectValue === toSelectValue || !currencyFromValue) {
+        return;
+    }
+
+    let currencyRate = currencies.find(currency => currency.id === fromSelectValue).rates.find(rate => rate.currencyId === toSelectValue).rate;     
     let fromName = currencies.find(currency => currency.id === fromSelectValue).name;
     let toName = currencies.find(currency => currency.id === toSelectValue).name;
-  
     let changedCurrency = currencyFromValue * currencyRate;
-    console.log(`${currencyFromValue} ${fromName} yra ${changedCurrency} ${toName}`);
-    console.log(`santykis: 1 ${fromName} = ${currencyRate} ${toName}`)
+
+    let changingResult = `${currencyFromValue} ${fromName} yra ${changedCurrency} ${toName}`;
+    let rateResult = `santykis: 1 ${fromName} = ${currencyRate} ${toName}`;
 });
