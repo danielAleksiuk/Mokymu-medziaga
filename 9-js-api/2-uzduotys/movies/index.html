@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #filter-input {
+            margin-bottom: 25px;
+        }
+        .movies-container {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            max-width: 1200px;
+          
+        }
+        .movie {
+            width: 210px;
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+    <div id="filter-input"> 
+        <input type="text" id="searchInput">
+        <button id="searchButton" onclick="onSearchClick()"> search </button>
+    </div>
+    <div id="movie-list"></div>
+
+    <script src="scripts.js"></script>
+</body>
+</html>

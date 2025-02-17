@@ -1,29 +1,21 @@
-async function fetchMovie() {
-    const response = await fetch(
-        'https://api.tvmaze.com/search/shows?q=spiderman'
-    );
 
-   return await response.json();
-}
+axios.get('https://jsonplaceholder.typicode.com/todos/1')
+    .then(response => { console.log(response) })
+    .catch(error => console.log(error));
 
-fetchMovie()
-    .then (data => {
-        const moviesContainer = document.createElement('div');
-        moviesContainer.className = 'movies-container';
 
-        for (let movie of data) {
-            const movieDiv = document.createElement('div');
-            movieDiv.className = 'movie';
+let newTask = {
+    userID: 1,
+    id: 125,
+    title: 'mano nauja uzduotis',
+    body: 'uzsakyti pica'
+};
 
-            movieDiv.innerHTML = `
-                <img src='${movie.show.image.medium}'>
-                <h3>${movie.show.name}</h3>
-                <p> genres: ${movie.show.genres.join(',')}</p>
-                <p> ${movie.show.summary} </p>
-            `;
+axios.post('https://jsonplaceholder.typicode.com/posts', newTask)
+    .then(response => { console.log(response) })
+    .catch(error => console.log(error));
 
-            moviesContainer.appendChild(movieDiv);
-        }
-
-        document.body.appendChild(moviesContainer);
-    });
+    
+axios.get('https://jsonplaceholder.typicode.com/todos/125')
+    .then(response => { console.log(response) })
+    .catch(error => console.log(error));
