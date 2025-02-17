@@ -74,8 +74,16 @@ function addDataIntoDropdownShortName(items) {
 addDataIntoDropdownShortName(currencies);
 addDataIntoDropdownName(currencies);
 
+let isResetButtonShown = false;
 
 document.querySelector('.calculate').addEventListener('click', () => {
+    isResetButtonShown = true;
+
+    // if (isResetButtonShown) {
+    //     button display
+    // }
+
+
     let currencyFromValue = document.getElementById('input-from-value').value;
     let fromSelectValue = document.getElementById('select-currency-from').value;
     let toSelectValue = document.getElementById('select-currency-to').value;
