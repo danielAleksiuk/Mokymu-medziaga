@@ -117,3 +117,9 @@ checkUserLogin(false)
 
 
 // 7 uzduotis
+
+if (age === undefined) null undefined
+
+    if (!age || typeof age === 'number') {
+        
+    } 
