@@ -4,10 +4,13 @@ function addProductsIntoDiv(products) {
 
     for (let product of products) {
         productCard += `
-            <div class="product-card">
-                <img src="${product.image}">
-                <h4>${product.title}</h4>
-                <button class="button-card">perziureti</button>
+            <div class="card">
+                <img src="${product.image}" class="card-img-top">
+                <div class="card-body">
+                    <h5 class="card-title">${product.title}</h5>
+                    <p class="card-text">${product.description}</p>
+                    <button class="btn btn-primary">perziureti</button>
+                </div>
             </div>
         `
     }
