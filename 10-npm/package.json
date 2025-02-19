@@ -1,0 +1,19 @@
+{
+  "name": "mano-pirmas-npm-pvz2",
+  "version": "1.0.0",
+  "description": "pirmasis pabandymas su npm",
+  "main": "index.html",
+  "scripts": {
+    "test": "javascript test"
+  },
+  "keywords": [
+    "npm",
+    "js",
+    "html"
+  ],
+  "author": "daniel",
+  "license": "UNLICENSED",
+  "dependencies": {
+    "moment": "^2.30.1"
+  }
+}
