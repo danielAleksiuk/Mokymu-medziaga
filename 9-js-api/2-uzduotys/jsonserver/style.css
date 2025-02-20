@@ -41,3 +41,21 @@ input, textarea {
 textarea {
     min-height:200px;
 }
+
+
+.post {
+    background-color: white;
+    border-radius: 10px;
+    padding: 10px;
+    margin: 20px 0 20px 0;
+}
+.post a {
+    text-decoration: none;
+    color: green;
+}
+.post p {
+    margin-top: 0;
+}
+.post h2 {
+    margin:0;
+}

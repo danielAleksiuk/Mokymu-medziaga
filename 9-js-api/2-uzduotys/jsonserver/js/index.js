@@ -1,9 +1,14 @@
 window.addEventListener('DOMContentLoaded', () => renderPosts())
 
 const container = document.querySelector('.irasai')
+const searchForm = document.querySelector('.search');
 
-const renderPosts = async () => {
-    let uri = 'http://localhost:3000/posts'
+const renderPosts = async (search) => {
+    let uri = 'http://localhost:3000/posts';
+
+    if (search) {
+        uri += `?title=${search}`;
+    }
 
     const res = await fetch(uri)
     const posts = await res.json()
@@ -22,3 +27,9 @@ const renderPosts = async () => {
 
     container.innerHTML = template;
 };
+
+
+searchForm.addEventListener('submit', (e) => {
+   e.preventDefault();
+   renderPosts(searchForm.term.value.trim());
+})
