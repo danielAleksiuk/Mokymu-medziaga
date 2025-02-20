@@ -1,0 +1,51 @@
+[
+    {
+        "id": 1,
+        "name": "Automobilių konfigūratorius",
+        "description": "Automobilių konfigūravimo sistema, kuri leidžia vartotojui pasirinkti automobilio modelį, spalvą, variklį, ratus ir kitus parametrus.",
+        "technologies": ["React", "Redux", "Node.js", "Express", "MongoDB"],
+        "link": "https://automobiliu-konfiguratorius.herokuapp.com/"
+    },
+    {
+        "id": 2,
+        "name": "Knygų parduotuvė",
+        "description": "Knygų parduotuvės sistema, kuri leidžia vartotojui ieškoti knygų pagal pavadinimą, autorių, kategoriją ir kt.",
+        "technologies": ["React", "Node.js", "Express", "MongoDB"],
+        "link": "https://knygu-parduotuve.herokuapp.com/"
+    },
+    {
+        "id": 3,
+        "name": "Klientų valdymo sistema",
+        "description": "Klientų valdymo sistema, kuri leidžia vartotojui valdyti klientų sąrašą, jų duomenis, užsakymus ir kt.",
+        "technologies": ["JavaScript", "Node.js", "Express", "MongoDB"],
+        "link": "https://klientu-valdymo-sistema.herokuapp.com/"
+    },
+    {
+        "id": 4,
+        "name": "Darbuotojų valdymo sistema",
+        "description": "Darbuotojų valdymo sistema, kuri leidžia vartotojui valdyti darbuotojų sąrašą, jų duomenis, atlyginimus ir kt.",
+        "technologies": ["React", "Node.js", "Express", "MongoDB"],
+        "link": "https://darbuotoju-valdymo-sistema.herokuapp.com/"
+    },
+    {
+        "id": 5,
+        "name": "Kavos aparato valdymo sistema",
+        "description": "Kavos aparato valdymo sistema, kuri leidžia vartotojui valdyti kavos aparato parametrus, kavos rūšį, stiprumą ir kt.",
+        "technologies": ["JavaScript", "Node.js", "Express", "MongoDB"],
+        "link": "https://kavos-aparato-valdymo-sistema.herokuapp.com/"
+    },
+    {
+        "id": 6,
+        "name": "Medienos skaičiuotuvas",
+        "description": "Medienos skaičiuotuvas, kuris leidžia vartotojui apskaičiuoti medienos kiekį pagal ilgį, plotį, aukštį ir kt.",
+        "technologies": ["HTML", "Sass", "JavaScript"],
+        "link": "https://medienos-skaiciuotuvas.herokuapp.com/"
+    },
+    {
+        "id": 7,
+        "name": "Krovinio skaičiuotuvas",
+        "description": "Krovinio skaičiuotuvas, kuris leidžia vartotojui apskaičiuoti krovinio kiekį pagal ilgį, plotį, aukštį ir kt.",
+        "technologies": ["HTML", "CSS", "Bootstrap", "JavaScript"],
+        "link": "https://krovinio-skaiciuotuvas.herokuapp.com/"
+    }
+]

@@ -1,0 +1,20 @@
+[
+    {
+        "id": 1,
+        "title": "Front-end programuotojas",
+        "description": "Programavimo praktika su HTML, CSS ir JS.",
+        "location": "Vilnius",
+        "date": "2021-03 - 2021-06",
+        "company": "UAB Programavimo paslaugos",
+        "skills": ["HTML", "CSS", "JS"]
+    },
+    {
+        "id": 2,
+        "title": "Full-Stack programuotojas",
+        "description": "Programavimo praktika su React, Express ir MongoDB.",
+        "location": "Kaunas",
+        "date": "2021-07 - 2021-09",
+        "company": "UAB Programavimo pasaulis",
+        "skills": ["React", "Express", "MongoDB"]
+    }
+]

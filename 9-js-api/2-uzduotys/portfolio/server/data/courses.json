@@ -1,0 +1,83 @@
+[
+    {
+        "id": 1,
+        "title": "HTML/CSS basics",
+        "description": "HTML ir CSS pagrindai",
+        "duration": "40 hours",
+        "certificate": true,
+        "completed": "2021-01-01",
+        "tags": ["HTML", "CSS"]
+    },
+    {
+        "id": 2,
+        "title": "JavaScript basics",
+        "description": "JavaScript kintamieji, išvedimas, ciklai, funkcijos, objektai, masyvai, event'ai, AJAX, JSON, DOM, BOM, ES6+ ir kt.",
+        "duration": "80 hours",
+        "certificate": true,
+        "completed": "2021-02-01",
+        "tags": ["JavaScript"]
+    },
+    {
+        "id": 3,
+        "title": "React basics",
+        "description": "React komponentai, props'ai, state'as, event'ai, lifecycle metodai, hooks, routing, REST API, Redux, Context, testing ir kt.",
+        "duration": "80 hours",
+        "certificate": true,
+        "completed": "2021-03-01",
+        "tags": ["React"]
+    },
+    {
+        "id": 4,
+        "title": "Node.js basics",
+        "description": "Node.js, Express.js, REST API, MongoDB, Mongoose, JWT, testing ir kt.",
+        "duration": "20 hours",
+        "certificate": true,
+        "completed": "2021-04-01",
+        "tags": ["Node.js", "Express.js", "MongoDB"]
+    },
+    {
+        "id": 5,
+        "title": "MongoDB basics",
+        "description": "MongoDB duomenų bazės ir kolekcijos, duomenų gavimas, įrašymas, atnaujinimas, trynimas, užklausos, indeksai, agregacijos ir kt.",
+        "duration": "20 hours",
+        "certificate": true,
+        "completed": "2021-05-01",
+        "tags": ["MongoDB"]
+    },
+    {
+        "id": 6,
+        "title": "20 JavaScript projects",
+        "description": "20 JavaScript projektų, skirtų įvairiems lygiams ir tikslams",
+        "duration": "80 hours",
+        "certificate": true,
+        "completed": "2021-06-01",
+        "tags": ["JavaScript"]
+    },
+    {
+        "id": 7,
+        "title": "React projects",
+        "description": "React projektai, skirti įvairiems lygiams ir tikslams",
+        "duration": "80 hours",
+        "certificate": true,
+        "completed": "2021-07-01",
+        "tags": ["React"]
+    },
+    {
+        "id": 8,
+        "title": "Node.js projects",
+        "description": "Node.js projektai, skirti įvairiems lygiams ir tikslams",
+        "duration": "80 hours",
+        "certificate": true,
+        "completed": "2021-08-01",
+        "tags": ["Node.js", "Express.js", "MongoDB"]
+    },
+    {
+        "id": 9,
+        "title": "Building dashboard system with React",
+        "description": "Dashboard sistemos kūrimas su React, React Router, Redux, Context, REST API, testing ir kt.",
+        "duration": "40 hours",
+        "certificate": true,
+        "completed": "2021-09-01",
+        "tags": ["React", "Express.js", "MongoDB"]
+    }
+]

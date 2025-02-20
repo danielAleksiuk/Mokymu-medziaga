@@ -1,0 +1,16 @@
+[
+    {
+        "id": 1,
+        "title": "KTU",
+        "degree": "Bakalauras",
+        "year": "2019-2023",
+        "program": "Programų sistemos"
+    },
+    {
+        "id": 2,
+        "title": "KTU",
+        "degree": "Magistras",
+        "year": "2023-2025",
+        "program": "Programų sistemų inžinerija"
+    }
+]

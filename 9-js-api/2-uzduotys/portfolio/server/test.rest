@@ -1,0 +1,53 @@
+GET http://localhost:7788/
+
+###
+
+GET http://localhost:7788/projects
+
+###
+
+GET http://localhost:7788/projects/latest/3
+
+###
+
+GET http://localhost:7788/projects/technologies
+
+###
+
+GET http://localhost:7788/projects/technologies/react
+
+###
+
+GET http://localhost:7788/work-experience
+
+###
+
+GET http://localhost:7788/work-experience/latest/2
+
+###
+
+GET http://localhost:7788/education
+
+###
+
+GET http://localhost:7788/education/latest/2
+
+###
+
+GET http://localhost:7788/courses
+
+###
+
+GET http://localhost:7788/courses/latest/2
+
+###
+
+GET http://localhost:7788/courses/technologies
+
+###
+
+GET http://localhost:7788/courses/technologies/react
+
+###
+
+GET http://localhost:7788/courses/technologies/javascript
