@@ -1,0 +1,148 @@
+.header-container {
+    background-color: black;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-block ul {
+    display: flex;
+    gap: 20px; 
+    padding: 0;
+    margin-right: 100px;
+}
+
+.nav-block ul li {
+    list-style: none;
+}
+
+.nav-block ul li a {
+    text-decoration: none;
+    color: white;
+}
+
+.header-container h3 {
+    color: white;
+    margin-left: 100px;
+}
+
+.banner{
+    background-color: #87cefa;
+    display: flex;
+    justify-content: center;
+    padding: 60px 0 60px 0;
+}
+
+.banner-name h1 {
+margin-left: 44px;
+
+}
+
+.main-block-projects {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.main-block-projects-card {
+    border: solid 1px #dcdcdc;
+    border-radius: 5px;
+    width: 390px;
+    height: 300px;
+    box-shadow: 1px 1px 1px 1px #dcdcdc;
+    
+}
+
+.main-block h1 {
+    text-align: center;
+    margin: 55px 0 55px 0;
+}
+
+.main-block-tags {
+    display: flex;
+    gap: 12px;
+    
+}
+
+.main-block-tags p{
+    background-color: #87cefa;
+    color: white;
+    border-radius: 5px;
+    padding: 3px 6px 3px 6px;
+    margin: 25px 0 5px 10px;
+}
+
+#mongo {
+    background-color: #87cefa;
+    color: white;
+    border-radius: 5px;
+    padding: 3px 6px 3px 6px;
+    margin: 0 0 5px 10px;
+    width: 85px;
+}
+
+.main-block-projects-card p {
+    margin-left: 10px;
+}
+
+.main-block-projects-card h2 {
+margin-left: 10px;
+}
+
+.main-block-projects-card button {
+    margin: 45px 0 5px 10px;
+    border: solid 2px black;
+    border-radius: 5px;
+    background-color: white;
+    padding: 10px 15px 10px 15px;
+    cursor: pointer;
+}
+
+.main-block-projects-card button:hover {
+    background-color: #87cefa;
+}
+
+#mongo-button {
+    margin: 20px 0 5px 10px;
+}
+
+.main-block-jobs-card {
+    border: solid 1px #dcdcdc;
+    border-radius: 5px;
+    width: 390px;
+    height: 300px;
+    box-shadow: 1px 1px 1px 1px #dcdcdc;
+  
+}
+.main-block-jobs h1 {
+    text-align: center;
+    margin: 120px 0 50px 0;
+}
+
+.main-block-jobs-cards {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+  
+}
+
+.main-block-jobs-card {
+    width: 620px;
+}
+
+.main-block-jobs-card-styles {
+    display: flex;
+    gap: 10px;
+}
+
+.main-block-jobs-card-styles p {
+    background-color: #87cefa;
+    color: white;
+    border-radius: 5px;
+    padding: 3px 6px 3px 6px;
+    margin: 25px 0 5px 10px;
+}
+
+.main-block-jobs-card h2, p {
+    margin: 25px 0 5px 10px;
+}
