@@ -5,7 +5,18 @@ const getData = (url) => {
 }
 
 const generateProjectsHTML = (projects) => {
-    return '<div></div>';
+    return projects.map( project => {
+        return `
+            <div class="main-block-projects-card">
+                <h2>${project.name}</h2>
+                <p>${project.description}</p>
+                <div class="main-block-tags">
+                    ${project.technologies.map(item => `<p>${item}</p>`).join('')}
+                </div>
+                <button>Ziureti</button>
+            </div>
+        `;
+    }).join('');
 }
 
 const generateWorkExperienceHTML = (workExp) => {
