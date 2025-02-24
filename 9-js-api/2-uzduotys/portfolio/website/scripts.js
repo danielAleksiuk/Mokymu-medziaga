@@ -20,7 +20,20 @@ const generateProjectsHTML = (projects) => {
 }
 
 const generateWorkExperienceHTML = (workExp) => {
-    return '<div></div>';
+    return workExp.map(job => {
+        return `
+           <div class="main-block-jobs-card">
+                <h2>${job.company}</h2>
+                <p>${job.title}</p>
+                <p>${job.date}</p>
+                <p>${job.location}</p>
+                <p>${job.description}</p>
+                <div class="main-block-jobs-card-styles">
+                  ${job.skills.map(item => `<p>${item}</p>`).join('')}
+                </div>
+            </div>
+        `
+    }).join('');
 }
 
 
