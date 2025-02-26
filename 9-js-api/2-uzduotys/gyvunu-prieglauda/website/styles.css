@@ -7,3 +7,8 @@ body {
     border-radius: 15px;
     padding: 60px 0 60px 0;
 }
+
+.cards-list {
+    gap: 5px;
+    justify-content: center;
+}
