@@ -16,52 +16,11 @@
         <div class="row">
             <h3>Filtrai:</h3>
         </div>
-      <div class="row g-3">
-        <div class="col-md-2">
-          <label for="age" class="form-label">Amžius:</label>
-          <select class="form-select" id="age">
-            <option value="visi" selected>Visi</option>
-          </select>
-        </div>
-
-        <div class="col-md-2">
-          <label for="animal" class="form-label">Gyvūnas:</label>
-          <select class="form-select" id="animal">
-            <option value="visi" selected>Visi</option>
-          </select>
-        </div>
-
-        <div class="col-md-2">
-          <label for="breed" class="form-label">Veislė:</label>
-          <select class="form-select" id="breed">
-            <option value="visi" selected>Visi</option>
-          </select>
-        </div>
-
-        <div class="col-md-2">
-          <label for="vaccinated" class="form-label">Skiepytas:</label>
-          <select class="form-select" id="vaccinated">
-            <option value="visi" selected>Visi</option>
-          </select>
-        </div>
-
-        <div class="col-md-2">
-          <label for="has-home" class="form-label">Turi namus:</label>
-          <select class="form-select" id="has-home">
-            <option value="visi" selected>Visi</option>
-          </select>
-        </div>
-
-        <div class="col-md-2">
-          <label for="character" class="form-label">Charakteris:</label>
-          <select class="form-select" id="character">
-            <option value="visi" selected>Visi</option>
-          </select>
-        </div>
-
+      <div class="row g-3 filter-items"></div>
+      <div class="row">
         <div class="col-12 text-end mt-3">
-          <button class="btn btn-primary">Filtruoti</button>
-        </div>
+            <button class="btn btn-primary">Filtruoti</button>
+          </div>
       </div>
     </div>
 
@@ -70,80 +29,7 @@
             <h3>Gyvūnų sąrašas:</h3>
         </div>
 
-        <div class="row cards-list">
-            <div class="col-5">
-                <div class="card">
-                  <div class="card-body">
-                    <h5 class="card-title">Reksas</h5>
-                    <p class="card-text">Metai: 5</p>
-                    <p class="card-text">Veislė: Labradoras</p>
-                    <p class="card-text">Šuo, skiepyta(s). Ieško namų</p>
-                    <p class="card-text">
-                        <span class="badge text-bg-primary">Draugiskas</span>
-                        <span class="badge text-bg-primary">Draugiskas</span>
-                        <span class="badge text-bg-primary">Draugiskas</span>
-                        <span class="badge text-bg-primary">Draugiskas</span>
-                        <span class="badge text-bg-primary">Draugiskas</span>
-                    </p>
-                    <p class="card-text">Reksas yra labai draugiškas ir energingas šuo. Jis mėgsta žaisti su kamuoliuku ir bėgioti lauke. Reksas yra labai draugiškas su vaikais ir kitais gyvūnais. Jis jau yra paskiepytas ir laukia savo naujų šeimininkų.</p>
-                  </div>
-                </div>
-            </div>
-            <div class="col-5">
-                <div class="card">
-                  <div class="card-body">
-                    <h5 class="card-title">Reksas</h5>
-                    <p class="card-text">Metai: 5</p>
-                    <p class="card-text">Veislė: Labradoras</p>
-                    <p class="card-text">Šuo, skiepyta(s). Ieško namų</p>
-                    <p class="card-text">
-                        <span class="badge text-bg-primary">Draugiskas</span>
-                        <span class="badge text-bg-primary">Draugiskas</span>
-                        <span class="badge text-bg-primary">Draugiskas</span>
-                        <span class="badge text-bg-primary">Draugiskas</span>
-                        <span class="badge text-bg-primary">Draugiskas</span>
-                    </p>
-                    <p class="card-text">Reksas yra labai draugiškas ir energingas šuo. Jis mėgsta žaisti su kamuoliuku ir bėgioti lauke. Reksas yra labai draugiškas su vaikais ir kitais gyvūnais. Jis jau yra paskiepytas ir laukia savo naujų šeimininkų.</p>
-                  </div>
-                </div>
-            </div>
-            <div class="col-5">
-                <div class="card">
-                  <div class="card-body">
-                    <h5 class="card-title">Reksas</h5>
-                    <p class="card-text">Metai: 5</p>
-                    <p class="card-text">Veislė: Labradoras</p>
-                    <p class="card-text">Šuo, skiepyta(s). Ieško namų</p>
-                    <p class="card-text">
-                        <span class="badge text-bg-primary">Draugiskas</span>
-                        <span class="badge text-bg-primary">Draugiskas</span>
-                        <span class="badge text-bg-primary">Draugiskas</span>
-                        <span class="badge text-bg-primary">Draugiskas</span>
-                        <span class="badge text-bg-primary">Draugiskas</span>
-                    </p>
-                    <p class="card-text">Reksas yra labai draugiškas ir energingas šuo. Jis mėgsta žaisti su kamuoliuku ir bėgioti lauke. Reksas yra labai draugiškas su vaikais ir kitais gyvūnais. Jis jau yra paskiepytas ir laukia savo naujų šeimininkų.</p>
-                  </div>
-                </div>
-            </div>
-            <div class="col-5">
-                <div class="card">
-                  <div class="card-body">
-                    <h5 class="card-title">Reksas</h5>
-                    <p class="card-text">Metai: 5</p>
-                    <p class="card-text">Veislė: Labradoras</p>
-                    <p class="card-text">Šuo, skiepyta(s). Ieško namų</p>
-                    <p class="card-text">
-                        <span class="badge text-bg-primary">Draugiskas</span>
-                        <span class="badge text-bg-primary">Draugiskas</span>
-                        <span class="badge text-bg-primary">Draugiskas</span>
-                        <span class="badge text-bg-primary">Draugiskas</span>
-                        <span class="badge text-bg-primary">Draugiskas</span>
-                    </p>
-                    <p class="card-text">Reksas yra labai draugiškas ir energingas šuo. Jis mėgsta žaisti su kamuoliuku ir bėgioti lauke. Reksas yra labai draugiškas su vaikais ir kitais gyvūnais. Jis jau yra paskiepytas ir laukia savo naujų šeimininkų.</p>
-                  </div>
-                </div>
-            </div>
-        </div>
+        <div class="row cards-list"></div>
     </div>
 
     <script src="scripts.js"></script>
