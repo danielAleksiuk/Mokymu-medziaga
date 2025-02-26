@@ -1,4 +1,12 @@
 const BASE_URL = 'http://localhost:7789';
+const FILTERS_TRANSLATIONS = {
+    age: 'amzius',
+    type: 'gyvunas',
+    breed: 'veisle',
+    state: 'ar iesko namu',
+    features: 'charakterio bruozai',
+    vaccinated: 'skiepyta(s)'
+};
 
 const getData = (url) => {
     return fetch(BASE_URL + url).then(response => response.json())
@@ -24,9 +32,44 @@ const generatePetsHTML = (pets) => {
     `).join('');
   };
 
+
+  const generateFiltersHTML = (filters) => {
+    let filtersHtml = '';
+        for(let typeFilter in filters) {
+            filtersHtml += `
+                <div class="col-md-2">
+                    <label for="${typeFilter}" class="form-label">${ FILTERS_TRANSLATIONS[typeFilter]}:</label>
+                    <select class="form-select" id="${typeFilter}">
+                        <option value="visi" selected>Visi</option>
+                        ${filters[typeFilter].map(f => `<option value="${f}">${f}</option>`).join('')}
+                    </select>
+                </div>
+            `;
+        };
+    return filtersHtml;
+  };
+
   window.addEventListener('DOMContentLoaded', async () => {
+    const filters = await getData('/pets/filters-list');
+    document.querySelector('.filter-items').innerHTML =  generateFiltersHTML(filters);
+
     const pets = await getData('/pets');
     document.querySelector('.cards-list').innerHTML = generatePetsHTML(pets);
   });
 
-  http://localhost:7789/pets/filters-list
+
+document.getElementById('filter-button').addEventListener('click', () => {
+    let filterParams = [];
+
+    for (let filterKey in FILTERS_TRANSLATIONS) {
+        let filterValue = document.getElementById(filterKey).value;
+
+        if (filterValue !== 'visi') {
+            filterParams.push(
+                `${filterKey}=${filterValue}`);
+        }
+        
+    }
+
+    console.log(filterParams.join('&'))
+});
