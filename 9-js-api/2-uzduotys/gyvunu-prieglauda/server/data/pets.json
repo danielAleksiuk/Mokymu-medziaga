@@ -1,0 +1,123 @@
+[
+    {
+        "id": 1,
+        "name": "Reksas",
+        "age": 5,
+        "breed": "Labradoras",
+        "type": "Šuo",
+        "vaccinated": true,
+        "state": "Ieško namų",
+        "features": ["draugiškas", "žaismingas", "geras su vaikais", "ilgo kailio"],
+        "description": "Reksas yra labai draugiškas ir energingas šuo. Jis mėgsta žaisti su kamuoliuku ir bėgioti lauke. Reksas yra labai draugiškas su vaikais ir kitais gyvūnais. Jis jau yra paskiepytas ir laukia savo naujų šeimininkų."
+    },
+    {
+        "id": 2,
+        "name": "Pūkis",
+        "age": 2,
+        "breed": "Škotų terjeras",
+        "type": "Šuo",
+        "vaccinated": true,
+        "state": "Ieško namų",
+        "features": ["draugiškas", "žaismingas", "geras su vaikais"],
+        "description": "Pūkis yra labai draugiškas ir energingas šuo. Jis mėgsta žaisti su kamuoliuku ir bėgioti lauke. Pūkis yra labai draugiškas su vaikais ir kitais gyvūnais. Jis jau yra paskiepytas ir laukia savo naujų šeimininkų."
+    },
+    {
+        "id": 3,
+        "name": "Rikis",
+        "age": 3,
+        "breed": "Vokiečių aviganis",
+        "type": "Šuo",
+        "vaccinated": true,
+        "state": "Suradęs namus",
+        "features": ["draugiškas", "geras su vaikais", "greitai besimokantis", "geras saugotojas"],
+        "description": "Rikis yra labai draugiškas ir energingas šuo. Jis mėgsta žaisti su kamuoliuku ir bėgioti lauke. Rikis yra labai draugiškas su vaikais ir kitais gyvūnais. Jis jau yra paskiepytas ir laimingai gyvena savo naujuose namuose."
+    },
+    {
+        "id": 4,
+        "name": "Murka",
+        "age": 1,
+        "breed": "Nežinoma",
+        "type": "Katė",
+        "vaccinated": true,
+        "state": "Ieško namų",
+        "features": ["draugiškas", "žaismingas", "mėgsta glostymus"],
+        "description": "Murka yra labai draugiška ir energinga katė. Ji mėgsta žaisti su kamuoliuku ir bėgioti lauke. Murka yra labai draugiška su vaikais ir kitais gyvūnais. Ji jau yra paskiepyta ir laukia savo naujų šeimininkų."
+    },
+    {
+        "id": 5,
+        "name": "Sniegius",
+        "age": 2,
+        "breed": "Amerikietiškas trumpaplaukis",
+        "type": "Jūrų kiaulytė",
+        "vaccinated": false,
+        "state": "Ieško namų",
+        "features": ["bailus", "ramus", "trumpo kailio"],
+        "description": "Sniegius yra labai draugiškas ir energingas jūrų kiaulytė. Jis mėgsta žaisti su kamuoliuku ir bėgioti lauke. Sniegius yra labai draugiškas su vaikais ir kitais gyvūnais. Jis jau yra paskiepytas ir laukia savo naujų šeimininkų."
+    },
+    {
+        "id": 6,
+        "name": "Brisius",
+        "age": 1,
+        "breed": "Nežinoma",
+        "type": "Šuo",
+        "vaccinated": true,
+        "state": "Ieško namų",
+        "features": ["draugiškas", "žaismingas", "geras su vaikais"],
+        "description": "Brisius yra labai draugiškas ir energingas šuo. Jis mėgsta žaisti su kamuoliuku ir bėgioti lauke. Brisius yra labai draugiškas su vaikais ir kitais gyvūnais. Jis jau yra paskiepytas ir laukia savo naujų šeimininkų."
+    },
+    {
+        "id": 7,
+        "name": "Miauksius",
+        "age": 3,
+        "breed": "Škotų terjeras",
+        "type": "Katė",
+        "vaccinated": true,
+        "state": "Suradęs namus",
+        "features": ["draugiškas", "žaismingas", "mėgsta glostymus"],
+        "description": "Miauksius yra labai draugiška ir energinga katė. Ji mėgsta žaisti su kamuoliuku ir bėgioti lauke. Miauksius yra labai draugiška su vaikais ir kitais gyvūnais. Ji jau yra paskiepyta ir laukia savo naujų šeimininkų."
+    },
+    {
+        "id": 8,
+        "name": "Brisius",
+        "age": 1,
+        "breed": "Nežinoma",
+        "type": "Šuo",
+        "vaccinated": true,
+        "state": "Ieško namų",
+        "features": ["draugiškas", "žaismingas", "geras su vaikais"],
+        "description": "Brisius yra labai draugiškas ir energingas šuo. Jis mėgsta žaisti su kamuoliuku ir bėgioti lauke. Brisius yra labai draugiškas su vaikais ir kitais gyvūnais. Jis jau yra paskiepytas ir laukia savo naujų šeimininkų."
+    },
+    {
+        "id": 9,
+        "name": "Miauksius",
+        "age": 3,
+        "breed": "Škotų terjeras",
+        "type": "Katė",
+        "vaccinated": true,
+        "state": "Suradęs namus",
+        "features": ["draugiškas", "mėgsta glostymus"],
+        "description": "Miauksius yra labai draugiška ir energinga katė. Ji mėgsta žaisti su kamuoliuku ir bėgioti lauke. Miauksius yra labai draugiška su vaikais ir kitais gyvūnais. Ji jau yra paskiepyta ir laukia savo naujų šeimininkų."
+    },
+    {
+        "id": 10,
+        "name": "Brisius",
+        "age": 1,
+        "breed": "Nežinoma",
+        "type": "Šuo",
+        "vaccinated": true,
+        "state": "Ieško namų",
+        "features": ["žaismingas", "geras su vaikais"],
+        "description": "Brisius yra labai draugiškas ir energingas šuo. Jis mėgsta žaisti su kamuoliuku ir bėgioti lauke. Brisius yra labai draugiškas su vaikais ir kitais gyvūnais. Jis jau yra paskiepytas ir laukia savo naujų šeimininkų."
+    },
+    {
+        "id": 11,
+        "name": "Miauksius",
+        "age": 3,
+        "breed": "Škotų terjeras",
+        "type": "Katė",
+        "vaccinated": true,
+        "state": "Suradęs namus",
+        "features": ["mėgsta glostymus", "ramus", "daug murkiantis"],
+        "description": "Miauksius yra labai draugiška ir energinga katė. Ji mėgsta žaisti su kamuoliuku ir bėgioti lauke. Miauksius yra labai draugiška su vaikais ir kitais gyvūnais. Ji jau yra paskiepyta ir laukia savo naujų šeimininkų."
+    }
+]

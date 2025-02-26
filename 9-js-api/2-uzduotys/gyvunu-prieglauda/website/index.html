@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+    />
+
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="container">
+        <div class="row">
+            <h3>Filtrai:</h3>
+        </div>
+      <div class="row g-3">
+        <div class="col-md-2">
+          <label for="age" class="form-label">Amžius:</label>
+          <select class="form-select" id="age">
+            <option value="visi" selected>Visi</option>
+          </select>
+        </div>
+
+        <div class="col-md-2">
+          <label for="animal" class="form-label">Gyvūnas:</label>
+          <select class="form-select" id="animal">
+            <option value="visi" selected>Visi</option>
+          </select>
+        </div>
+
+        <div class="col-md-2">
+          <label for="breed" class="form-label">Veislė:</label>
+          <select class="form-select" id="breed">
+            <option value="visi" selected>Visi</option>
+          </select>
+        </div>
+
+        <div class="col-md-2">
+          <label for="vaccinated" class="form-label">Skiepytas:</label>
+          <select class="form-select" id="vaccinated">
+            <option value="visi" selected>Visi</option>
+          </select>
+        </div>
+
+        <div class="col-md-2">
+          <label for="has-home" class="form-label">Turi namus:</label>
+          <select class="form-select" id="has-home">
+            <option value="visi" selected>Visi</option>
+          </select>
+        </div>
+
+        <div class="col-md-2">
+          <label for="character" class="form-label">Charakteris:</label>
+          <select class="form-select" id="character">
+            <option value="visi" selected>Visi</option>
+          </select>
+        </div>
+
+        <div class="col-12 text-end mt-3">
+          <button class="btn btn-primary">Filtruoti</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <h3>Gyvūnų sąrašas:</h3>
+        </div>
+    </div>
+
+    <script src="scripts.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

@@ -1,0 +1,101 @@
+GET http://localhost:7789/
+
+###
+
+GET http://localhost:7789/pets
+
+###
+
+GET http://localhost:7789/pets/1
+
+###
+
+GET http://localhost:7789/pets/2
+
+###
+
+GET http://localhost:7789/pets/filters-list
+
+###
+
+GET http://localhost:7789/pets/filtered?age=1
+
+###
+
+GET http://localhost:7789/pets/filtered?age=2
+
+###
+
+GET http://localhost:7789/pets/filtered?type=Šuo
+
+###
+
+GET http://localhost:7789/pets/filtered?type=Katė
+
+###
+
+GET http://localhost:7789/pets/filtered?type=katė
+
+###
+
+GET http://localhost:7789/pets/filtered?type=jūrų_kiaulytė
+
+###
+
+GET http://localhost:7789/pets/filtered?type=Šuo&age=1
+
+###
+
+GET http://localhost:7789/pets/filtered?type=Katė&age=5
+
+###
+
+GET http://localhost:7789/pets/filtered?breed=Labradoras
+
+###
+
+GET http://localhost:7789/pets/filtered?breed=škotų_terjeras
+
+###
+
+GET http://localhost:7789/pets/filtered?vaccinated=true
+
+###
+
+GET http://localhost:7789/pets/filtered?vaccinated=false
+
+###
+
+GET http://localhost:7789/pets/filtered?age=10&type=Šuo&breed=Labradoras&vaccinated=true
+
+###
+
+GET http://localhost:7789/pets/filtered?state=Ieško_namų
+
+###
+
+GET http://localhost:7789/pets/filtered?state=Suradęs_namus
+
+###
+
+GET http://localhost:7789/pets/filtered?features=draugiškas
+
+###
+
+GET http://localhost:7789/pets/filtered?features=mėgsta_glostymus
+
+###
+
+GET http://localhost:7789/pets/filtered?features=draugiškas,mėgsta_glostymus
+
+###
+
+GET http://localhost:7789/pets/filtered?features=ilgo_kailio,trumpo_kailio
+
+###
+
+GET http://localhost:7789/pets/filtered?features=draugiškas&age=2
+
+###
+
+GET http://localhost:7789/pets/filtered?age=5&type=šuo&breed=labradoras&vaccinated=true&state=ieško_namų&features=draugiškas,ilgo_kailio
