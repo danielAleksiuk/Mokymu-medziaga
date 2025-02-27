@@ -12,6 +12,11 @@ const getData = (url) => {
     return fetch(BASE_URL + url).then(response => response.json())
 };
 
+
+const addPetsNumberInHTML = (petsNumber) => {
+    document.getElementById('petsCount').innerHTML = petsNumber;
+};
+
 const generatePetsHTML = (pets) => {
     return pets.map(pet => `
       <div class="col-5">
@@ -54,6 +59,7 @@ const generatePetsHTML = (pets) => {
     document.querySelector('.filter-items').innerHTML =  generateFiltersHTML(filters);
 
     const pets = await getData('/pets');
+    addPetsNumberInHTML(pets.length); 
     document.querySelector('.cards-list').innerHTML = generatePetsHTML(pets);
   });
 
@@ -79,6 +85,7 @@ document.getElementById('filter-button').addEventListener('click', async () => {
     } else {
         pets = await getData(url);
     }
+    addPetsNumberInHTML(pets.length); 
     document.querySelector('.cards-list').innerHTML = generatePetsHTML(pets);
     
 });
