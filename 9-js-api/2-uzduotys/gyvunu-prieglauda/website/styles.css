@@ -22,3 +22,8 @@ body {
     width: 25vh;
     height: 25vh;
 }
+
+#collapseWidthExample div.collapse-bg-color {
+    background-color: rgb(234, 234, 234);
+    border: none;
+}
