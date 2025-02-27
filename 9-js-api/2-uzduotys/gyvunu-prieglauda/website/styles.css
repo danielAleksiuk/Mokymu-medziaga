@@ -17,3 +17,8 @@ body {
 .cards-list .card {
     height: 100%;
 }
+
+.card-text .pet-img {
+    width: 25vh;
+    height: 25vh;
+}

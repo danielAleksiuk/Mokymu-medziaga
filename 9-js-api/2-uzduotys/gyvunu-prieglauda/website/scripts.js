@@ -8,6 +8,11 @@ const FILTERS_TRANSLATIONS = {
     vaccinated: 'skiepyta(s)'
 };
 
+const VALUE_TRANSLATIONS = {
+    true: 'taip',
+    false: 'ne'
+};
+
 const getData = (url) => {
     return fetch(BASE_URL + url).then(response => response.json())
 };
@@ -22,6 +27,7 @@ const generatePetsHTML = (pets) => {
       <div class="col-5">
           <div class="card">
               <div class="card-body">
+                    <p class="card-text"><img class="pet-img" src="https://cdn2.thecatapi.com/images/${pet.id}.jpg"></p>
                   <h5 class="card-title">${pet.name}</h5>
                   <p class="card-text">Metai: ${pet.age}</p>
                   <p class="card-text">Veislė: ${pet.breed}</p>
@@ -46,7 +52,9 @@ const generatePetsHTML = (pets) => {
                     <label for="${typeFilter}" class="form-label">${ FILTERS_TRANSLATIONS[typeFilter]}:</label>
                     <select class="form-select" id="${typeFilter}">
                         <option value="visi" selected>Visi</option>
-                        ${filters[typeFilter].map(f => `<option value="${f}">${f}</option>`).join('')}
+                        ${filters[typeFilter].map(f => `<option value="${f}">
+                            ${ f === true || f === false ? VALUE_TRANSLATIONS[f] : f }
+                        </option>`).join('')}
                     </select>
                 </div>
             `;
@@ -89,3 +97,39 @@ document.getElementById('filter-button').addEventListener('click', async () => {
     document.querySelector('.cards-list').innerHTML = generatePetsHTML(pets);
     
 });
+
+
+document.getElementById('clear-button').addEventListener('click', async () => {
+    
+    for (let filterKey in FILTERS_TRANSLATIONS) {
+        let filterElement = document.getElementById(filterKey);
+        if (filterElement.tagName === 'SELECT') {
+            filterElement.selectedIndex = 0;  
+        } else {
+            filterElement.value = ''; 
+        }
+    }
+
+    const pets = await getData("/pets");
+    document.querySelector(".cards-list").innerHTML = generatePetsHTML(pets);
+
+    addPetsNumberInHTML(pets.length);
+});
+
+// 1. metoda - onClick clear mygtukui
+//     a. clear mygtukas - EXTRA 
+//         a. atsiranda kai ijungtas filtras
+//         b. filtras ijungtras - enabled , filtras isjungtas disabled
+// 2. paspadus mygtuka 
+//     a. iskviestis API ir gauti visus gyvunus
+//     b. visu filtru reiksme turi buti 'visi'
+
+
+// Isvesti pranesima, jeigu gyvunu saras yra tuscias
+
+// true/false reiksmes filtre pakeisti i TAIP/NE
+
+
+// show filter mygtukas
+// atsiranda https://getbootstrap.com/docs/5.3/components/collapse/#horizontal
+// arba dingsta
