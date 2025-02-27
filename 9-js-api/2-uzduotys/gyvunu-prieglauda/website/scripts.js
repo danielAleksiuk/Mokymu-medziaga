@@ -58,7 +58,7 @@ const generatePetsHTML = (pets) => {
   });
 
 
-document.getElementById('filter-button').addEventListener('click', () => {
+document.getElementById('filter-button').addEventListener('click', async () => {
     let filterParams = [];
 
     for (let filterKey in FILTERS_TRANSLATIONS) {
@@ -66,10 +66,19 @@ document.getElementById('filter-button').addEventListener('click', () => {
 
         if (filterValue !== 'visi') {
             filterParams.push(
-                `${filterKey}=${filterValue}`);
+                `${filterKey}=${filterValue.split(' ').join('_')}`);
         }
         
     }
-
-    console.log(filterParams.join('&'))
+    let readyFilter = filterParams.length ? `?${filterParams.join('&')}` : null;
+    
+    let url = '/pets';
+    let pets = null;
+    if (readyFilter) {
+        pets = await getData(`${url}/filtered${readyFilter}`);
+    } else {
+        pets = await getData(url);
+    }
+    document.querySelector('.cards-list').innerHTML = generatePetsHTML(pets);
+    
 });
