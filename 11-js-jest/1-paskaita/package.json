@@ -1,0 +1,17 @@
+{
+  "name": "1-paskaita",
+  "version": "1.0.0",
+  "description": "jest intro",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "test-verbose": "jest --verbose",
+    "test-coverage": "jest --coverage",
+    "test-watchAll": "jest --verbose --watchAll"
+  },
+  "author": "daniel",
+  "license": "ISC",
+  "devDependencies": {
+    "jest": "^29.7.0"
+  }
+}

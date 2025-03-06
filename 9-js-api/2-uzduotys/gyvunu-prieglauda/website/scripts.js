@@ -115,7 +115,7 @@ document.getElementById('clear-button').addEventListener('click', async () => {
 
     addPetsNumberInHTML(pets.length);
 });
-
+bjhb
 // 1. metoda - onClick clear mygtukui
 //     a. clear mygtukas - EXTRA 
 //         a. atsiranda kai ijungtas filtras
