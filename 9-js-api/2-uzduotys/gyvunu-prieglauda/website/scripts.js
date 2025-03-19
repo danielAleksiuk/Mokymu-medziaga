@@ -23,7 +23,7 @@ const addPetsNumberInHTML = (petsNumber) => {
 };
 
 const generatePetsHTML = (pets) => {
-    return pets.map(pet => `
+    return pets.map((pet) => `
       <div class="col-5">
           <div class="card">
               <div class="card-body">
