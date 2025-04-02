@@ -41,8 +41,6 @@ const TrysKepyklos = () => {
                     : kepykla;
             }
         ));
-
-
         // const newValue = kepyklos[id];
         // newValue.reiksme = event.target.value;
 
@@ -50,6 +48,19 @@ const TrysKepyklos = () => {
         // kepyklos.splice(id, 1, newValue);
         
         // setKepyklos([...kepyklos]);
+    }
+
+    const resetHandler = () => {
+        setKepyklos(
+            kepyklos.map((kepykla) => {
+                return  {
+                        id: kepykla.id,
+                        pavadinimas: kepykla.pavadinimas,
+                        klientoPavadinimas: kepykla.klientoPavadinimas,
+                        reiksme: 0
+                    }
+            }
+        ));
     }
 
     const uzsakymuVykdymas = () => {
@@ -83,6 +94,7 @@ const TrysKepyklos = () => {
             kepyklos.map((kepykla, index) => {
                 return (
                     <div key={index}>
+                        <p>{kepykla.reiksme}</p>
                         <label htmlFor={kepykla.pavadinimas}>{kepykla.klientoPavadinimas}:</label>
                         <input onChange={(event) => kepyklaHandler(event, kepykla.id)} type="number" id={kepykla.pavadinimas}/>
         
@@ -92,6 +104,9 @@ const TrysKepyklos = () => {
           }
       
           <p>{uzsakymuVykdymas()}</p>
+          <p>
+            <button onClick={resetHandler}>reset</button>
+          </p>
         </div>
       );
       
