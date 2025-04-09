@@ -1,9 +1,9 @@
-const Paslauga = ({pavadinimas, kategorija}) => {
+const Paslauga = (props) => {
     return (
         <div>
-            Paslaugaaa
-            <p>{pavadinimas}</p>
-            <p>{kategorija}</p>
+            Paslauga
+            <p>{props.pavadinimas}</p>
+            <p>{props.kategorija}</p>
             <hr/>
         </div>
         
