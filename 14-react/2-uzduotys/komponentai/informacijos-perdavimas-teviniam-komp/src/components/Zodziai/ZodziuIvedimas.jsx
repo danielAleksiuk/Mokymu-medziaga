@@ -6,8 +6,11 @@ const ZodziuIvedimas = (props) => {
 
     const submitHandle = (event) => {
         event.preventDefault();
-
-        props.pridetiZodi(inputRef.current.value);
+        const inputValue = inputRef.current.value.trim();
+        if (inputValue !== '') {
+            props.pridetiZodi(inputValue);
+            inputRef.current.value = '';
+        }
     }
 
     return (
