@@ -1,8 +1,12 @@
-import Button from '../Button';
 import './Product.css';
+import Button from '../Button';
 
 const Product = (props) => {
     let product = props.product;
+
+    const onDeleteButtonClick = () => {
+        props.onDeleteAction(product.id)
+    }
 
     return (
         <div className='productContainer'>
@@ -10,8 +14,8 @@ const Product = (props) => {
                 <h4>{product.name}</h4>
                 <p>price: {product.price}</p>
                 <p>amount: {product.amount}</p>
+                <Button title='Delete' action={onDeleteButtonClick}/>
             </div>
-            {/* <Button title="Delete" action={deleteProduct} */}
         </div>
     )
 }

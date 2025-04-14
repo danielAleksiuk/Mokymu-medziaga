@@ -16,6 +16,13 @@ const ProductCatalog = () => {
         setData(products);
     }
 
+    const deleteProductFromData = (id) => {
+        console.log(id)
+        setData(
+            data.filter(item => item.id !== id)
+        );
+    }
+
     return (
         <div className="catalogContainer">
             <HeaderWithCounter
@@ -30,7 +37,7 @@ const ProductCatalog = () => {
             {
                 data.length > 0 && (
                     data.map(item => {
-                        return <Product product={item} />
+                        return <Product product={item} onDeleteAction={deleteProductFromData}/>
                    })
                 )
             }

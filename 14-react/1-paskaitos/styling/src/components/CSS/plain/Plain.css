@@ -1,0 +1,10 @@
+.plainContainer {
+    color: red;
+    display: flex;
+    justify-content: center;
+}
+
+.plainContainer h1 {
+    font-style: italic;
+    font-size: 25px;
+}
