@@ -4,6 +4,8 @@ import InlineStylingJsObjects from './components/CSS/inline-styling/js-objects/I
 import InlineStylingPlain from './components/CSS/inline-styling/plain/InlineStylingPlain'
 import BootstrapCss from './components/CSS/library/BootstrapCss'
 import Plain from './components/CSS/plain/Plain'
+import SassStyling from './components/Sass/SassStyling'
+import StyledComponentsExample from './components/styled-components/StyledComponentsExample'
 // import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
@@ -19,6 +21,9 @@ function App() {
         <hr/>
         <BootstrapCss/>
         <hr/>
+        <SassStyling/>
+        <hr/>
+        <StyledComponentsExample/>
     </>
   )
 }

@@ -1,0 +1,43 @@
+@import 'Colors.scss';
+
+$textColor: blue;
+$h4fontSize: 30px;
+
+#sassComponent {
+    h2 {
+        font-size: 40px;
+        color: $textColor
+    }
+
+    .sassLinks {
+        ul {
+            li {
+                a {
+                    &.link {
+                        color: $dangerColor;
+                        text-decoration: none;
+                    }
+                }
+            }
+        }
+    }
+}
+
+#sassContainer {
+    max-width: 800px;
+    margin: 0 auto;
+
+    h4 {
+        font-size: $h4fontSize;
+    }
+
+    p {
+        color: $infoColor;
+    }
+
+    button {
+        &.btn-click {
+            color: red;
+        }
+    }
+}
