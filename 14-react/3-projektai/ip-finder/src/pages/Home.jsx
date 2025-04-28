@@ -1,71 +1,96 @@
 import { useState } from "react";
 import { useEffect } from "react";
-import { MAP_API_KEY } from "../utils/constants";
-
 import './Home.css';
+import MapContainer from "../components/MapContainer";
+import LabelWithTitle from "../components/LabelWithTitle";
 
-import Map, {Marker}  from 'react-map-gl/mapbox';
-import 'mapbox-gl/dist/mapbox-gl.css';
+
 // latitude: 54.6876
 // longitude: 25.2806
 
 const Home = () => {
-    const [ipDetails, setIpDetails] = useState();
+    const [ipDetails, setIpDetails] = useState({
+      ip: null,
+      city: null,
+      org: null,
+      country_name: null
+    });
     const [coordinates, setCoordinates] = useState({
       latitude: 55.261909,
       longitude: 24.034855
     });
-    const [viewPort, setViewPort] = useState({
-      latitude: coordinates.latitude,
-      longitude: coordinates.longitude,
-      zoom: 5,
-      width: '100%',
-      height: '100%'
-    });
-
-    // const [lat, setLat] = useState();
-    // const [lon, setLon] = useState();
     
+    // useFetch
+    // api path
+
   useEffect(() => {
     fetch('https://ipapi.co/json/')
       .then(response => response.json())
       .then(data => {
         console.log(data);
-        setIpDetails(data);
+        setIpDetails({
+          ip: data.ip,
+          city: data.region,
+          org: data.org,
+          country_name: data.country_name
+        });
         setCoordinates({
           latitude: data.latitude,
           longitude: data.longitude
         });
-
-        // setLat(data.latitude);
-        // setLon(data.longitude)
+      })
+      .catch(() => {
+        // fake data 
+        setIpDetails({
+          ip: '78.60.184.222',
+          city: 'Random city',
+          org: 'TEO',
+          country_name: 'Random Country'
+        });
+        setCoordinates({
+          latitude: 19.932344,
+          longitude: 78.254511
+        });
       })
   }, []);
 
-  useEffect(() => {
-    console.log('coordinates is here')
-    console.log(coordinates)
-  }, [coordinates])
+ 
 
     return (
-        <div>
-            <h1>IP address finder</h1>
-            <p>What is my IP address?</p>
-            <p>{ipDetails?.ip}</p>
-            <p>location</p>
-            <p>{ipDetails && ipDetails.country_name},{ipDetails?.region} </p>
-            <p>internet provider</p>
-            <p>{ipDetails?.org}</p>
+      <>
+        <LabelWithTitle 
+          title='IP address finder'
+          type="primary"
+          align="center"
+        />
 
-            <div className="mapContainer">
-                <Map
-                  mapboxAccessToken={MAP_API_KEY}
-                  {...viewPort}
-                  mapStyle="mapbox://styles/mapbox/streets-v9">
+        <LabelWithTitle 
+          title='What is my IP address?'
+          type="secondary"
+          body={ipDetails.ip}
+          align="left"
+        />
+        
+        <LabelWithTitle
+          title='Location'
+          type="default"
+          body={ `${ipDetails.country_name}, ${ipDetails.city}` }
+          align="left"
+        />
 
-                </Map>
-            </div>
+        <LabelWithTitle 
+          title='Internet provider'
+          type="default"
+          body={ipDetails.org}
+          align="right"
+        />
+
+        <div className="mapContainer">
+          <MapContainer
+            latitude={coordinates.latitude}
+            longitude={coordinates.longitude}/>
         </div>
+      </>
     )
 };
 
