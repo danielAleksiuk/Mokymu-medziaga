@@ -1,0 +1,44 @@
+{
+    "navigation": {
+        "title": "React landing page",
+        "navigationItems": [
+            "features",
+            "about",
+            "services",
+            "gallery",
+            "testimonials",
+            "team",
+            "contact"
+        ]
+    },
+    "header": {
+        "title": "we are a landing page",
+        "subtitle": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam sed commodo nibh ante facilisis bibendum.",
+        "button": "learn more"
+    },
+    "features": {
+        "title": "features",
+        "featuresItems": [
+            {
+                "icon": "ADD icon name",
+                "title": "lorem ipsum",
+                "text": "Lorem ipsum dolor sit amet placerat facilisis felis mi in tempus eleifend pellentesque natoque etiam."
+            },
+            {
+                "icon": "ADD icon name",
+                "title": "lorem ipsum",
+                "text": "Lorem ipsum dolor sit amet placerat facilisis felis mi in tempus eleifend pellentesque natoque etiam."
+            },
+            {
+                "icon": "ADD icon name",
+                "title": "lorem ipsum",
+                "text": "Lorem ipsum dolor sit amet placerat facilisis felis mi in tempus eleifend pellentesque natoque etiam."
+            },
+            {
+                "icon": "ADD icon name",
+                "title": "lorem ipsum",
+                "text": "Lorem ipsum dolor sit amet placerat facilisis felis mi in tempus eleifend pellentesque natoque etiam."
+            }
+        ]
+    }
+}
