@@ -22,7 +22,7 @@ const useFetch = (url, timeout = 1000) => {
                         latitude: 19.932344,
                         longitude: 78.254511
                       }
-                    )
+                    );
                 })
                 .finally(() => setLoading(false));
         }, timeout)
