@@ -9,7 +9,7 @@ const Features = ({title,featuresItems}) => {
                 <h1 className="features__title">{title}</h1>
                 <Row>
                     { featuresItems.map((item, key) => (
-                        <Col id={key}>
+                        <Col key={key}>
                             <span className="features__icon">{ icons[item.icon]() }</span>
                             <h3>{item.title}</h3>
                             <p>{item.text}</p>
