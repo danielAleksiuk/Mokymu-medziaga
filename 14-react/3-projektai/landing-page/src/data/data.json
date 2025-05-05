@@ -20,22 +20,22 @@
         "title": "features",
         "featuresItems": [
             {
-                "icon": "ADD icon name",
+                "icon": "HiChatAlt2",
                 "title": "lorem ipsum",
                 "text": "Lorem ipsum dolor sit amet placerat facilisis felis mi in tempus eleifend pellentesque natoque etiam."
             },
             {
-                "icon": "ADD icon name",
+                "icon": "HiVolumeUp",
                 "title": "lorem ipsum",
                 "text": "Lorem ipsum dolor sit amet placerat facilisis felis mi in tempus eleifend pellentesque natoque etiam."
             },
             {
-                "icon": "ADD icon name",
+                "icon": "HiOutlineUserGroup",
                 "title": "lorem ipsum",
                 "text": "Lorem ipsum dolor sit amet placerat facilisis felis mi in tempus eleifend pellentesque natoque etiam."
             },
             {
-                "icon": "ADD icon name",
+                "icon": "HiPencil",
                 "title": "lorem ipsum",
                 "text": "Lorem ipsum dolor sit amet placerat facilisis felis mi in tempus eleifend pellentesque natoque etiam."
             }
