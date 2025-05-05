@@ -1,6 +1,7 @@
-import * as icons from "react-icons/hi";
-import { Col, Row, Container } from 'react-bootstrap';
+
+import { Row, Container } from 'react-bootstrap';
 import './Features.scss'
+import ItemDetails from '../../components/itemDetails/ItemDetails';
 
 const Features = ({title,featuresItems}) => {
     return (
@@ -9,11 +10,12 @@ const Features = ({title,featuresItems}) => {
                 <h1 className="features__title">{title}</h1>
                 <Row>
                     { featuresItems.map((item, key) => (
-                        <Col key={key}>
-                            <span className="features__icon">{ icons[item.icon]() }</span>
-                            <h3>{item.title}</h3>
-                            <p>{item.text}</p>
-                        </Col>
+                        <ItemDetails 
+                            key={key}
+                            title={item.title}
+                            text={item.text}
+                            iconName={item.icon}
+                        />
                     ))}
                 </Row>
            

@@ -23,18 +23,4 @@
         margin-left: -30px;
         left: 50%;
     }
-
-    &__icon {
-        font-size: 38px;
-        margin-bottom: 20px;
-        transition: all 0.5s;
-        color: #fff;
-        width: 100px;
-        height: 100px;
-        padding: 15px 0;
-        border-radius: 50%;
-        background: linear-gradient(to right, #6372ff 0%, #5ca9fb 100%);
-        box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.05);
-        display: inline-block;
-    }
 }
