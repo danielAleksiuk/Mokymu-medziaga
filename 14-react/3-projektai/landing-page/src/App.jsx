@@ -6,6 +6,7 @@ import Navigation from './components/navigation/Navigation';
 import Header from './pages/header/Header';
 import Features from './pages/features/Features';
 import About from './pages/about/About';
+import OurServices from './pages/services/OurServices';
 
 function App() {
   const [landingPageData, setLandingPageData] = useState(null);
@@ -36,6 +37,9 @@ function App() {
               description={landingPageData.about.description}
               whyChoouseUsTitle={landingPageData.about.whyChoouseUsTitle}
               whyChoouseUsItems={landingPageData.about.whyChoouseUsItems}/>
+            <OurServices
+              title={landingPageData.services.title}
+              subtitle={landingPageData.services.description} servicesItems={landingPageData.services.serviceItems}/>
           </>
         )
       }

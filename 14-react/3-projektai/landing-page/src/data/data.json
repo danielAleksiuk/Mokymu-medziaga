@@ -55,5 +55,42 @@
             "why choose us?",
             "why choose us?"
         ]
+    },
+    "services": {
+        "title": "our services",
+        "description": "Lorem ipsum dolor sit amet placerat facilisis felis mi in tempus eleifend pellentesque natoque etiam.",
+        "serviceItems": [
+            {
+                "icon": "HiChatAlt2",
+                "title": "lorem ipsum",
+                "text": "Lorem ipsum dolor sit amet placerat facilisis felis mi in tempus eleifend pellentesque natoque etiam."
+            },
+            {
+                "icon": "HiVolumeUp",
+                "title": "lorem ipsum",
+                "text": "Lorem ipsum dolor sit amet placerat facilisis felis mi in tempus eleifend pellentesque natoque etiam."
+            },
+            {
+                "icon": "HiOutlineUserGroup",
+                "title": "lorem ipsum",
+                "text": "Lorem ipsum dolor sit amet placerat facilisis felis mi in tempus eleifend pellentesque natoque etiam."
+            },
+            {
+                "icon": "HiBell",
+                "title": "lorem ipsum",
+                "text": "Lorem ipsum dolor sit amet placerat facilisis felis mi in tempus eleifend pellentesque natoque etiam."
+            },
+            {
+                "icon": "HiClock",
+                "title": "lorem ipsum",
+                "text": "Lorem ipsum dolor sit amet placerat facilisis felis mi in tempus eleifend pellentesque natoque etiam."
+            }
+            , {
+                "icon": "HiChip",
+                "title": "lorem ipsum",
+                "text": "Lorem ipsum dolor sit amet placerat facilisis felis mi in tempus eleifend pellentesque natoque etiam."
+            }
+        ]
+        
     }
 }
