@@ -5,6 +5,7 @@ import JsonData from './data/data.json';
 import Navigation from './components/navigation/Navigation';
 import Header from './pages/header/Header';
 import Features from './pages/features/Features';
+import About from './pages/about/About';
 
 function App() {
   const [landingPageData, setLandingPageData] = useState(null);
@@ -30,6 +31,11 @@ function App() {
             <Features
               title={landingPageData.features.title}
               featuresItems={landingPageData.features.featuresItems}/>
+            <About
+              title={landingPageData.about.title}
+              description={landingPageData.about.description}
+              whyChoouseUsTitle={landingPageData.about.whyChoouseUsTitle}
+              whyChoouseUsItems={landingPageData.about.whyChoouseUsItems}/>
           </>
         )
       }

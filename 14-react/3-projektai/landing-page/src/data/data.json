@@ -40,5 +40,20 @@
                 "text": "Lorem ipsum dolor sit amet placerat facilisis felis mi in tempus eleifend pellentesque natoque etiam."
             }
         ]
+    },
+    "about": {
+        "title": "about us",
+        "description": "Lorem ipsum dolor sit amet placerat facilisis felis mi in tempus eleifend pellentesque natoque etiam.",
+        "whyChoouseUsTitle": "why choose us?",
+        "whyChoouseUsItems": [
+            "why choose us?",
+            "why choose us?",
+            "why choose us?",
+            "why choose us?",
+            "why choose us?",
+            "why choose us?",
+            "why choose us?",
+            "why choose us?"
+        ]
     }
 }
