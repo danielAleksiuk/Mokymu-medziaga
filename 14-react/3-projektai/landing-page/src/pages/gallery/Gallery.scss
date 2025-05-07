@@ -1,0 +1,31 @@
+.gallery {
+    &__img-block {
+        padding: 0;
+        position: relative;
+        img {
+            height: 300px;
+            width: 100%;
+        }
+    }
+
+    &__img-title {
+        text-align: center;
+        margin: 0 auto;
+        height: 100%;
+        width: 100%;
+        opacity: 0;
+        position: absolute;
+        top: 0;
+        left: 0;
+        color: #fff;
+        padding: 30% 0 0;
+        transition:  all 0.5;
+        background: linear-gradient(to right, rgb(0, 93, 219 , 0.8) 0%,
+         rgb(39, 131, 255 , 0.8) 100%  );
+
+        &:hover {
+            opacity: 3;
+        }
+    }
+    
+}

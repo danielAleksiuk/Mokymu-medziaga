@@ -7,6 +7,7 @@ import Header from './pages/header/Header';
 import Features from './pages/features/Features';
 import About from './pages/about/About';
 import OurServices from './pages/services/OurServices';
+import Gallery from './pages/gallery/Gallery';
 
 function App() {
   const [landingPageData, setLandingPageData] = useState(null);
@@ -40,6 +41,10 @@ function App() {
             <OurServices
               title={landingPageData.services.title}
               subtitle={landingPageData.services.description} servicesItems={landingPageData.services.serviceItems}/>
+            <Gallery
+              title={landingPageData.gallery.title}
+              description={landingPageData.gallery.description}
+              images={landingPageData.gallery.images}/>
           </>
         )
       }
