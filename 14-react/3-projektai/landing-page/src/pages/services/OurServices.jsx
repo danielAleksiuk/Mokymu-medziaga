@@ -5,7 +5,7 @@ import ItemDetails from '../../components/itemDetails/ItemDetails';
 const OurServices = ({ title, subtitle, servicesItems }) => {
   return (
     <section className="services-section">
-      <Containerr>
+      <Container>
         <h2 className="services-title">{title}</h2>
         <span className="services-underline"></span>
         <p className="services-subtitle">{subtitle}</p>
@@ -26,7 +26,7 @@ const OurServices = ({ title, subtitle, servicesItems }) => {
           ))}
         
         </div>
-      </Containerr>
+      </Container>
     </section>
   );
 };
