@@ -92,5 +92,56 @@
             }
         ]
         
+    },
+    "gallery": {
+        "title": "Gallery",
+        "description": "Lorem ipsum dolor sit amet placerat facilisis felis mi in tempus eleifend pellentesque natoque etiam.",
+        "images": [
+            {
+                "id": 1,
+                "title": "happy dogas",
+                "url": "https://images.delfi.lt/media-api-image-cropper/v1/c0c5d330-7953-11ed-bbfd-e17f1d900260.jpg?noup&w=1200&h=711&fx=0.5&fy=0.25"
+            },
+            {
+                "id": 2,
+                "title": "happy dogas",
+                "url": "https://images.delfi.lt/media-api-image-cropper/v1/c0c5d330-7953-11ed-bbfd-e17f1d900260.jpg?noup&w=1200&h=711&fx=0.5&fy=0.25"
+            },
+            {
+                "id": 3,
+                "title": "happy dogas",
+                "url": "https://images.delfi.lt/media-api-image-cropper/v1/c0c5d330-7953-11ed-bbfd-e17f1d900260.jpg?noup&w=1200&h=711&fx=0.5&fy=0.25"
+            },
+            {
+                "id": 4,
+                "title": "happy dogas",
+                "url": "https://images.delfi.lt/media-api-image-cropper/v1/c0c5d330-7953-11ed-bbfd-e17f1d900260.jpg?noup&w=1200&h=711&fx=0.5&fy=0.25"
+            },
+            {
+                "id": 5,
+                "title": "happy dogas",
+                "url": "https://images.delfi.lt/media-api-image-cropper/v1/c0c5d330-7953-11ed-bbfd-e17f1d900260.jpg?noup&w=1200&h=711&fx=0.5&fy=0.25"
+            },
+            {
+                "id": 6,
+                "title": "happy dogas",
+                "url": "https://images.delfi.lt/media-api-image-cropper/v1/c0c5d330-7953-11ed-bbfd-e17f1d900260.jpg?noup&w=1200&h=711&fx=0.5&fy=0.25"
+            },
+            {
+                "id": 7,
+                "title": "happy dogas",
+                "url": "https://images.delfi.lt/media-api-image-cropper/v1/c0c5d330-7953-11ed-bbfd-e17f1d900260.jpg?noup&w=1200&h=711&fx=0.5&fy=0.25"
+            },
+            {
+                "id": 8,
+                "title": "happy dogas",
+                "url": "https://images.delfi.lt/media-api-image-cropper/v1/c0c5d330-7953-11ed-bbfd-e17f1d900260.jpg?noup&w=1200&h=711&fx=0.5&fy=0.25"
+            },
+            {
+                "id": 9,
+                "title": "happy dogas",
+                "url": "https://images.delfi.lt/media-api-image-cropper/v1/c0c5d330-7953-11ed-bbfd-e17f1d900260.jpg?noup&w=1200&h=711&fx=0.5&fy=0.25"
+            }
+        ]
     }
 }
