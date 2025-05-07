@@ -5,14 +5,18 @@ import ItemDetails from '../../components/itemDetails/ItemDetails';
 const OurServices = ({ title, subtitle, servicesItems }) => {
   return (
     <section className="services-section">
-      <Container>
+      <Containerr>
         <h2 className="services-title">{title}</h2>
         <span className="services-underline"></span>
         <p className="services-subtitle">{subtitle}</p>
-        <Row className="services-grid">
+        
+
+       {/* display: grid  https://getbootstrap.com/docs/5.3/utilities/spacing/#gap*/}
+        <div 
+          className="services-grid d-grid gap-3">
           {servicesItems.map((item, index) => (
     
-            <Col key={index} md={4} className='service-card'>
+            <Col key={index} className='service-card'>
               <ItemDetails
                 title={item.title}
                 text={item.text}
@@ -20,8 +24,9 @@ const OurServices = ({ title, subtitle, servicesItems }) => {
               />
             </Col>  
           ))}
-        </Row>
-      </Container>
+        
+        </div>
+      </Containerr>
     </section>
   );
 };
