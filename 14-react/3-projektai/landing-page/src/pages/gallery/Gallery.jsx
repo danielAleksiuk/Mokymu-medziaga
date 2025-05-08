@@ -3,7 +3,7 @@ import { Row, Container, Col } from 'react-bootstrap';
 
 const Gallery = ({title, description, images}) => {
     return (
-        <div className="gallery">
+        <div className="gallery" id='gallery-nav'>
                
             <Container>
                 <h1 className="gallery__title">{title}</h1>

@@ -9,7 +9,7 @@ const Contacts = ({
     socialIcons
 }) => {
     return (
-        <div className="contacts">
+        <div id="contact">
             <Container>
                 <h1>{title}</h1>
                 <p>{description}</p>

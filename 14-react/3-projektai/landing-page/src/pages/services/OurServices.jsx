@@ -4,7 +4,7 @@ import ItemDetails from '../../components/itemDetails/ItemDetails';
 
 const OurServices = ({ title, subtitle, servicesItems }) => {
   return (
-    <section className="services-section">
+    <section id="services" className="services-section">
       <Container>
         <h2 className="services-title">{title}</h2>
         <span className="services-underline"></span>

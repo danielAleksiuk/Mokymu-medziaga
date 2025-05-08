@@ -9,6 +9,7 @@ import About from './pages/about/About';
 import OurServices from './pages/services/OurServices';
 import Gallery from './pages/gallery/Gallery';
 import Contacts from './pages/contacts/Contacts';
+import Footer from './components/footer/Footer';
 
 function App() {
   const [landingPageData, setLandingPageData] = useState(null);
@@ -54,6 +55,8 @@ function App() {
               form={landingPageData.contacts.form}
               socialIcons={landingPageData.contacts.socialIcons}
               />
+
+              <Footer/>
           </>
         )
       }
