@@ -143,5 +143,121 @@
                 "url": "https://images.delfi.lt/media-api-image-cropper/v1/c0c5d330-7953-11ed-bbfd-e17f1d900260.jpg?noup&w=1200&h=711&fx=0.5&fy=0.25"
             }
         ]
+    },
+    "feedback": {
+        "title": "what our clients say",
+        "feedbacks": [
+            {
+                "id": 1,
+                "author": "John doe",
+                "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam sedasd commodo nibh ante facilisis bibendum dolor feugiat at.",
+                "url": "./public/feedbacks/01.jpg"
+            },
+            {
+                "id": 2,
+                "author": "John doe",
+                "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam sedasd commodo nibh ante facilisis bibendum dolor feugiat at.",
+                "url": "./public/feedbacks/02.jpg"
+            },
+            {
+                "id": 3,
+                "author": "John doe",
+                "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam sedasd commodo nibh ante facilisis bibendum dolor feugiat at.",
+                "url": "./public/feedbacks/03.jpg"
+            },
+            {
+                "id": 4,
+                "author": "John doe",
+                "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam sedasd commodo nibh ante facilisis bibendum dolor feugiat at.",
+                "url": "./public/feedbacks/04.jpg"
+            },
+            {
+                "id": 5,
+                "author": "John doe",
+                "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam sedasd commodo nibh ante facilisis bibendum dolor feugiat at.",
+                "url": "./public/feedbacks/05.jpg"
+            },
+            {
+                "id": 6,
+                "author": "John doe",
+                "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam sedasd commodo nibh ante facilisis bibendum dolor feugiat at.",
+                "url": "./public/feedbacks/06.jpg"
+            }
+        ]
+    },
+    "team": {
+        "title": "meet the team",
+        "description": "Lorem ipsum dolor sit amet placerat facilisis felis mi in tempus eleifend pellentesque natoque etiam.",
+        "members": [
+            {
+                "id": 1,
+                "name": "John doe",
+                "role": "director",
+                "url": "./public/team/01.jpg"
+            },
+            {
+                "id": 2,
+                "name": "John doe",
+                "role": "director",
+                "url": "./public/team/02.jpg"
+            },
+            {
+                "id": 3,
+                "name": "John doe",
+                "role": "director",
+                "url": "./public/team/03.jpg"
+            },
+            {
+                "id": 4,
+                "name": "John doe",
+                "role": "director",
+                "url": "./public/team/04.jpg"
+            }
+        ]
+    },
+    "contacts": {
+        "title": "Get In Touch",
+        "description": "Please fill out the form below to send us an email and we will get back to you as soon as possible",
+        "contactInfoTitle": "Contact info", 
+        "contactInfoItems": [
+            {
+                "icon": "add icon",
+                "property": "Address",
+                "value": "4321 California St, San Francisco, CA 12345"
+            },
+            {
+                "icon": "add icon",
+                "property": "Phone",
+                "value": "+1 123 456 1234"
+            },
+            {
+                "icon": "add icon",
+                "property": "Email",
+                "value": "info@email.com"
+            }
+        ],
+        "form": [
+            {
+                "type": "input",
+                "text": "Name"
+            },
+            {
+                "type": "input",
+                "text": "Email"
+            },
+            {
+                "type": "textarea",
+                "text": "Message"
+            },
+            {
+                "type": "button",
+                "text": "send message"
+            }
+        ],
+        "socialIcons": [
+            "add social icon",
+            "add social icon",
+            "add social icon"
+        ]
     }
 }

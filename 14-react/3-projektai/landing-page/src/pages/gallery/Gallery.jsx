@@ -23,7 +23,7 @@ const Gallery = ({title, description, images}) => {
             </Container>
     
         </div>
-    )
+)
 }
 
 export default Gallery;
