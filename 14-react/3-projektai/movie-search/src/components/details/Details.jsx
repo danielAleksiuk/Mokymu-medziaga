@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-
+import {  Button, Modal } from "react-bootstrap";
 const API_URL = 'https://www.omdbapi.com'
 const API_KEY = 'apikey=a2526df0';
 
@@ -14,7 +14,7 @@ const Details = ({id, handleClose}) => {
 
             fetch(url)
                 .then(response => response.json())
-                .then(data => console.log(data));
+                .then(data => setMovie(data));
         }
         
         getData();
@@ -24,8 +24,25 @@ const Details = ({id, handleClose}) => {
 
     return (
         <>
-            details
+            {
+                movie && (
+                    <Modal show={movie} onHide={handleClose}>
+                        <Modal.Header closeButton>
+                            <Modal.Title>{movie.Title}</Modal.Title>
+                        </Modal.Header>
+                        <Modal.Body>
+                            Woohoo, you are reading this text in a modal!
+                        </Modal.Body>
+                        <Modal.Footer>
+                            <Button variant="secondary" onClick={handleClose}>
+                                Close
+                            </Button>
+                        </Modal.Footer>
+                    </Modal> 
+                )
+            }
         </>
+        
     )
 };
 
