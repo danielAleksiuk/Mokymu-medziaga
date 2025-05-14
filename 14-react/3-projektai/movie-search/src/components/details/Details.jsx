@@ -4,23 +4,30 @@ const API_URL = 'https://www.omdbapi.com'
 const API_KEY = 'apikey=a2526df0';
 
 
-const Details = ({id, handleClose}) => {
+const Details = ({id, handleClose, isLoading}) => {
     const [movie, setMovie] = useState();
 
 
     useEffect(() => {
         const getData = () => {
-            const url = `${API_URL}/?${API_KEY}&i=${id}`;
 
-            fetch(url)
-                .then(response => response.json())
-                .then(data => setMovie(data));
+            setTimeout(() => {
+                const url = `${API_URL}/?${API_KEY}&i=${id}`;
+
+                fetch(url)
+                    .then(response => response.json())
+                    .then(data => setMovie(data))
+                    .finally(() => isLoading(false))
+            }, 1000)
+            
         }
         
         getData();
 
 
     }, [id])
+
+    
 
     return (
         <>
