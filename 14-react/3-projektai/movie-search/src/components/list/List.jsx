@@ -1,10 +1,15 @@
 import { Container, Row, Col, Card, Button, Modal } from "react-bootstrap";
-import { useState } from "react";
+import {  useState } from "react";
+import Details from "../details/Details";
 
 const List = ({list}) => {
     const [show, setShow] = useState(false);
+    const [selectedId, setSelectedId] = useState();
     const handleClose = () => setShow(false);
-    const handleShow = () => setShow(true);
+    const handleShow = (id) => {
+        setSelectedId(id);
+        setShow(true);
+    }
 
     return (
         <Container style={{margin: '20px'}}>
@@ -19,7 +24,11 @@ const List = ({list}) => {
                                     <Card.Text>
                                         Type: {item.Type} / Year: {item.Year}
                                     </Card.Text>
-                                    <Button onClick={handleShow} style={{width: '100%'}} variant="primary">Open details</Button>
+                                    <Button 
+                                        onClick={() => handleShow(item.imdbID)} 
+                                        style={{width: '100%'}} variant="primary">
+                                            Open details
+                                    </Button>
                                 </Card.Body>
                             </Card>
                         </Col>
@@ -27,9 +36,11 @@ const List = ({list}) => {
                 }
             </Row>
 
+            { show && <Details id={selectedId} handleClose={handleClose}/> }
+
             
             {/* modal lango pvz */}
-                <Modal show={show} onHide={handleClose}>
+                {/* <Modal show={show} onHide={handleClose}>
                     <Modal.Header closeButton>
                     <Modal.Title>mano pirmas modal window</Modal.Title>
                     </Modal.Header>
@@ -39,7 +50,7 @@ const List = ({list}) => {
                         Close
                     </Button>
                     </Modal.Footer>
-                </Modal>
+                </Modal> */}
         </Container>
     )
 };
