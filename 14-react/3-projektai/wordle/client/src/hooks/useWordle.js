@@ -8,25 +8,122 @@ const useWordle = (solution) => {
     const [isCorrect, setIsCorrect] = useState(false);
 
     const formatGuess = () => {
-        const solutionArray = [...solution];
+        // let solutionArray = [...solution];
 
         // foreach -> map
-        const formattedGuess = [...currentGuess]
-            .map((letter) => {
-                return {key:letter, color: 'grey'}
-            });
+    //     const formattedGuess = [...currentGuess]
+    //         .map((letter, index) => {
+    //             return {key:letter, color: 'grey'}
+    //         });
         
         
-        formattedGuess.forEach((letter, index) => {
-            if (solutionArray[index] === letter.key) {
-                formattedGuess[index].color = 'green';
-                solutionArray[index] = null;
-            }
+    //     formattedGuess.forEach((letter, index) => {
+    //         if (solutionArray[index] === letter.key) {
+    //             formattedGuess[index].color = 'green';
+    //             solutionArray[index] = null;
+    //         }
 
-            if (solutionArray.includes(letter.key) && letter.color !== 'green') {
-                formattedGuess[index].color = 'yellow';
-                solutionArray[solutionArray.indexOf(letter.key)] = null;
+    //         if (solutionArray.includes(letter.key) && letter.color !== 'green') {
+    //             formattedGuess[index].color = 'yellow';
+    //             solutionArray[solutionArray.indexOf(letter.key)] = null;
+    //         }
+    //     });
+
+    //     solutionArray = [...solution]
+
+    //     const newFormattedGuessViktorija =  [...currentGuess].map((letter, index) => {
+    //         const letterObj = { key: letter, color: 'grey' };
+            
+    //         if (solutionArray[index] === letter) {
+    //             solutionArray[index] = null;
+    //             letterObj.color = 'green';
+    //         } else if (solutionArray.includes(letter)) {
+    //             solutionArray[solutionArray.indexOf(letter)] = null;
+    //             letterObj.color = 'yellow';
+    //         } else {
+    //             letterObj.color = 'grey';
+    //         }
+
+    //         return letterObj;
+    //     });
+
+
+
+
+    //    solutionArray = [...solution]
+    //     const formattedGuessEdgaras1 = [...currentGuess].map((letter, index) => ({
+    //         key: letter,
+    //         color: 
+    //             solutionArray[index] === letter
+    //             ? (solutionArray[index] = null, 'green')
+    //             : solutionArray.includes(letter)
+    //                 ? (solutionArray[solutionArray.indexOf(letter)] = null, 'yellow')
+    //                 : 'grey'
+    //         }));
+
+
+    //            solutionArray = [...solution]
+    //     const formattedGuessEdgaras2 = [...currentGuess].map((letter, index) => {
+    //         const formattedLetter = { key: letter, color: 'grey' };
+            
+    //         if (solutionArray[index] === letter) {
+    //             formattedLetter.color = 'green';
+    //             solutionArray[index] = null;
+    //         } else if (solutionArray.includes(letter)) {
+    //             formattedLetter.color = 'yellow';
+    //             solutionArray[solutionArray.indexOf(letter)] = null;
+    //         }
+            
+    //         return formattedLetter;
+    //         });
+
+
+
+    //          solutionArray = [...solution]
+    //         const formattedGuess3 = [...currentGuess].map((letter, index) => {
+    //             const isExactMatch = solutionArray[index] === letter;
+    //             const isPartialMatch = !isExactMatch && solutionArray.includes(letter);
+
+    //             return {
+    //                 key: letter,
+    //                 color: isExactMatch ? 'green' : isPartialMatch ? 'yellow' : 'grey'
+    //             };
+    //             });
+
+        
+    //     let solutionCopy = [...solution];
+    //     const formattedGuessRimas = [...currentGuess].map((letter, index) => {
+    //         let color = 'grey';
+    //         if (solutionCopy[index] === letter) {
+    //             color = 'green';
+    //             solutionCopy[index] = null;
+    //         } else if (solutionCopy.includes(letter)) {
+    //             color = 'yellow';
+    //             solutionCopy[solutionCopy.indexOf(letter)] = null;
+    //         }
+    //         return { key: letter, color };
+    //     });
+    
+
+    //     console.log('++++++++++++++++++++++');
+    //     console.log(formattedGuess);
+    //     console.log(newFormattedGuessViktorija);
+    //     console.log(formattedGuessEdgaras1);
+    //     console.log(formattedGuessEdgaras2);
+    //     console.log(formattedGuess3);
+    //     console.log(formattedGuessRimas)
+    //     console.log('++++++++++++++++++++++');
+        let solutionCopy = [...solution];
+        const formattedGuess = [...currentGuess].map((letter, index) => {
+            let color = 'grey';
+            if (solutionCopy[index] === letter) {
+                color = 'green';
+                solutionCopy[index] = null;
+            } else if (solutionCopy.includes(letter)) {
+                color = 'yellow';
+                solutionCopy[solutionCopy.indexOf(letter)] = null;
             }
+            return { key: letter, color };
         });
 
         return formattedGuess;
