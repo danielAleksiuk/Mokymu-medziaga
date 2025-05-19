@@ -4,9 +4,12 @@ const Grid = ({currentGuess, guesses, turn}) => {
     return (
         <>
             {
-                guesses.map((guess, index) => {
-                    return <Row key={index} guess={guess}/>
-                })
+                guesses.map((guess, index) => (
+                    <>
+                        {turn === index && <Row key={index} currentGuess={currentGuess}/>}
+                        {turn !== index && <Row key={index} guess={guess}/>}
+                    </>
+                ))
             }
         </>
     )
