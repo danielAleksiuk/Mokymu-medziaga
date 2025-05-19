@@ -1,3 +1,7 @@
+body {
+  text-align: center;
+}
+
 .row {
   text-align: center;
   display: flex;
@@ -97,4 +101,37 @@
 
 .row.current > div.filled {
   animation: bounce 0.2s ease-in-out forwards;
+}
+
+.keypad {
+  max-width: 500px;
+  margin: 20px auto;
+}
+
+.keypad > div {
+  margin: 5px;
+  width: 40px;
+  height: 50px;
+  text-transform: uppercase;
+  background-color: #eee;
+  display: inline-block;
+  border-radius: 6px;
+  line-height: 50px;
+}
+
+.keypad > div.green {
+  background-color: green;
+}
+
+.keypad > div.grey {
+  background-color: grey;
+}
+
+.keypad > div.yellow {
+  background-color: yellow;
+}
+
+.keypad > div.green, .keypad > div.grey, .keypad > div.yellow {
+  transition: all 0.3s ease-in;
+  color: #fff;
 }

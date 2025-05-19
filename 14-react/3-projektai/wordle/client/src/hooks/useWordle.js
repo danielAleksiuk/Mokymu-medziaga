@@ -6,28 +6,29 @@ const useWordle = (solution) => {
     const [guesses, setGuesses] = useState([...Array(6)]);
     const [history, setHistory] = useState('');
     const [isCorrect, setIsCorrect] = useState(false);
+    const [usedKeys, setUsedKeys] = useState({});
 
     const formatGuess = () => {
         // let solutionArray = [...solution];
 
-        // foreach -> map
-    //     const formattedGuess = [...currentGuess]
-    //         .map((letter, index) => {
-    //             return {key:letter, color: 'grey'}
-    //         });
+        // // foreach -> map
+        // const formattedGuess = [...currentGuess]
+        //     .map((letter, index) => {
+        //         return {key:letter, color: 'grey'}
+        //     });
         
         
-    //     formattedGuess.forEach((letter, index) => {
-    //         if (solutionArray[index] === letter.key) {
-    //             formattedGuess[index].color = 'green';
-    //             solutionArray[index] = null;
-    //         }
+        // formattedGuess.forEach((letter, index) => {
+        //     if (solutionArray[index] === letter.key) {
+        //         formattedGuess[index].color = 'green';
+        //         solutionArray[index] = null;
+        //     }
 
-    //         if (solutionArray.includes(letter.key) && letter.color !== 'green') {
-    //             formattedGuess[index].color = 'yellow';
-    //             solutionArray[solutionArray.indexOf(letter.key)] = null;
-    //         }
-    //     });
+        //     if (solutionArray.includes(letter.key) && letter.color !== 'green') {
+        //         formattedGuess[index].color = 'yellow';
+        //         solutionArray[solutionArray.indexOf(letter.key)] = null;
+        //     }
+        // });
 
     //     solutionArray = [...solution]
 
@@ -144,6 +145,11 @@ const useWordle = (solution) => {
         setHistory((prev) => [...prev, currentGuess]);
         setTurn((prev) => prev + 1);
         setCurrentGuess('');
+        setUsedKeys((prev) => {
+            let newKeys = {...prev};
+            console.log(newKeys)
+            return newKeys;
+        })
     }
 
     const handleKeyup = ({key}) => {
@@ -176,7 +182,7 @@ const useWordle = (solution) => {
     }
 
 
-    return ({turn, currentGuess, guesses, isCorrect, handleKeyup})
+    return ({turn, currentGuess, guesses, isCorrect, usedKeys, handleKeyup})
 };
 
 export default useWordle;
