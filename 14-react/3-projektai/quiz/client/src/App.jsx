@@ -5,7 +5,7 @@ import { useState } from 'react';
 function App() {
   const [questions, setQuestions] = useState([]);
 
-gauti duomenis, kada komponentas yra uzkrautas - duomenis is db.json
+// gauti duomenis, kada komponentas yra uzkrautas - duomenis is db.json
 
   return (
     <>
