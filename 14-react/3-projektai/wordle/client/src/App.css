@@ -135,3 +135,11 @@ body {
   transition: all 0.3s ease-in;
   color: #fff;
 }
+
+.won-title {
+  color: green;
+}
+
+.lost-title {
+  color: red;
+}

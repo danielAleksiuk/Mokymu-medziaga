@@ -147,7 +147,11 @@ const useWordle = (solution) => {
         setCurrentGuess('');
         setUsedKeys((prev) => {
             let newKeys = {...prev};
-            console.log(newKeys)
+
+            formattedGuess.forEach((letter) => {
+                newKeys[letter.key] = letter.color;
+            })
+            
             return newKeys;
         })
     }

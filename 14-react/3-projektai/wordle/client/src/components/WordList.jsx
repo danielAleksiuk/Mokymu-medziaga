@@ -17,7 +17,7 @@ const WordList = () => {
     }, [setSolution]);
 
 
-    return (
+return (
         <div className="solution">
             {solution && <h2>{solution}</h2>}
             
@@ -26,4 +26,4 @@ const WordList = () => {
     );
 }
 
-export default WordList;
+export default WordList

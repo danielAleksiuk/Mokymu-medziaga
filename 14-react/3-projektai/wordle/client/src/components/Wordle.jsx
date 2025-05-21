@@ -9,19 +9,24 @@ const Wordle = ({solution}) => {
     useEffect(() => {
         window.addEventListener('keyup', handleKeyup);
 
+        if (isCorrect || turn > 5) {
+            window.removeEventListener('keyup', handleKeyup);
+        }
+
         return () => window.removeEventListener(
             'keyup',
             handleKeyup
         );
-    }, [handleKeyup]);
+    }, [handleKeyup, isCorrect, turn]);
 
-    useEffect(() => {
-        console.log(guesses, turn, isCorrect);
-    }, [guesses, turn, isCorrect])
+ 
 
     return (
-        <>
-            <h3> current guess --- {currentGuess} </h3>
+        <>  
+            { isCorrect && <h3 className="won-title">you won</h3> }
+            { turn > 5 && <h3 className="lost-title">you lost</h3>}
+            { (isCorrect || turn > 5) && <button>start new game</button>}
+            { !isCorrect && turn <= 5 && <h3> current guess --- {currentGuess} </h3>}
             <Grid 
                 currentGuess={currentGuess} 
                 guesses={guesses} 
