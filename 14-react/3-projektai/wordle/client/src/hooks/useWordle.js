@@ -185,8 +185,17 @@ const useWordle = (solution) => {
         }
     }
 
+    const resetGame = () => {
+        setTurn(0);
+        setCurrentGuess('');
+        setGuesses([...Array(6)]);
+        setHistory('');
+        setIsCorrect(false);
+        setUsedKeys({});
+    }
 
-    return ({turn, currentGuess, guesses, isCorrect, usedKeys, handleKeyup})
+
+    return ({ turn, currentGuess, guesses, isCorrect, usedKeys, handleKeyup, resetGame})
 };
 
 export default useWordle;
