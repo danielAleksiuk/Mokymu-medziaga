@@ -14,7 +14,7 @@ function App() {
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [score, setScore] = useState(0);
   const [timer, setTimer] = useState(QUESTION_TIME);
-
+const [quizEnd, setQuizEnd] = useState(false);
 
   useEffect( () => {
       getData('/questions')
@@ -31,6 +31,7 @@ function App() {
             
             if (currentQuestion === questions.length - 1 ) {
               setQuizStarted(false);
+              setQuizEnd(true);
             } else {
               setCurrentQuestion(prev => prev + 1);
             }
@@ -46,6 +47,7 @@ function App() {
     setCurrentQuestion(0);
     setScore(0);
     setQuizStarted(true);
+    setQuizEnd(false);
   }
 
   const handleAnswerQuestion = (answerId) => {  
@@ -57,7 +59,7 @@ function App() {
   const handleNextQuestion = () => {
     if (currentQuestion === questions.length - 1 ) {
       setQuizStarted(false);
-     
+      setQuizEnd(true);
       return;
     }
 
@@ -69,16 +71,16 @@ function App() {
       <h1>Vilnius coding school</h1>
       <h3>Quiz app</h3>
       <p>Start test</p>
-      { !quizStarted && <Button onClick={onStartButtonClick}>Start</Button>}
+      { (!quizStarted && !quizEnd)  && <Button onClick={onStartButtonClick}>Start</Button>}
       { quizStarted && <QuestionList
         timer={timer}
         questions={questions}
         current={currentQuestion}
         handleAnswerQuestion={handleAnswerQuestion}
         handleNextQuestion={handleNextQuestion} />}
-      <Score
+      { quizEnd && <Score
         score={score}
-        restartButtonClick={onStartButtonClick}/>
+        restartButtonClick={onStartButtonClick}/>}
     </Container>
   )
 }

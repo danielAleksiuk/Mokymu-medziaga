@@ -11,7 +11,3 @@ const Score = ({score, restartButtonClick}) => {
 }
 
 export default Score;
-
-
-1 stilizuoti score
-2 kada rodyti score 
