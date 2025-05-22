@@ -1,21 +1,25 @@
 import { useState } from "react";
 import { Button, Col, Container, Row } from "react-bootstrap";
 
-const QuestionList = ({ questions, current, handleAnswerQuestion,handleNextQuestion }) => {
+const QuestionList = ({ timer, questions, current, handleAnswerQuestion,handleNextQuestion }) => {
     const [selectedOption, setSelectedOption] = useState(null);
     const optionsIds = ['a', 'b', 'c', 'd'];
     
-    const handleOptionClick = (option) => {
-
+    const handleOptionClick = (optionId) => {
+        setSelectedOption(optionId);
+        handleAnswerQuestion(optionId);
     };
     
     return (
         <Container>
-            <p>time remaining</p>
+            <p>time remaining: {timer} sek</p>
             <h3>{questions[current].question}</h3>
             <div className="list-group">
                 { questions[current].options.map((option, index) => (
-                    <Button key={index}>
+                    <Button 
+                        key={index} 
+                        className={selectedOption === option.id ? 'active' : ''}
+                        onClick={() => handleOptionClick(option.id)}> 
                         {option.value}
                     </Button>
                  ))}
