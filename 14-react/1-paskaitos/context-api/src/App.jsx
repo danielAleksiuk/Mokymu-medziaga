@@ -4,6 +4,7 @@ import ThemeToggle from "./components/ThemeToggle"
 import AuthContextProvider from "./contexts/AuthContextProvider"
 import BookContextProvider from "./contexts/BookContextProvider"
 import ThemeContextProvider from "./contexts/ThemeContextProvider"
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
 

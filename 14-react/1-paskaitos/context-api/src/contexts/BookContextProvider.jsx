@@ -1,15 +1,21 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { createContext } from "react";
 import { v4 as uuidv4 } from 'uuid';
 
 export const BookContext = createContext();
 
+const BOOKS_KEY = 'books'
+
 const BookContextProvider = (props) => {
-    const [state ,  setState] = useState([
-        {title: 'atomic', author: 'james', id: 1},
-        {title: 'principles', author: 'ray', id: 2},
-        {title: 'boy', author: 'charlie', id: 3}
-    ]);
+    const [state ,  setState] = useState(() => {
+        const localStorageData = localStorage.getItem(BOOKS_KEY);
+
+        return localStorageData ? JSON.parse(localStorageData) : [];
+    });
+
+    useEffect(() => {
+       localStorage.setItem(BOOKS_KEY, JSON.stringify(state));
+    }, [state])
 
     const addBook = (title, author) => {
         setState( prev => [
@@ -23,7 +29,7 @@ const BookContextProvider = (props) => {
     }
 
     return (
-        <BookContext.Provider value={{ books: state, addBook, removeBook }}>
+        <BookContext.Provider value={{ books: state, addBook, removeBook, setBooks: setState }}>
             {props.children}
         </BookContext.Provider>
     )
