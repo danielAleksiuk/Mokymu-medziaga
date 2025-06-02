@@ -1,20 +1,26 @@
 
-import { useState } from 'react'
-import './App.css'
+// import { useState } from 'react'
+import './App.css';
+import { useDispatch, useSelector } from 'react-redux';
 
 function App() {
-  let [count, setCount] = useState(0);
+  const count = useSelector(state => state.count)
+  const dispatch = useDispatch();
+  // let [count, setCount] = useState(0);
 
   const increment = () => {
-    setCount(prevState => prevState + 1);
+    dispatch({type: 'INCREMENT'});
+    // setCount(prevState => prevState + 1);
   }
 
   const decrement = () => {
-    setCount(prevState => prevState - 1);
+    dispatch({type: 'DECREMENT'})
+    // setCount(prevState => prevState - 1);
   }
 
   const reset = () => {
-    setCount(0);
+    dispatch({type: 'RESET'})
+    // setCount(0);
   }
 
   return (

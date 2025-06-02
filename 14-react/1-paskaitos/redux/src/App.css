@@ -1,0 +1,37 @@
+.counter {
+  text-align: center;
+  margin-top: 200px;
+}
+
+input {
+  padding: 0;
+  font-size: 48px;
+  text-align: center;
+  font-weight: bold;
+}
+
+input:disabled {
+  border: none;
+  background-color:darkgray;
+}
+
+.btn {
+  padding: 15px 40px;
+  font-size: 36px;
+  font-weight: bold;
+  cursor: pointer;
+  color:white;
+}
+
+.incBtn {
+  background-color: lightgreen;
+}
+
+.decBtn {
+  background-color: lightcoral;
+}
+
+.resetBtn {
+  background-color: darkslategray;
+  margin-top: 10px;
+}
