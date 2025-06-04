@@ -1,7 +1,9 @@
-import { ADD_TODO, TOGGLE_TODO } from "../actions/actionTypes";
+
+import { ADD_TODO, SET_FILTER, TOGGLE_TODO } from "../actions/actionTypes";
 
 const initialState = {
-    todos: []
+    todos: [],
+    filterValue: 'all'
 };
 
 export const todoReducer = (state = initialState, action) => {
@@ -16,8 +18,27 @@ export const todoReducer = (state = initialState, action) => {
             }
         }
         case TOGGLE_TODO: {
-              return state;
+            const {id} = action.payload;
+
+              return {
+                ...state,
+                todos: state.todos.map(todo => {
+                    if (todo.id === id) {
+                        return {
+                            ...todo,
+                            completed: !todo.completed
+                        }
+                    }
+
+                    return todo;
+                }) 
+              }
         }
+        case SET_FILTER: 
+            return {
+                ...state, 
+                filterValue: action.payload.filter
+            }
         default: 
             return state;
     }

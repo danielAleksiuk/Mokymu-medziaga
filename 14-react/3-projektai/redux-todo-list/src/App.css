@@ -5,6 +5,7 @@
 
 .todo-list li{
     text-decoration: underline;
+    margin: 5px;
 }
 
 .filters span {

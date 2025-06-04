@@ -1,14 +1,18 @@
 import { useState } from "react";
 import { useDispatch } from 'react-redux';
 import { addTodo } from "../actions/actions";
+import { v4 as uuidv4 } from 'uuid';
 
 const AddTodo = () => {
     const [newTodo, setTodo] = useState('');
     const dispatch = useDispatch()
 
     const onAddTodoButtonClick = () => {
-        console.log(newTodo);
-        dispatch(addTodo({id: 123, name: newTodo, completed: false}))
+        dispatch(addTodo({
+            id: uuidv4(),
+            name: newTodo,
+            completed: false
+        }));
     }
 
     return (
