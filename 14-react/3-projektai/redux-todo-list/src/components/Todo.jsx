@@ -1,7 +1,15 @@
-const Todo = () => {
+const Todo = ({todo}) => {
     return (
         <>
-            list
+            {todo && (
+                <>
+                    <input 
+                        type="checkbox" 
+                        checked={todo.completed} 
+                        disabled/>
+                    {todo.name}
+                </>
+            )}
         </>
     )
 };

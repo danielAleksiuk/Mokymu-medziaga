@@ -1,8 +1,26 @@
+import { useState } from "react";
+
 const AddTodo = () => {
+    const [newTodo, setTodo] = useState('');
+
+    const onAddTodoButtonClick = () => {
+        console.log(newTodo)
+    }
+
     return (
-        <>
-            add
-        </>
+        <div className="add-todo-task">
+            <input  
+                type="text"
+                value={newTodo}
+                onChange={e => setTodo(e.target.value)}
+            />
+            <button 
+                className="add-todo-button"
+                onClick={onAddTodoButtonClick}
+                >
+                Add todo
+            </button>
+        </div>
     )
 };
 
