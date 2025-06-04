@@ -1,6 +1,8 @@
+import { useSelector } from "react-redux";
 import Todo from "./Todo";
 
 const TodoList = () => {
+    const stateValue = useSelector(state => state);
     const todos = [
         { id: 1, name: 'do something', completed: true},
         { id: 2, name: 'do something more', completed: true},
@@ -9,6 +11,10 @@ const TodoList = () => {
         { id: 5, name: 'do or not to do', completed: true}
     ];
 
+    const printState = () => {
+        console.log(stateValue);
+    }
+
     return (
         <ul className="todo-list">
             {todos.map(todo => (
@@ -16,6 +22,9 @@ const TodoList = () => {
                     <Todo todo={todo}/>
                 </li>
             ))}
+            <li>
+                <button onClick={printState}>print state</button>
+            </li>
         </ul>
     )
 };

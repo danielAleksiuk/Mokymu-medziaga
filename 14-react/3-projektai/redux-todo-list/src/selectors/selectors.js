@@ -1,0 +1,1 @@
+export const getTodoList = (storeState) => storeState.todos;

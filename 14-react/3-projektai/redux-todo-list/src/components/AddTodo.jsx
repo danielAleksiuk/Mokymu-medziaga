@@ -1,10 +1,14 @@
 import { useState } from "react";
+import { useDispatch } from 'react-redux';
+import { addTodo } from "../actions/actions";
 
 const AddTodo = () => {
     const [newTodo, setTodo] = useState('');
+    const dispatch = useDispatch()
 
     const onAddTodoButtonClick = () => {
-        console.log(newTodo)
+        console.log(newTodo);
+        dispatch(addTodo({id: 123, name: newTodo, completed: false}))
     }
 
     return (
