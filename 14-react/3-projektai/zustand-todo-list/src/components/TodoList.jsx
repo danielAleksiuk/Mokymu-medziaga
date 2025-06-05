@@ -3,26 +3,28 @@ import { useTodoStore } from "../store/store";
 import Todo from "./Todo";
 
 const TodoList = () => {
-    const { todos } = useTodoStore();
-    
+    const { todos, filter } = useTodoStore();
+    const filteredTodos = todos.filter(todo => {
+        if (filter === 'all') {
+            return todo;
+        }
 
-    const printStore = () => {
-        console.log(todos);
-        // addTodo({name: 'pvz', completed: true, id: 456})
-    }
+        if (filter === 'completed' && todo.completed) {
+            return todo
+        };
+
+        if (filter === 'incompleted' && !todo.completed) {
+            return todo
+        };
+    })
 
     return (
         <ul className="todo-list">
-            {todos.map(todo => (
+            {filteredTodos.map(todo => (
                 <li key={todo.id}>
                     <Todo todo={todo}/>
                 </li>
             ))}
-            <li>
-                <button onClick={printStore}>
-                    show store0
-                </button>
-            </li>
         </ul>
     )
 };

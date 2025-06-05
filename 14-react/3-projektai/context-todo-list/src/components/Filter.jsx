@@ -1,23 +1,24 @@
-import { useTodoStore } from "../store/store";
+// import { useTodoStore } from "../store/store";
 
 const Filter = () => {
-    const { filter, setFilter } = useTodoStore();
+    // const { filter, setFilter } = useTodoStore();
+    const filter = 'all';
     
     return (
         <div className="filters">
             <span 
                 className={filter === 'all' ? 'active' : '' }
-                onClick={() => setFilter('all')}>
+                onClick={() => console.log('click filter')}>
                     All
             </span>
             <span 
                 className={filter === 'completed' ? 'active' : '' }
-                onClick={() => setFilter('completed')}
+                onClick={() => console.log('click filter')}
                 >
             Completed</span>
             <span 
                 className={filter === 'incompleted' ? 'active' : '' }
-                onClick={() => setFilter('incompleted')}>
+                onClick={() =>  console.log('click filter')}>
             Incomplete</span>
         </div>
     )
