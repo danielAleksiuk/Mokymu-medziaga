@@ -1,0 +1,18 @@
+.todo-app {
+    max-width: 350px;
+    margin: 100px auto;
+}
+
+.todo-list li{
+    text-decoration: underline;
+    margin: 5px;
+}
+
+.filters span {
+    margin: 5px;
+}
+
+.filters span.active {
+    font-weight: bold;
+     text-decoration: underline;
+}

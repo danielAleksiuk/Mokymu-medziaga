@@ -1,9 +1,8 @@
-import { useSelector } from "react-redux";
+
 import Todo from "./Todo";
-import { getTodosByFilterValue } from "../selectors/selectors";
 
 const TodoList = () => {
-    const todos = useSelector(state => getTodosByFilterValue(state, state.filterValue));
+    const todos = [];
 
 
     return (
