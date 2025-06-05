@@ -1,16 +1,18 @@
 import { useState } from "react";
 import { v4 as uuidv4 } from 'uuid';
+import { useTodoStore } from "../store/store";
 
 const AddTodo = () => {
     const [newTodo, setTodo] = useState('');
+    const { addTodo } = useTodoStore();
    
 
     const onAddTodoButtonClick = () => {
-    //  {
-    //         id: uuidv4(),
-    //         name: newTodo,
-    //         completed: false
-    //     };
+        addTodo({
+            id: uuidv4(),
+            name: newTodo,
+            completed: false
+        });
     }
 
     return (

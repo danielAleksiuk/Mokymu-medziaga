@@ -1,9 +1,15 @@
 
+import { useTodoStore } from "../store/store";
 import Todo from "./Todo";
 
 const TodoList = () => {
-    const todos = [];
+    const { todos } = useTodoStore();
+    
 
+    const printStore = () => {
+        console.log(todos);
+        // addTodo({name: 'pvz', completed: true, id: 456})
+    }
 
     return (
         <ul className="todo-list">
@@ -12,6 +18,11 @@ const TodoList = () => {
                     <Todo todo={todo}/>
                 </li>
             ))}
+            <li>
+                <button onClick={printStore}>
+                    show store0
+                </button>
+            </li>
         </ul>
     )
 };
