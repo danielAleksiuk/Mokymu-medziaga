@@ -4,12 +4,23 @@ import Todo from "./Todo";
 import { TodoContext } from "../context/TodoContextProvider";
 
 const TodoList = () => {
-    const contextObject = useContext(TodoContext);
-    const todos = [];
+    const {todos, filter} = useContext(TodoContext);
+    const filteredTodos = todos.filter(todo => {
+        if (filter === 'all') {
+            return todo;
+        }
 
+        if (filter === 'completed' && todo.completed) {
+            return todo
+        };
+
+        if (filter === 'incompleted' && !todo.completed) {
+            return todo
+        };
+    });
     return (
         <ul className="todo-list">
-            {todos.map(todo => (
+            {filteredTodos.map(todo => (
                 <li key={todo.id}>
                     <Todo todo={todo}/>
                 </li>

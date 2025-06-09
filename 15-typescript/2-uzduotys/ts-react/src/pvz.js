@@ -1,0 +1,1 @@
+export const url2 = '15min.lt';

@@ -1,9 +1,11 @@
-
+import { useContext } from "react";
+import { TodoContext } from "../context/TodoContextProvider";
 
 const Todo = ({todo}) => {
+   const {toggleTodo} = useContext(TodoContext);
 
     const onTodoClick = (id) => {
-
+        toggleTodo(id);
     }
 
     return (

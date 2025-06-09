@@ -1,0 +1,1 @@
+export const url: string = 'www.delfi.lt';
