@@ -1,0 +1,36 @@
+
+
+<%- include('./layout/header.ejs') %>
+<%- include('./layout/nav.ejs') %>
+    <div id="home-content">
+        <h1>EJS INDEX PAGE</h1>
+
+        <% const vardas = 'Tomas' %>
+        
+        <%= vardas %>
+        
+        <% for(let i = 0; i < 10; i++ ) { %>
+            <h3>welcome <%= vardas %></h3>
+        <% } %>
+
+        <% let laikas = 5 %>
+        <%= laikas %>
+        
+        <div id="timer"></div>
+
+        <script> 
+            let laikas = 5;
+
+            const timer = setInterval(() => {
+                if (laikas > 0) {
+                    document.getElementById('timer').innerHTML = `liko ${laikas} sekundziu`
+                    --laikas
+                } else if (laikas === 0) {
+                    document.getElementById('timer').innerHTML = `laikas baigesi`
+                    clearInterval(timer)
+                }
+            }, 1000);
+        </script>
+    </div>
+<%- include('./layout/footer.ejs') %>
+
