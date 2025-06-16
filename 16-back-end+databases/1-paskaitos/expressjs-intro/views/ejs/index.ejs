@@ -31,6 +31,18 @@
                 }
             }, 1000);
         </script>
+        <hr/>
+        <h1>duomenu perdavimo dalys</h1>
+        <% if(blogs.length > 0) { %>
+            <p>pamokos yra!</p>
+            <% blogs.forEach(blog => {%>
+                <h2><%= blog.title%></h2>
+                <p><%= blog.santrauka%></p>
+            <% }) %>
+        <% } else { %>
+            <p>pamoku sarase nera</p>
+        <% } %>
+    <hr/>
     </div>
 <%- include('./layout/footer.ejs') %>
 

@@ -34,10 +34,24 @@ app.use(express.static(__dirname));
 app.use(express.urlencoded({extended: true}))
 
 app.get('/', (req, res) => {
-    res.render('./ejs/index')
+    const blogs = [
+        {title: 'node.js pamoka', santrauka: 'lorem lorem'},
+        {title: 'express.js pamoka', santrauka: 'lorem lorem'},
+        {title: 'mongo db pamoka', santrauka: 'lorem lorem'}
+    ]
+
+    res.render('./ejs/index', {blogs});
 });
 
 
 app.get('/apie', (req, res) => {
-    res.render('./ejs/apie')
+    res.render('./ejs/apie', {manoInfo: 'mano info is serviso'});
 });
+
+app.get('/createBlog', (req, res) => {
+    res.render('./ejs/createBlog');
+});
+
+app.post('/create-blog', (req, res) => {
+    console.log(req);
+})
