@@ -3,6 +3,25 @@
 <%- include('./layout/nav.ejs') %>
     <div id="create-blog-content">
         <h2>naujos pamokos pridejimas</h2>
+        <form>
+            <label for="title">Pavadinimas</label>
+            <input type="text" id="title" name="title"/>
+            <br>
+            <label for="santrauka">Santrauka</label>
+            <input type="text" id="santrauka" name="santrauka">
+            <br>
+            <button type="submit">kurti pamoka</button>
+        </form>
+        <hr/>
+        <form method="POST">
+            <label for="title">Pavadinimas</label>
+            <input type="text" id="title" name="title"/>
+            <br>
+            <label for="santrauka">Santrauka</label>
+            <input type="text" id="santrauka" name="santrauka">
+            <br>
+            <button type="submit">kurti pamoka</button>
+        </form>
     </div>
 <%- include('./layout/footer.ejs') %>
 
