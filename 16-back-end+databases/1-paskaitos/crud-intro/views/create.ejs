@@ -3,7 +3,21 @@
 <div id="receptu-list">
     <h2>create</h2>
 
-    
+          <form action="/receptai/create" method="POST">
+            <label for="title">Pavadinimas</label>
+            <input type="text" id="title" name="title"/>
+            <br>
+            <label for="description">Santrauka</label>
+            <input type="text" id="description" name="description">
+            <br>
+            <label for="price">kaina</label>
+            <input type="number" id="price" name="price">
+            <br>
+            <label for="level">lygis</label>
+            <input type="number" id="level" name="level">
+            <br>
+            <button type="submit">kurti recepta</button>
+        </form>
 
 </div>
 <%- include('./layout/footer.ejs') %>

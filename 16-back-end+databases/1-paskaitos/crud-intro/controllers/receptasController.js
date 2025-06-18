@@ -19,7 +19,7 @@ const receptas_create_post = (req, res) => {
     const newReceptas = new Receptas(req.body);
 
     newReceptas.save()
-        .then(() => res.json('/receptai/list'))
+        .then(() => res.redirect('/receptai/list'))
         .catch((e) => console.log(e));
 }
 
