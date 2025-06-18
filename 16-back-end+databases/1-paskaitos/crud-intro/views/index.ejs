@@ -2,5 +2,35 @@
 <%- include('./layout/nav.ejs') %>
 <div id="receptu-list">
     <h2>receptu sarasiukas</h2>
+    <h3>siuo metu yra: <%= receptai.length %> rece[tu</h3>
+      <table border="1">
+            <tr><th>title</th><th>description</th><th>level</th><th>price</th><th>actions</th></tr>
+            <% receptai.forEach(item => {  %>
+                <tr>
+                    <td><%= item.title %></td>
+                    <td><%= item.description %></td>
+                    <td><%= item.level %></td>
+                    <td><%= item.price %></td>
+                    <td>
+                        <button>edit</button>
+                           <button onclick="onDeleteClick('<%= item._id %>')">delete</button>
+                    </td>
+                </tr>
+            <% }) %>
+        </table>
 </div>
 <%- include('./layout/footer.ejs') %>
+
+
+<script>
+    function onDeleteClick (id) {
+        const endpoint = `/receptai/list/${id}`;
+
+        fetch(endpoint, {method: 'DELETE'})
+            .then(response => response.json())
+            .then(data => window.location.href = data)
+            .catch(error  => console.log(error));
+
+    }
+
+</script>
