@@ -1,17 +1,12 @@
 {
-  "name": "expressjs-intro",
+  "name": "crud-intro",
   "version": "1.0.0",
   "description": "",
   "license": "ISC",
-  "author": "daniel",
+  "author": "",
   "type": "commonjs",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "dependencies": {
-    "ejs": "^3.1.10",
-    "express": "^5.1.0",
-    "mongoose": "^8.15.2"
   }
 }

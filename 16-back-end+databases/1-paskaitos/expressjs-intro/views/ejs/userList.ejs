@@ -1,0 +1,22 @@
+
+
+<%- include('./layout/header.ejs') %>
+<%- include('./layout/nav.ejs') %>
+    <div id="user-list-content">
+        <h1>user listas</h1>
+        <h3>siuo metu yra: <%= users.length %> vartotoju</h3>
+
+        <table border="1">
+            <tr><th>id</th><th>name</th><th>email</th><th>psw</th></tr>
+            <% users.forEach(user => {  %>
+                <tr>
+                    <td><%= user._id %></td>
+                    <td><%= user.name %></td>
+                    <td><%= user.email %></td>
+                    <td><%= user.password %></td>
+                </tr>
+            <% }) %>
+        </table>
+    </div>
+<%- include('./layout/footer.ejs') %>
+
