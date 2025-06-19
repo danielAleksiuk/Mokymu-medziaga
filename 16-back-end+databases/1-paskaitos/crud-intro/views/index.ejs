@@ -12,8 +12,8 @@
                     <td><%= item.level %></td>
                     <td><%= item.price %></td>
                     <td>
-                        <button>edit</button>
-                           <button onclick="onDeleteClick('<%= item._id %>')">delete</button>
+                        <a href="/edit/<%= item._id %>"><button>edit</button></a>
+                        <button onclick="onDeleteClick('<%= item._id %>')">delete</button>
                     </td>
                 </tr>
             <% }) %>

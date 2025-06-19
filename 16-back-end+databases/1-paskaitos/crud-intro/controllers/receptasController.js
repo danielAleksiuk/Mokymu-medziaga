@@ -27,11 +27,22 @@ const receptas_create_get = (req, res) => {
     res.render('create');
 }
 
+const receptas_edit_get = (req, res) => {
+
+}
+
+const receptas_edit_put = (req, res) => {
+
+}
+
 module.exports = {
     receptas_list,
     receptas_delete,
     receptas_create_post,
-    receptas_create_get
+    receptas_create_get,
+    receptas_edit_get,
+    receptas_edit_put
+
 };
 
 
