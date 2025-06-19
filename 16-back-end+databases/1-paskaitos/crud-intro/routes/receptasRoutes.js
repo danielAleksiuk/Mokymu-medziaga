@@ -7,7 +7,7 @@ router.delete('/receptai/list/:id', receptasController.receptas_delete);
 router.post('/receptai/create', receptasController.receptas_create_post);
 router.get('/receptai/create', receptasController.receptas_create_get);
 
-router.get('/edit/:id', receptas_edit_get );
-router.put('/edit/:id', receptas_edit_put)
+router.get('/edit/:id', receptasController.receptas_edit_get );
+router.put('/edit/:id', receptasController.receptas_edit_put)
 
 module.exports = router;
