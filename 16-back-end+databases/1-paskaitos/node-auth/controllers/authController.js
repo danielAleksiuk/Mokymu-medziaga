@@ -1,4 +1,12 @@
 const User = require("../models/User");
+const jwt = require('jsonwebtoken');
+
+const maxAge = 3 * 24 * 60 * 60;
+const createToken = (id) => {
+    return jwt.sign({id}, 'slaptas dalykas', {
+        expiresIn: maxAge
+    })
+};
 
 const handleErrors = (error) => {
     let errors = { email: '', password: ''};
@@ -7,6 +15,14 @@ const handleErrors = (error) => {
         errors.email = 'email panaudotas, naudok kita';
 
         return errors;
+    }
+
+    if (error.message === 'incorrect email') {
+        errors.email = 'toks mailas nera registruotas';
+    }
+
+    if (error.message === 'incorrect password') {
+        errors.password = 'slaptazodis neteisingas';
     }
 
     if (error.message.includes('user validation failed')) {
@@ -34,20 +50,32 @@ const signupPost = async (req, res) => {
             email: email,
             password: psw
         });
-        res.json(user);
+        
+        const token = createToken(user._id);
+        res.cookie('jwt', token, {httpOnly: true, maxAge: maxAge * 1000});
+        res.json({user:user._id});
     } catch (e) {
-        console.log(e);
         const error = handleErrors(e)
         res.json({error});
     }
     // res.send('new signup');
 }
-
-const loginPost = (req, res) => {
-    console.log(req.body)
+// useris123
+const loginPost = async (req, res) => {
     const { email, psw } = req.body;
-    console.log(email, psw)
-    res.send('user login');
+    
+    try {
+        const user = await User.login(email, psw);
+
+        const token = createToken(user._id);
+        res.cookie('jwt', token, {httpOnly: true, maxAge: maxAge * 1000});
+        res.json({user:user._id});
+    } catch (e) {
+        console.log(e)
+        const error = handleErrors(e)
+        console.log(error);
+        res.json({error});
+    }
 }
 
 module.exports = {

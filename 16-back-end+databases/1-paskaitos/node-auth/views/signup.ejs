@@ -4,18 +4,23 @@
     <form>
         <label for="email"> email:</label>
         <input type="email" name="email" required/>
-        <div class="email error"></div>
+        <div class="email error" style="color:red"></div>
         <label for="password"> password:</label>
         <input type="password" name="password" required/>
-        <div class="password error"></div>
+        <div class="password error" style="color:red"></div>
         <button>sign up</button>
     </form>
 
     <script>
         const formHtml = document.querySelector('form');
+        const emailError = document.querySelector('.email.error');
+        const passwordError = document.querySelector('.password.error')
 
         formHtml.addEventListener('submit', async (e)=> {
             e.preventDefault();
+
+            emailError.textContent = '';
+            passwordError.textContent = '';
             const email = formHtml.email.value;
             const password = formHtml.password.value;
 
@@ -24,10 +29,22 @@
                     method: 'POST',
                     body: JSON.stringify({email, psw: password}),
                     headers: {'Content-Type': 'application/json'}
-                })
+                });
+                // console.log('try:', await res.json());
+                const data = await res.json();
+                
+                if (data.error) {
+                    emailError.textContent = data.error.email;
+                    passwordError.textContent = data.error.password;
+                }
+
+                if (data.user) {
+                    location.assign('/');
+                }
+
             }
             catch(error) {
-                console.log(error)
+                console.log('catch:' , error)
             }
         })
     </script>

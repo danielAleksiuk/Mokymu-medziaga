@@ -17,6 +17,21 @@ app.use(express.json());
 app.use(express.static('public'));
 app.set('view engine', 'ejs');
 
+const cookieParser = require('cookie-parser');
+app.use(cookieParser());
+
 
 app.get('/', (req, res) => res.render('home'));
 app.use(authRoutes);
+
+// app.get('/set-cookies', (req, res) => {
+//     res.cookie('newCookie', false);
+//     res.cookie('isStudent', true, {maxAge: 1000 * 60 * 60 * 24, secure: true})
+//     res.send('cookies yra issaugotos');
+// });
+
+// app.get('/red-cookies', (req, res) => {
+//     const cookies = req.cookies;
+
+//     res.json(cookies);
+// })
