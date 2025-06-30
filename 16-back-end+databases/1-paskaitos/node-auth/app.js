@@ -4,6 +4,7 @@ const app = express();
 
 const dbUrl = 'mongodb+srv://codingSchoolDaniel:GKLomYzKfAuQ9SUj@coding-school-cluster.ehftrvr.mongodb.net/node-auth';
 const authRoutes = require('./routes/authRoutes');
+const {requireAuth, checkUser} = require('./middleware/authMiddleware');
 
 mongoose.connect(dbUrl)
     .then(() => {
@@ -20,8 +21,9 @@ app.set('view engine', 'ejs');
 const cookieParser = require('cookie-parser');
 app.use(cookieParser());
 
-
-app.get('/', (req, res) => res.render('home'));
+app.get(/(.*)/, checkUser);
+app.get('/', requireAuth, (req, res) => res.render('home'));
+app.get('/randomListas', requireAuth, (req, res) => res.render('listas'));
 app.use(authRoutes);
 
 // app.get('/set-cookies', (req, res) => {
@@ -35,3 +37,4 @@ app.use(authRoutes);
 
 //     res.json(cookies);
 // })
+
