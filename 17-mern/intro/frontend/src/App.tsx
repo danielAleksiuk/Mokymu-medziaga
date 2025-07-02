@@ -1,35 +1,41 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import {BrowserRouter, Route, Routes} from 'react-router-dom'
+
 import './App.css'
+import Home from './pages/Home'
+import Navbar from './components/Navbar'
+import CreateTask from './pages/CreateTask'
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+    <div className='App'>
+      <BrowserRouter>
+        <Navbar/>
+        <div className='pages'>
+          <Routes>
+            <Route path='/' element={<Home/>}/>
+            <Route path='/newPratimas' element={<CreateTask/>}/>
+          </Routes>
+        </div>
+      </BrowserRouter>
+      
+    </div>
   )
 }
 
 export default App
+
+
+// 1. sukurti forma 
+//   title
+//   reps
+//   lygis
+
+// 2. paspaudus mygtuka save 
+//   siusti POST uzklausa 
+
+// 3. jei uzklausa yra sekminga 
+//   pereiti i home puslapi
+
+// 4. jei uzklausa nesekminga
+//   parodyti klaida - raudonomis raidemis
