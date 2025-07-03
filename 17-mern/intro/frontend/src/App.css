@@ -34,3 +34,26 @@ header a {
   padding: 20px;
   margin: 0 auto;
 }
+
+.tasksTable {
+  border: 1px solid black;
+}
+
+.tasksTable a {
+  cursor: pointer;
+}
+
+.taskCreateContainer form {
+  text-align: right;
+    width: 30%;
+}
+
+.errorMsg {
+  color:red;
+}
+
+.toastPosition {
+  top: 20px;
+  right: 20px;
+  position: fixed;
+}

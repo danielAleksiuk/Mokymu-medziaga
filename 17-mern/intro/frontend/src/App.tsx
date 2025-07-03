@@ -4,6 +4,7 @@ import './App.css'
 import Home from './pages/Home'
 import Navbar from './components/Navbar'
 import CreateTask from './pages/CreateTask'
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
 
@@ -25,17 +26,3 @@ function App() {
 
 export default App
 
-
-// 1. sukurti forma 
-//   title
-//   reps
-//   lygis
-
-// 2. paspaudus mygtuka save 
-//   siusti POST uzklausa 
-
-// 3. jei uzklausa yra sekminga 
-//   pereiti i home puslapi
-
-// 4. jei uzklausa nesekminga
-//   parodyti klaida - raudonomis raidemis
