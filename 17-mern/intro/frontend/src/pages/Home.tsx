@@ -1,4 +1,4 @@
-import { use, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import type { Task } from "../utils/types";
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
@@ -9,18 +9,19 @@ const Home = () => {
     const [pratimoDetails, setPratimoDetails] = useState<Task>();
 
     useEffect(() => {
-        const getPratimai = async () => {
-            const response = await fetch('http://localhost:4000/api/pratimai');
-            const json = await response.json();
-
-            if (response.ok) {
-                setPratimai(json);
-                console.log(json);
-            }
-        }
-
+       
         getPratimai();
     }, []);
+
+    const getPratimai = async () => {
+        const response = await fetch('http://localhost:4000/api/pratimai');
+        const json = await response.json();
+
+        if (response.ok) {
+            setPratimai(json);
+            console.log(json);
+        }
+    }
 
     const [show, setShow] = useState(false);
     const [showToast, setShowToast] = useState(false);
@@ -29,9 +30,6 @@ const Home = () => {
     const handleShow = () => setShow(true);
 
     const openDetails = async (id: string) => {
-
-        console.log(id);
-
         const response = await fetch('http://localhost:4000/api/pratimai/' + id );
         const pratimasDetails = await response.json();
 
@@ -47,15 +45,19 @@ const Home = () => {
         }
     }
 
+    const onDeleteTaskClick = async (id: string) => {
+        console.log(id);
+        const response = await fetch('http://localhost:4000/api/pratimai/' + id, {method: 'DELETE'} );
+        const responseDetails = await response.json();
+        console.log(responseDetails)
 
-    // 1. instaliuoti bootstrap
-    // 2. prideti modal Langa
-    // 3. ideti info ir mygtukus i modal langa
+        setShow(false);
+        getPratimai();
+    }
 
     return (
         <>
             <h1>Mano pratimai</h1>
-
             {   pratimai.length > 0 && (
                  <table className="tasksTable">
                     <thead>
@@ -106,7 +108,11 @@ const Home = () => {
 
                 </Modal.Body>
                 <Modal.Footer>
-                <Button variant="danger" onClick={handleClose}>
+
+                <Button variant="warning">
+                    Atnaujinti
+                </Button>        
+                <Button variant="danger" onClick={() => onDeleteTaskClick(pratimoDetails?._id)}>
                     Istrinti
                 </Button>
                 <Button variant="secondary" onClick={handleClose}>

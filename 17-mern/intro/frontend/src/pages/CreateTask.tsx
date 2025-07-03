@@ -1,6 +1,6 @@
 import { useRef, useState } from "react";
 import {  useNavigate } from "react-router-dom";
-
+import Toast from 'react-bootstrap/Toast';
 
 // 1. sukurti forma 
 //   title
@@ -23,6 +23,7 @@ const CreateTask = () => {
     const repsRef = useRef(null);
     const levelRef = useRef(null);
     const navigate = useNavigate();
+    const [showToast, setShowToast] = useState(false);
 
     const onCreateButtonClick = async () => {
         if (titleRef.current.value && repsRef.current.value && levelRef.current.value) {
@@ -42,31 +43,51 @@ const CreateTask = () => {
             }
             
             if (response.ok) {
+                setShowToast(true);
+                
                 navigate('/')
             }
         }
     };
 
     return (
-        <div className="taskCreateContainer">
-            {error && <h2 className="errorMsg">{error}</h2>}
-            <form>
-                <label htmlFor="title">Pavadinimas:</label>
-                <input ref={titleRef} type="text" name="title"/>
+        <>
+            <div className="taskCreateContainer">
+                {error && <h2 className="errorMsg">{error}</h2>}
+                <form>
+                    <label htmlFor="title">Pavadinimas:</label>
+                    <input ref={titleRef} type="text" name="title"/>
 
-                <br/>
+                    <br/>
 
-                <label htmlFor="reps">Pratimo pasikartojimai:</label>
-                <input ref={repsRef} type="number" name="reps" />
-                <br/>
+                    <label htmlFor="reps">Pratimo pasikartojimai:</label>
+                    <input ref={repsRef} type="number" name="reps" />
+                    <br/>
 
-                <label htmlFor="level">Lygis:</label>
-                <input ref={levelRef} type="number" name="level" />
-                <br/>
+                    <label htmlFor="level">Lygis:</label>
+                    <input ref={levelRef} type="number" name="level" />
+                    <br/>
 
-                <button type="button" onClick={onCreateButtonClick}>Sukurti nauja pratima</button>
-            </form>
-        </div>
+                    <button type="button" onClick={onCreateButtonClick}>Sukurti nauja pratima</button>
+                </form>
+            </div>
+                
+            <Toast 
+                className="toastPosition"
+                bg="success" onClose={() => setShowToast(false)}
+                show={showToast} 
+                delay={2000} 
+                autohide
+            >
+                <Toast.Header>
+                    Sekmingai ivykdyta operacija
+                </Toast.Header>
+                <Toast.Body>
+                    <strong>Pridejome nauja pratima</strong>
+                </Toast.Body>
+            </Toast>
+        </>
+     
     )
 }
 
