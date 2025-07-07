@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, type SyntheticEvent } from "react";
 import type { Task } from "../utils/types";
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
@@ -6,7 +6,8 @@ import Toast from 'react-bootstrap/Toast';
 
 const Home = () => {
     const [pratimai, setPratimai] = useState<Task[]>([]);
-    const [pratimoDetails, setPratimoDetails] = useState<Task>();
+    const [pratimoDetails, setPratimoDetails] = useState<any>();
+    const [editEnabled, setEditEnabled] = useState<boolean>(false);
 
     useEffect(() => {
        
@@ -26,7 +27,10 @@ const Home = () => {
     const [show, setShow] = useState(false);
     const [showToast, setShowToast] = useState(false);
     const [error, setError] = useState('');
-    const handleClose = () => setShow(false);
+    const handleClose = () => {  
+        setShow(false) 
+        setEditEnabled(false);
+    };
     const handleShow = () => setShow(true);
 
     const openDetails = async (id: string) => {
@@ -53,6 +57,17 @@ const Home = () => {
 
         setShow(false);
         getPratimai();
+    }
+
+    const onUpdateTaskClick = () => setEditEnabled(prev => !prev);
+
+    const onInputChangeEvent = (e: SyntheticEvent) => {
+        console.log(e);
+        console.log(pratimoDetails);
+    }
+
+    const updateTaskOnSaveButtonClick = () => {
+        console.log(pratimoDetails)
     }
 
     return (
@@ -99,25 +114,89 @@ const Home = () => {
 
             <Modal show={show} onHide={handleClose} centered>
                 <Modal.Header closeButton>
-                <Modal.Title>Pratimo detali informacija</Modal.Title>
+                <Modal.Title>  
+                    {   
+                        editEnabled 
+                            ? "Atnaujinti pratimo informacija" 
+                            : "Pratimo detali informacija"}
+                </Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
-                    <p>pavadinimas: {pratimoDetails?.title}</p>
-                    <p>pasikarotimai: {pratimoDetails?.reps}</p>
-                    <p>lygis: {pratimoDetails?.level}</p>
+                    { editEnabled && 
+                        <>
+                            <form style={{textAlign: "right"}}>
+                                <label htmlFor="title">Pavadinimas:</label>
+                                <input  
+                                    onChange={event => setPratimoDetails( {
+                                        level:  pratimoDetails.level,
+                                        title: event.target.value,
+                                        reps: pratimoDetails.reps,
+                                        _id: pratimoDetails._id
+                                    } ) } 
+                                    type="text" name="title" defaultValue={pratimoDetails?.title}/>
 
+                                <br/>
+
+                                <label htmlFor="reps">Pratimo pasikartojimai:</label>
+                                <input 
+                                    onChange={event => setPratimoDetails( {
+                                        level:  pratimoDetails.level,
+                                        title: pratimoDetails.title,
+                                        reps: parseInt(event.target.value),
+                                        _id: pratimoDetails._id
+                                    } ) } 
+                                    type="number" name="reps" defaultValue={pratimoDetails?.reps}/>
+                                <br/>
+
+                                <label htmlFor="level">Lygis:</label>
+                                <input 
+                                    onChange={event => setPratimoDetails( {
+                                        level: parseInt(event.target.value),
+                                        title: pratimoDetails.title,
+                                        reps: pratimoDetails.reps,
+                                        _id: pratimoDetails._id
+                                    } ) } 
+                                    type="number" name="level" defaultValue={pratimoDetails?.level}/>
+                                <br/>
+                            </form>
+                        </>
+                    }
+                    {
+                        !editEnabled && 
+                            <>
+                                <p>pavadinimas: {pratimoDetails?.title}</p>
+                                <p>pasikarotimai: {pratimoDetails?.reps}</p>
+                                <p>lygis: {pratimoDetails?.level}</p>
+                            </>
+                    }
                 </Modal.Body>
                 <Modal.Footer>
+                    {editEnabled && (
+                        <>
+                            <Button variant="success" onClick={updateTaskOnSaveButtonClick}>
+                                Issaugoti
+                            </Button>
+                            <Button variant="primary" onClick={() => setEditEnabled(false)}>
+                                Atsaukti
+                            </Button>
+                        </>
+                    )}
+                    {!editEnabled &&
+                        <>
+                            <Button variant="warning" onClick={() => onUpdateTaskClick()}>
+                                Atnaujinti
+                            </Button>        
+                            <Button variant="danger" onClick={() => onDeleteTaskClick(pratimoDetails?._id)}>
+                                Istrinti
+                            </Button>
+                          
+                        </>
+                    }
 
-                <Button variant="warning">
-                    Atnaujinti
-                </Button>        
-                <Button variant="danger" onClick={() => onDeleteTaskClick(pratimoDetails?._id)}>
-                    Istrinti
-                </Button>
-                <Button variant="secondary" onClick={handleClose}>
-                    Uzdaryti
-                </Button>
+                    <Button variant="secondary" onClick={handleClose}>
+                        Uzdaryti
+                    </Button>
+          
         
                 </Modal.Footer>
             </Modal>
