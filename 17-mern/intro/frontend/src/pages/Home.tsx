@@ -25,8 +25,16 @@ const Home = () => {
     }
 
     const [show, setShow] = useState(false);
-    const [showToast, setShowToast] = useState(false);
-    const [error, setError] = useState('');
+    // const [showToast, setShowToast] = useState(false);
+    // const [error, setError] = useState('');
+
+    const [toast, setToast] = useState({
+        body: '',
+        header: '',
+        type: 'success',
+        show: false
+    });
+
     const handleClose = () => {  
         setShow(false) 
         setEditEnabled(false);
@@ -38,8 +46,15 @@ const Home = () => {
         const pratimasDetails = await response.json();
 
         if (pratimasDetails.error) {
-            setError(pratimasDetails.error);
-            setShowToast(true);
+            // setError(pratimasDetails.error);
+            // setShowToast(true);
+            setToast({
+                body: pratimasDetails.error,
+                header: 'Ivyko klaida, bandant gauti pratimo informacija',
+                type: 'danger',
+                show: true
+            });
+
             return;
         }
 
@@ -66,8 +81,62 @@ const Home = () => {
         console.log(pratimoDetails);
     }
 
-    const updateTaskOnSaveButtonClick = () => {
+
+// 1. toast su statusu
+//     zalias sekmingas 
+//     raudonas ne
+// 2. jei uzklausa sekminga
+//     uzdarom modal window
+//     atnaujinam lista
+
+// 3. jei nesekminga toast su klaida 
+
+    const updateTaskOnSaveButtonClick = async () => {
         console.log(pratimoDetails)
+        const response = await fetch(
+            'http://localhost:4000/api/pratimai/' + pratimoDetails._id,
+            {method: 'PATCH', 
+                body: JSON.stringify({
+                    title: pratimoDetails.title,
+                    reps: pratimoDetails.reps,
+                    level: pratimoDetails.level
+                }),
+                headers: {'Content-Type': 'application/json'}
+            }
+        );
+        const responseDetails = await response.json();
+
+        console.log(responseDetails);
+
+        if (responseDetails.error) {
+            // setError(responseDetails.error);
+            // setShowToast(true);  
+
+            setToast({
+                body: responseDetails.error,
+                header: 'Ivyko klaida, bandant atnaujinti pratimo informacija',
+                type: 'danger',
+                show: true
+            });
+
+            return;
+        }
+
+        if (response.ok) {
+            
+            setToast({
+                body: 'atnaujinas ' + pratimoDetails.title + ' pratimas',
+                header: 'Sekmingai ivykdytas atnaujinimas',
+                type: 'success',
+                show: true
+            });
+
+            getPratimai();
+            setShow(false);
+            
+        }
+
+
     }
 
     return (
@@ -99,16 +168,21 @@ const Home = () => {
 
             <Toast 
                 className="toastPosition"
-                bg="danger" onClose={() => setShowToast(false)}
-                show={showToast} 
+                bg={toast.type} onClose={() => setToast( { 
+                    show: false,
+                    body: '',
+                    header: '',
+                    type: ''
+                 })}
+                show={toast.show}  
                 delay={2000} 
                 autohide
             >
                 <Toast.Header>
-                    Ivyko klaida, bandant gauti pratimo informacija
+                    {toast.header}
                 </Toast.Header>
                 <Toast.Body>
-                    <strong>{error}</strong>
+                    <strong>{toast.body}</strong>
                 </Toast.Body>
             </Toast>
 

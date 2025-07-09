@@ -56,4 +56,5 @@ header a {
   top: 20px;
   right: 20px;
   position: fixed;
+  z-index: 100000;
 }
