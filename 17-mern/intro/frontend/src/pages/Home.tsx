@@ -8,9 +8,15 @@ const Home = () => {
     const [pratimai, setPratimai] = useState<Task[]>([]);
     const [pratimoDetails, setPratimoDetails] = useState<any>();
     const [editEnabled, setEditEnabled] = useState<boolean>(false);
+    const [toast, setToast] = useState({
+        body: '',
+        header: '',
+        type: 'success',
+        show: false
+    });
+    const [deleteEnabled, setDeleteEnabled] = useState<boolean>(false);
 
     useEffect(() => {
-       
         getPratimai();
     }, []);
 
@@ -28,16 +34,12 @@ const Home = () => {
     // const [showToast, setShowToast] = useState(false);
     // const [error, setError] = useState('');
 
-    const [toast, setToast] = useState({
-        body: '',
-        header: '',
-        type: 'success',
-        show: false
-    });
+ 
 
     const handleClose = () => {  
         setShow(false) 
         setEditEnabled(false);
+        setDeleteEnabled(false);
     };
     const handleShow = () => setShow(true);
 
@@ -64,16 +66,40 @@ const Home = () => {
         }
     }
 
-    const onDeleteTaskClick = async (id: string) => {
+    const deleteTask = async (id: string) => {
         console.log(id);
-        const response = await fetch('http://localhost:4000/api/pratimai/' + id, {method: 'DELETE'} );
+        const response = await fetch('http://localhost:4000/api/pratimai/' + 'id', {method: 'DELETE'} );
         const responseDetails = await response.json();
         console.log(responseDetails)
+        
+        if (responseDetails.error) {
+            setToast({
+                body: responseDetails.error,
+                header: 'Ivyko klaida, bandant istrinti pratima',
+                type: 'danger',
+                show: true
+            });
 
-        setShow(false);
-        getPratimai();
+            setDeleteEnabled(false);
+            return;
+        }
+
+        if (response.ok) {
+            setToast({
+                body: 'istrintas ' + pratimoDetails.title + ' pratimas',
+                header: 'Sekmingai ivykdytas trinimas',
+                type: 'success',
+                show: true
+            });
+
+            getPratimai();
+            setShow(false);
+            setDeleteEnabled(false);
+        }
+    
     }
 
+    const onDeleteTaskClick = () => setDeleteEnabled(true);
     const onUpdateTaskClick = () => setEditEnabled(prev => !prev);
 
     const onInputChangeEvent = (e: SyntheticEvent) => {
@@ -81,15 +107,23 @@ const Home = () => {
         console.log(pratimoDetails);
     }
 
-
-// 1. toast su statusu
-//     zalias sekmingas 
-//     raudonas ne
-// 2. jei uzklausa sekminga
-//     uzdarom modal window
-//     atnaujinam lista
-
-// 3. jei nesekminga toast su klaida 
+    // 0. paleisti appsa
+    // 1. paspaudus istrinti
+    //     vietoje action mygtuku - atsiras - 
+    //         yes ir no mygtukai
+    //             yes raudonas
+    //             no melynas
+    // 2. paspaudus no, action mygtuukai i pradine busena
+    // 3. paspaudus yes, 
+    //      3.1  sekmes atveju 
+    //         uzdarom modal langa
+    //         atnaujinam pratimu lista 
+    //         zalias pranesimas
+    //             success message
+    //     3.2  klaidos atveju
+    //         raudonas pranesimas 
+    //             error message
+    //         liekam tam paciame modal lange,action mygtukai i pradine busena
 
     const updateTaskOnSaveButtonClick = async () => {
         console.log(pratimoDetails)
@@ -123,7 +157,6 @@ const Home = () => {
         }
 
         if (response.ok) {
-            
             setToast({
                 body: 'atnaujinas ' + pratimoDetails.title + ' pratimas',
                 header: 'Sekmingai ivykdytas atnaujinimas',
@@ -132,11 +165,8 @@ const Home = () => {
             });
 
             getPratimai();
-            setShow(false);
-            
+            setShow(false);   
         }
-
-
     }
 
     return (
@@ -189,10 +219,9 @@ const Home = () => {
             <Modal show={show} onHide={handleClose} centered>
                 <Modal.Header closeButton>
                 <Modal.Title>  
-                    {   
-                        editEnabled 
-                            ? "Atnaujinti pratimo informacija" 
-                            : "Pratimo detali informacija"}
+                    { editEnabled && "Atnaujinti pratimo informacija" }
+                    { deleteEnabled && 'Ar tikrai norite istrinti si pratima?'}
+                    { !editEnabled && !deleteEnabled && "Pratimo detali informacija"}
                 </Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
@@ -255,17 +284,24 @@ const Home = () => {
                             </Button>
                         </>
                     )}
-                    {!editEnabled &&
+                    {!editEnabled && !deleteEnabled &&
                         <>
                             <Button variant="warning" onClick={() => onUpdateTaskClick()}>
                                 Atnaujinti
                             </Button>        
-                            <Button variant="danger" onClick={() => onDeleteTaskClick(pratimoDetails?._id)}>
+                            <Button variant="danger" onClick={() => onDeleteTaskClick()}>
                                 Istrinti
                             </Button>
                           
                         </>
                     }
+
+                    {deleteEnabled && (
+                        <>
+                            <Button variant="danger" onClick={ () => deleteTask(pratimoDetails._id)}>Taip</Button>
+                            <Button onClick={() => setDeleteEnabled(false)}>Ne</Button>
+                        </>
+                    )}
 
                     <Button variant="secondary" onClick={handleClose}>
                         Uzdaryti
