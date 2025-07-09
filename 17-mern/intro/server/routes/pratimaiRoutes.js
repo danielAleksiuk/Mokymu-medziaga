@@ -1,6 +1,6 @@
 import express from 'express';
 import Pratimas from '../models/pratimoModelis.js';
-import * as controller from '../controllers/controller.js';
+import * as controller from '../controllers/pratimasController.js';
 
 const router = express.Router();
 

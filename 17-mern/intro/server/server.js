@@ -1,6 +1,7 @@
 import express from 'express';
 import dotenv from 'dotenv';
 import pratimaiRoutes from './routes/pratimaiRoutes.js';
+import usersRoutes from './routes/usersRoutes.js';
 import mongoose from 'mongoose';
 import cors from 'cors';
 
@@ -18,6 +19,7 @@ app.use(cors());
 
 app.use(express.json());
 app.use('/api/pratimai', pratimaiRoutes);
+app.use('/api/user', usersRoutes);
 
 app.use((req, res, next) => {
     console.log(req.path, req.method);
