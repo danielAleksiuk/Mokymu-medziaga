@@ -67,10 +67,8 @@ const Home = () => {
     }
 
     const deleteTask = async (id: string) => {
-        console.log(id);
-        const response = await fetch('http://localhost:4000/api/pratimai/' + 'id', {method: 'DELETE'} );
+        const response = await fetch('http://localhost:4000/api/pratimai/' + id, {method: 'DELETE'} );
         const responseDetails = await response.json();
-        console.log(responseDetails)
         
         if (responseDetails.error) {
             setToast({
