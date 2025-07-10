@@ -30,7 +30,31 @@ export const useUserSignup = () => {
     return { signUp, isLoading, error };
 }
 
-// aprasyti login 
-// 1. visa forma ideti i login
-// 2. login uzklausa ideti hooksa
-// 3. sujungti forma su hooksu
+export const useUserLogin = () => {
+    const [error, setError] = useState<string>('');
+    const [isLoading, setIsLoading] = useState<boolean>(false);
+
+    const login = async (userData: User) => {
+        const response = await fetch(
+            'http://localhost:4000/api/user/login', {
+                method: 'POST',
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify(userData)
+        });
+
+        const json = await response.json();
+
+        if (json.error) {
+            setError(json.error);
+            return;
+        }
+        
+        if (response.ok) {
+            return json;
+        }
+        
+    }
+
+
+    return { login, isLoading, error };
+}
