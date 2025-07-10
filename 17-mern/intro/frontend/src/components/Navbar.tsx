@@ -1,10 +1,18 @@
 import { useContext } from 'react';
 import {Link} from 'react-router-dom';
 import { AuthContext } from '../context/AuthContext';
+import {  useNavigate } from "react-router-dom";
 
 const Navbar = () => {
-    const {user} = useContext<any>(AuthContext);
+    const {user, setUser} = useContext<any>(AuthContext);
+    const navigate = useNavigate();
 
+    const handleLogout = () => {
+        localStorage.removeItem('user');
+        navigate('/login');
+        setUser(null);
+    }
+    
     return (
         <header>
             <div className='container'>
@@ -16,7 +24,8 @@ const Navbar = () => {
                         <Link to='/newPratimas'>
                             <h1>Sukurti nauja pratima</h1>
                         </Link>
-                        <h1>Logout</h1>
+                     
+                        <h1 onClick={handleLogout}>Logout</h1>  
                     </>
                 )}
 

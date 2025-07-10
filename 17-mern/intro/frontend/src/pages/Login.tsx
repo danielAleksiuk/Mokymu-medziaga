@@ -32,15 +32,13 @@ const Login = () => {
     };
 
     const handleSubmitButton = async() => {
-        console.log(user);
-//         console.log(user);
-//         const userData = await login(user);
+        const userData = await login(newUser);
 
-//         if (userData) {
-//             localStorage.setItem('user', JSON.stringify(userData));
-// // add in context
-//             navigate('/');
-//         }
+        if (userData) {
+            localStorage.setItem('user', JSON.stringify(userData));
+            setUser(userData);
+            navigate('/');
+        }
     }
 
     return (

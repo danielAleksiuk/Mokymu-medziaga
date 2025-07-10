@@ -2,10 +2,7 @@ import { useEffect, useState } from "react"
 import { AuthContext } from "./AuthContext";
 
 export const AuthContextProvider = ({children}) => {
-    const [user, setUser] = useState({
-        email: '',
-        token: ''
-    });
+    const [user, setUser] = useState(null);
 
     useEffect(() => {
         const userData = 
