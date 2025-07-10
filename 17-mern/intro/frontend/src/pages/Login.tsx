@@ -1,43 +1,46 @@
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import Container from 'react-bootstrap/Container';
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import type { User } from '../utils/types';
 import { useUserLogin } from '../hooks/useUserService';
 import {  useNavigate } from "react-router-dom";
+import { AuthContext } from '../context/AuthContext';
 
 
 const Login = () => {
-     const [user, setUser] = useState<User>({
+     const [newUser, setNewUser] = useState<User>({
         email: '',
         password: ''
     });
     const { login, isLoading, error } = useUserLogin();
     const navigate = useNavigate();
+    const {user, setUser} = useContext(AuthContext);
 
     const onPswInputChange = (e: any) => {
-        setUser({
-            email: user.email,
+        setNewUser({
+            email: newUser.email,
             password: e.target.value
         })
     };
 
     const onEmailInputChange = (e: any) => {
-          setUser({
+          setNewUser({
             email: e.target.value,
-            password: user.password
+            password: newUser.password
         })
     };
 
     const handleSubmitButton = async() => {
         console.log(user);
-        const userData = await login(user);
+//         console.log(user);
+//         const userData = await login(user);
 
-        if (userData) {
-            localStorage.setItem('user', JSON.stringify(userData));
-// add in context
-            navigate('/');
-        }
+//         if (userData) {
+//             localStorage.setItem('user', JSON.stringify(userData));
+// // add in context
+//             navigate('/');
+//         }
     }
 
     return (

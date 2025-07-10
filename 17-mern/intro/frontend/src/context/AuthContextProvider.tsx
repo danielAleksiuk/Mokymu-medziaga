@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { AuthContext } from "./AuthContext";
 
 export const AuthContextProvider = ({children}) => {
@@ -6,10 +6,22 @@ export const AuthContextProvider = ({children}) => {
         email: '',
         token: ''
     });
-    const [isUserAuth, setIsUserAuth] = useState<boolean>(false);
+
+    useEffect(() => {
+        const userData = 
+            localStorage.getItem('user')
+            ?  JSON.parse(localStorage.getItem('user'))
+            : null;
+
+        if (userData) {
+            console.log(userData)
+            setUser(userData);
+        }
+    }, [])
+
     
     return  (
-        <AuthContext.Provider value={{user, isUserAuth}}>
+        <AuthContext.Provider value={{user, setUser}}>
             {children}
         </AuthContext.Provider>
     )
