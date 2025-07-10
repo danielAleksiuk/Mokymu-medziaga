@@ -4,3 +4,9 @@ export type Task = {
     reps: number;
     level: number;
 }
+
+export type User = {
+    email: string,
+    password: string,
+    token?: string
+}

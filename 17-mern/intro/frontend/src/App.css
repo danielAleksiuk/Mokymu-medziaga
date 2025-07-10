@@ -58,3 +58,7 @@ header a {
   position: fixed;
   z-index: 100000;
 }
+
+form .errorMessage { 
+  color:red
+}
