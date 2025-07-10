@@ -1,8 +1,9 @@
-import { useEffect, useState, type SyntheticEvent } from "react";
+import { useContext, useEffect, useState, type SyntheticEvent } from "react";
 import type { Task } from "../utils/types";
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import Toast from 'react-bootstrap/Toast';
+import { AuthContext } from "../context/AuthContext";
 
 const Home = () => {
     const [pratimai, setPratimai] = useState<Task[]>([]);
@@ -15,13 +16,20 @@ const Home = () => {
         show: false
     });
     const [deleteEnabled, setDeleteEnabled] = useState<boolean>(false);
+    const user = JSON.parse(localStorage.getItem('user'));
 
     useEffect(() => {
+        console.log('++++')
+        console.log(user)
         getPratimai();
     }, []);
 
     const getPratimai = async () => {
-        const response = await fetch('http://localhost:4000/api/pratimai');
+        const response = await fetch('http://localhost:4000/api/pratimai', {
+            headers: {
+                'Authorization': `Bearer ${user.token}`
+            }
+        });
         const json = await response.json();
 
         if (response.ok) {
@@ -44,7 +52,11 @@ const Home = () => {
     const handleShow = () => setShow(true);
 
     const openDetails = async (id: string) => {
-        const response = await fetch('http://localhost:4000/api/pratimai/' + id );
+        const response = await fetch('http://localhost:4000/api/pratimai/' + id , {
+            headers: {
+                'Authorization': `Bearer ${user.token}`
+            }
+        });
         const pratimasDetails = await response.json();
 
         if (pratimasDetails.error) {
@@ -67,7 +79,12 @@ const Home = () => {
     }
 
     const deleteTask = async (id: string) => {
-        const response = await fetch('http://localhost:4000/api/pratimai/' + id, {method: 'DELETE'} );
+        const response = await fetch('http://localhost:4000/api/pratimai/' + id, {
+            method: 'DELETE',
+            headers: {
+                'Authorization': `Bearer ${user.token}`
+            }
+        } );
         const responseDetails = await response.json();
         
         if (responseDetails.error) {
@@ -133,7 +150,10 @@ const Home = () => {
                     reps: pratimoDetails.reps,
                     level: pratimoDetails.level
                 }),
-                headers: {'Content-Type': 'application/json'}
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Authorization': `Bearer ${user.token}`
+                }
             }
         );
         const responseDetails = await response.json();
